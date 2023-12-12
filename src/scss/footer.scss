@@ -1,0 +1,94 @@
+@import './variables.scss';
+
+
+
+footer {
+    background:$color_232f3e;
+    > div:not(:first-of-type) {
+        border-top:1px solid rgba(255,255,255,0.1)
+    }
+    .footer_upper {
+        
+        .footer_upper_right {
+            h2 {
+                font-size:27px;
+                text-transform: capitalize;
+                font-weight: 400;
+            }
+        }
+        
+        .footer_upper_left {
+            .input-group {
+                padding:10px !important;
+                input {
+                    box-shadow: none;
+                    outline: none;
+                    border:0;
+                    &::-webkit-input-placeholder {
+                        text-transform: capitalize;
+                    }
+                }
+                span {
+                    text-transform: capitalize;
+                    cursor: pointer;
+                    background:$color_232f3e;
+                    color:white;
+                    display: block;
+                    border:2px solid white;
+                    font-weight: 300;
+                }
+            }
+
+        }
+    }
+
+    .footer_mid {
+        h3 {
+            font-size:25px;
+            font-weight: 400;
+        }
+        .contact_us {
+            ul {
+                li {
+                    p {
+                        color:white;
+                        font-size:13px;
+                        font-weight: 300;
+                        margin-bottom:15px
+                    }
+                }
+                .social {
+                    li {
+                        a {
+                            width:35px;
+                            height:35px;
+                            background:rgba(255,255,255,0.1);
+                            border-radius: 50%;
+                            display:flex;
+                            align-items: center;
+                            justify-content: center;
+                            color:white
+                        }
+                    }
+                }
+            }
+        }
+        .information {
+            ul {
+                li:not(:last-of-type) {
+                    a {
+                        margin-bottom:10px;
+                    }
+                }
+                li {
+                    
+                    a {
+                        font-weight: 300;
+                        font-size:13px;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,121 @@
+@import './variables.scss';
+
+
+
+.header_top {
+    background: $color_131921;
+    border-bottom:1px solid $color_3b4149;
+    .row {
+        > div {
+           p {
+            font-size : 14px;
+            text-transform: capitalize;
+            font-weight: 300;
+           } 
+        }
+    }
+}
+
+.header_mid {
+    background: $color_131921;
+    .row {
+        align-items: center;
+        > div {
+           .logo {
+            a {
+                font-size : 30px;
+                text-transform: capitalize;
+                font-weight: 500;
+            }
+           } 
+           .input-group {
+            input {
+                outline:none !important;
+                font-size: 17px;
+                box-shadow: none !important;
+                border:none;
+                &::-webkit-input-placeholder {
+                    font-size:14px;
+                    text-transform: capitalize;
+                }
+            };
+
+            span {
+                background:$color_febd69;
+                color:white;
+                cursor: pointer;
+            }
+           }
+           .header_mid_links {
+                .link {
+                    .image {
+                        width:35px;
+                        height:35px;
+                        img {
+                            width:100%;
+                            height:100%
+                        }
+                    }
+                    p {
+                        line-height: 1.1;
+                        font-weight: 200;
+                        font-size:13px
+                    }
+                }
+                .cart {
+                    .mony {
+                        .count {
+                           border-radius: 5px;
+                        }
+                    }
+                }
+           }
+        }
+       
+    }
+}
+
+.header_bottom {
+    background: $color_232f3e;
+    .menu {
+        .menu_links {
+            a , .main .dropdown button {
+                color:white;
+                text-transform: capitalize;
+                font-weight: 300;
+                font-size: 15px;
+                
+            }
+        }
+    }
+    .main .dropdown  {
+        button {
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 200;
+            .image {
+                width:22px;
+                height:22px;
+                img {
+                    width:100%;
+                    height:100%
+                }
+            }
+        }
+        
+        .dropdown-menu {
+            width:100% !important;
+            transform :translate(0px, 42px) !important;
+            background:$color_131921;
+            padding:0;
+            li a {
+                border-bottom:1px solid $color_3b4149 !important;
+                font-size: 14px;
+                text-transform: capitalize;
+                &:hover {
+                    color:black !important
+                }
+            }
+        }
+    }
+}
