@@ -103,7 +103,7 @@ export default function Footer() {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col-md-2">
+                            <div className="col-md-2"></div>
                                 <div className="information">
                                     <h3 className="text-capitalize text-white mb-4">quick links</h3>
                                     <ul className="list-unstyled">
