@@ -1,14 +1,12 @@
+import LandingPage from "../components/home/landing_page";
+import ServicePage from "../components/home/services";
 
 export default function Home () {
     return ( 
-        <div>
-            <h1>
-                home
-            </h1>
-            <p className="alert alert-danger">
-                ddddddd
-            </p>
-        </div>
+        <>
+            <LandingPage></LandingPage>
+            <ServicePage></ServicePage>
+        </>
      );
 }
 

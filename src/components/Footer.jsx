@@ -126,14 +126,41 @@ export default function Footer() {
                                 </div>
                             </div>
                             <div className="col-md-3">
-                                <div className="our_app">
+                                <div className="our_app ">
                                     <h3 className="text-capitalize text-white mb-4">our app</h3>
                                     <p className="text-white">download our app and extra %15 discount <br /> on your first order...</p>
-                                    <div className="apps">
+                                    <div className="apps d-flex align-items-center gap-1 mt-5">
+                                        <div className="app ">
+                                            <a href="/">
+                                                <img src="/images/App-Store.png" alt="" />
+                                            </a>
+                                        </div>
                                         <div className="app">
-                                            <img src="/public/images/" alt="" />
+                                            <a href="/">
+                                                <img src="/images/play.jpg" alt="" />
+                                            </a>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="footer_bottom py-2">
+                    <div className="container-xxl">
+                        <div className="row align-items-center">
+                            <div className="col-md-6">
+                                <p className="mb-0">@ 2023, digital powered by shopify</p>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="payment d-flex align-items-center">
+                                    <a href="/"><img src="images/cart/cart1.jpg" alt="" /></a>
+                                    <a href="/"><img src="images/cart/cart2.jpg" alt="" /></a>
+                                    <a href="/"><img src="images/cart/cart6.jpg" alt="" /></a>
+                                    <a href="/"><img src="images/cart/cart3.jpg" alt="" /></a>
+                                    <a href="/"><img src="images/cart/cart4.jpg" alt="" /></a>
+                                    <a href="/"><img src="images/cart/cart5.png" alt="" /></a>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.servicePage {
+    background:$color_f5f5f7;
+    .item {
+        width:calc(100% / 5);
+        padding : 0 10px;
+        .image {
+            img {
+                width:100%;
+
+            }
+        }
+        .details {
+            h4 {
+                font-size:16px;
+                font-weight: 500;
+                color:#000;
+                margin-bottom:5px
+            }
+            p {
+                font-size:12px;
+                margin:0;
+                color:$color_3b4149
+            }
+        }
+    }
+}   
+
+
+@media (max-width : 900px) {
+    .servicePage {
+        background:$color_f5f5f7;
+        .item {
+            width:calc(100% / 2);
+            justify-content: start !important;
+        }
+    }
+}
+@media (max-width : 700px) {
+    .servicePage {
+        background:$color_f5f5f7;
+        .item {
+            width:calc(100% );
+            justify-content: start !important;
+        }
+    }
+}
