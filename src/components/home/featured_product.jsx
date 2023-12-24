@@ -92,8 +92,8 @@ function FeatureProductSection () {
                             }}
                         }
                         >
-                        {productData.map(ele => ( 
-                            <ProductCart cart={ele}></ProductCart>
+                        {productData.map((ele , index) => ( 
+                            <ProductCart key={index} cart={ele}></ProductCart>
                         ))}    
                     </OwlCarousel>
                 </div>

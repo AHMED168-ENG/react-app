@@ -1,6 +1,6 @@
 
 import "../../scss/home/special_product.scss"
-import SpecialProductCart from "./special_product_cart";
+import SpecialProductCartSection from "./special_product_cart";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/grid';
@@ -12,11 +12,13 @@ import { Grid, Pagination } from 'swiper/modules';
 function SpecialProductSection () {
     let productData = [
         {
-            img1 : "/images/headphone.jpg",
-            img2 : "/images/yellow_headphone.jpg",
+            img1 : "/images/camera10.png",
+            img2 : "/images/camera11.png",
+            img3 : "/images/camera12.png",
             type : "havelis",
-            header: 'a beautiful sunday morning renaissance',
-            price : "$100.00"
+            header: 'samsong galaxy note 10+ mobile phone sml...',
+            price : "$60.00",
+            oldprice : "$75.00",
         },
         {
             img1 : "/images/camera_classic.jpg",
@@ -64,7 +66,7 @@ function SpecialProductSection () {
             type : "bajaj",
             header: 'amera soman detram sandra elit cursus',
             price : "$220.00"
-        }
+        },
     ]
     
     return ( 
@@ -79,17 +81,22 @@ function SpecialProductSection () {
                         slidesPerView={3}
                         grid={{
                             rows: 2,
+                            fill: "row",
                         }}
+                        autoplay={true}
+                        loop={true}
                         spaceBetween={30}
                         pagination={{
                             clickable: true,
                         }}
-                        modules={[Grid, Pagination]}
+                        modules={[Grid]}
                         className="mySwiper"
                     >
                         {
-                        productData.map(ele => (
-                            <SpecialProductCart product={ele}></SpecialProductCart>
+                        productData.map((ele, index) => (
+                            <SwiperSlide key={index} >
+                                <SpecialProductCartSection product={ele}></SpecialProductCartSection>
+                            </SwiperSlide>
                         ))
                     }
                     </Swiper>              

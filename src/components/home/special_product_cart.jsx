@@ -5,13 +5,15 @@ import { CiHeart } from "react-icons/ci";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
 import { Navigation } from "swiper/modules";
-import Swiper from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
+
 import { Link } from "react-router-dom";
 
-function SpecialProductCartSection ({product}) {
-    
-    return ( 
-        <>
+function SpecialProductCartSection (props) {
+    return (    
         <div className="item product p-2 d-flex">
             <div className="product-assets">
                 <div className="parian-image">
@@ -23,7 +25,7 @@ function SpecialProductCartSection ({product}) {
                     <IoEyeOutline />
                 </div>
                 <div className="child-image">
-                <Swiper navigation={true} modules={[Navigation]}>
+                <Swiper navigation={true} >
                     <div className="image">
                         <img src="" alt="" />
                     </div>
@@ -38,8 +40,8 @@ function SpecialProductCartSection ({product}) {
                 </div>
             </div>
             <div className="details">
-                <span>{product.type}</span>
-                <h2 className="text-transform">{product.header}</h2>
+                <span>{props.product.type}</span>
+                <h2 className="text-transform">{props.product.header}</h2>
                 <StarRatings
                     rating={4.5}
                     starRatedColor="#ffd700"
@@ -72,15 +74,13 @@ function SpecialProductCartSection ({product}) {
                 </div>
                 <div className="product_progress">
                     <h4 className="text-capitalize">product: 5</h4>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div className="progress">
+                        <div className="progress-bar" role="progressbar" style={{width: "100%"}} aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                 </div>
                 <Link to="/" className="text-uppercase">option</Link>
             </div>
         </div>
-            
-        </>
      );
 }
 

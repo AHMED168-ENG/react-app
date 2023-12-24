@@ -43,8 +43,8 @@ function LatestNewsSection () {
                 </header>
                 <div className="row">
                     {
-                        newsData.map(ele => (
-                                <div className="col-md-3">
+                        newsData.map((ele ,index) => (
+                                <div className="col-md-3" key={index}>
                                     <NewsCart cart={ele}></NewsCart>
                                 </div>
                             )
