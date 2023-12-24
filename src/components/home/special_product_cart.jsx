@@ -6,6 +6,7 @@ import { IoGitCompareOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
 import { Navigation } from "swiper/modules";
 import Swiper from "swiper";
+import { Link } from "react-router-dom";
 
 function SpecialProductCartSection ({product}) {
     
@@ -56,12 +57,26 @@ function SpecialProductCartSection ({product}) {
                         $30.00
                     </span>
                 </div>
-                <div className="days-of-discount d-flex">
-                    <div className="left">
+                <div className="days-of-discount d-flex align-items-center justify-content-between">
+                    <div className="days d-flex">
                         <span>887</span>
                         <span>days</span>
                     </div>
+                    <div className="date">
+                        <span className="bg-danger cel text-white d-flex align-items-center justify-content-center">05</span> 
+                        <span className="separate">:</span>
+                        <span className="bg-danger cel text-white d-flex align-items-center justify-content-center">37</span>
+                        <span className="separate">:</span>
+                        <span className="bg-danger cel text-white d-flex align-items-center justify-content-center">32</span>
+                    </div>
                 </div>
+                <div className="product_progress">
+                    <h4 className="text-capitalize">product: 5</h4>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                <Link to="/" className="text-uppercase">option</Link>
             </div>
         </div>
             
