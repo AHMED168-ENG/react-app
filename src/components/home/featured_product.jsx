@@ -38,6 +38,13 @@ function FeatureProductSection () {
             price : "$100.00",
         },
         {
+            img1 : "/images/headphone.jpg",
+            img2 : "/images/yellow_headphone.jpg",
+            type : "havelis",
+            header: 'a beautiful sunday morning renaissance',
+            price : "$100.00"
+        },
+        {
             img2 : "/images/smartWatch.jpg",
             img1 : "/images/watch.jpg",
             date : "11 june 2022",
@@ -62,7 +69,8 @@ function FeatureProductSection () {
                     <h2 className="text-uppercase">Featured collections </h2>
                 </header>
                 <div className="products">                
-                    <OwlCarousel className='owl-theme' 
+                    <OwlCarousel className='owl-theme'
+                        
                         loop={true}
                         margin={20}
                         nav={true}
@@ -82,7 +90,8 @@ function FeatureProductSection () {
                             1000: {
                                 items: 6,
                             }}
-                        }>
+                        }
+                        >
                         {productData.map(ele => ( 
                             <ProductCart cart={ele}></ProductCart>
                         ))}    

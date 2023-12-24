@@ -11,4 +11,20 @@
         padding: 10px 0  !important;
         overflow: visible;
     }
+
+    .owl-theme .owl-nav {
+        position:absolute;
+        top:-70px;
+        right:0;
+        width:5%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next {
+        font-size: 35px;
+        font-weight: 400;
+        background: none !important;
+        color:#222
+    }
 }
+
