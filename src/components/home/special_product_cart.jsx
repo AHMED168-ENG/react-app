@@ -6,6 +6,7 @@ import { CiHeart } from "react-icons/ci";
 import { IoGitCompareOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
 import { BiShoppingBag } from "react-icons/bi";
+import Swiper from "swiper";
 
 function SpecialProductCartSection ({product}) {
     
@@ -20,10 +21,14 @@ function SpecialProductCartSection ({product}) {
                     <CiHeart />
                     <IoGitCompareOutline />
                     <IoEyeOutline />
-                    <BiShoppingBag />
                 </div>
-                <div className="pairant-image">
-                    <img src="" alt="" />
+                <div className="child-image">
+                <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                    <div className="image">
+                        <img src="" alt="" />
+                    </div>
+                </Swiper>
+                    
                 </div>
             </div>
             <div className="details">
