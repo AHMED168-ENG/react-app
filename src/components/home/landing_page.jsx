@@ -3,7 +3,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from 'react-router-dom';
-import "../../scss/home/landingPage.scss"
+import "../../scss/home/landing_page.scss"
 
 
 function LandingPage () {
@@ -17,8 +17,8 @@ function LandingPage () {
                             <OwlCarousel className='owl-theme' 
                                 loop={true}
                                 margin={10}
-                                nav={false}
-                                dots={true}
+                                nav={true}
+                                dots={false}
                                 autoplay={true}
                                 autoplayTimeout={5000}
                                 items={4}
@@ -36,7 +36,7 @@ function LandingPage () {
                                         items: 1,
                                     }}
                                 }>
-                                <div class='item position-relative'>
+                                <div className='item position-relative'>
                                     <div className="img">
                                         <img src="/images/main-banner-1.jpg" alt="" />
                                     </div>
@@ -48,7 +48,7 @@ function LandingPage () {
                                     </div>
                                 </div>
 
-                                <div class='item position-relative'>
+                                <div className='item position-relative'>
                                     <div className="img">
                                         <img src="/images/main-banner.jpg" alt="" />
                                     </div>
@@ -66,7 +66,7 @@ function LandingPage () {
                        <div className="left_banner right_banner">
                             <div className="row">
                                 <div className="col-md-6">
-                                    <div class='item position-relative'>
+                                    <div className='item position-relative'>
                                         <div className="img">
                                             <img src="/images/catbanner-01.jpg" alt="" />
                                         </div>
@@ -78,7 +78,7 @@ function LandingPage () {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <div class='item position-relative'>
+                                    <div className='item position-relative'>
                                         <div className="img">
                                             <img src="/images/catbanner-02.jpg" alt="" />
                                         </div>
@@ -90,7 +90,7 @@ function LandingPage () {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <div class='item position-relative'>
+                                    <div className='item position-relative'>
                                         <div className="img">
                                             <img src="/images/catbanner-03.jpg" alt="" />
                                         </div>
@@ -102,7 +102,7 @@ function LandingPage () {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <div class='item position-relative'>
+                                    <div className='item position-relative'>
                                         <div className="img">
                                             <img src="/images/catbanner-04.jpg" alt="" />
                                         </div>

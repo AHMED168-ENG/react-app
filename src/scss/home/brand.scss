@@ -1,0 +1,18 @@
+@import '../variables.scss';
+
+.brandPage {
+    .marque_inside {
+        box-shadow:5px 5px 15px rgba(0,0,0,0.07) , -5px -5px 15px rgba(0,0,0,0.07);
+        border-radius: 10px;
+        .brand {
+            flex:1;
+            .image {
+                width:100%;
+                img {
+                    width:100%
+                }
+            }
+        }
+    }
+
+}   

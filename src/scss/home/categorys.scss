@@ -1,0 +1,98 @@
+@import '../variables.scss';
+
+.category-section {
+    background:$color_f5f5f7;
+    .inside {
+        background:white;
+        box-shadow:8px 8px 15px rgba(0,0,0,0.1);
+        border-radius: 15px;
+        > .item:not(:nth-of-type(5) , :nth-of-type(10)){
+            border-right:1px solid $color_ededed
+        }
+        > .item:not(:nth-of-type(6) , :nth-of-type(7) , :nth-of-type(8) , :nth-of-type(9) , :nth-of-type(10)){
+            border-bottom:1px solid $color_ededed
+        }
+        .item {
+            width: calc(100% / 5) !important;
+            justify-content: space-between;
+            padding:20px 20px;
+            .details {
+                padding-top:20px;
+                h4 {
+                    font-size:15px;
+                    margin-bottom:5px;
+                    text-transform: capitalize;
+                }
+                p {
+                    font-size:12px;    
+                    color:$color_232f3e
+                }
+            }
+            .image {
+                width:36%;
+                aspect-ratio: 1/1;
+                img {
+                    width:100%;
+                    height:100%;
+                    aspect-ratio: 1/0.7;
+                }
+            }
+
+        }
+    }
+}   
+
+@media (max-width:1000px) {
+    .categoryPage {
+        background:$color_f5f5f7;
+        .inside {
+            > .item:not(:nth-of-type(4) , :nth-of-type(8)){
+            
+                border-right:1px solid $color_ededed !important
+            }
+            > .item:not(:nth-of-type(9) , :nth-of-type(10)){
+                border-bottom:1px solid $color_ededed !important
+            }
+            .item {
+                border-right: 0 !important;
+                width: calc(100% / 4) !important;
+            }
+        }
+    }  
+}
+
+@media (max-width:800px) {
+    .categoryPage {
+        background:$color_f5f5f7;
+        .inside {
+            > .item:not(:nth-of-type(3) , :nth-of-type(6), :nth-of-type(9)){
+                border-right:1px solid $color_ededed !important
+            }
+            > .item:not(:nth-of-type(10)){
+                border-bottom:1px solid $color_ededed !important
+            }
+            .item {
+                border-right: 0 !important;
+                width: calc(100% / 3) !important;
+            }
+        }
+    }  
+}
+
+@media (max-width:400px) {
+    .categoryPage {
+        background:$color_f5f5f7;
+        .inside {
+            > .item:not(:nth-of-type(2) , :nth-of-type(4), :nth-of-type(6), :nth-of-type(8)){
+                border-right:1px solid $color_ededed !important
+            }
+            > .item:not(:nth-of-type(9) , :nth-of-type(10)){
+                border-bottom:1px solid $color_ededed !important
+            }
+            .item {
+                border-right: 0 !important;
+                width: calc(100% / 2) !important;
+            }
+        }
+    }  
+}

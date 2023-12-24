@@ -1,8 +1,5 @@
 
-import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
-import "../../scss/home/servicePage.scss"
+import "../../scss/home/service.scss"
 
 
 function ServicePage () {
@@ -13,7 +10,7 @@ function ServicePage () {
                 <div className="d-flex flex-wrap justify-content-between align-items-center">
                   
                     <div className="item d-flex align-items-center justify-content-center mb-3 mb-md-0 gap-3">
-                        <div class="image">
+                        <div className="image">
                             <img src="/images/service.png" alt="" />
                         </div>
                         <div className="details">
@@ -23,7 +20,7 @@ function ServicePage () {
                     </div>
 
                     <div className="item d-flex align-items-center justify-content-center mb-3 mb-md-0 gap-3">
-                        <div class="image">
+                        <div className="image">
                             <img src="/images/service-02.png" alt="" />
                         </div>
                         <div className="details">
@@ -33,7 +30,7 @@ function ServicePage () {
                     </div>
             
                     <div className="item d-flex align-items-center justify-content-center mb-3 mb-md-0 gap-3">
-                        <div class="image">
+                        <div className="image">
                             <img src="/images/service-03.png" alt="" />
                         </div>
                         <div className="details">
@@ -43,7 +40,7 @@ function ServicePage () {
                     </div>
                   
                     <div className="item d-flex align-items-center justify-content-center mb-3 mb-md-0 gap-3">
-                        <div class="image">
+                        <div className="image">
                             <img src="/images/service-04.png" alt="" />
                         </div>
                         <div className="details">
@@ -53,7 +50,7 @@ function ServicePage () {
                     </div>
                   
                     <div className="item d-flex align-items-center justify-content-center mb-3 mb-md-0 gap-3">
-                        <div class="image">
+                        <div className="image">
                             <img src="/images/service-05.png" alt="" />
                         </div>
                         <div className="details">
