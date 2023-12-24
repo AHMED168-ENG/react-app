@@ -88,11 +88,12 @@ function SpecialProductSection () {
                         className="mySwiper"
                     >
                         {
-                            productData.map(ele => (
-                                <SpecialProductCart product={ele}></SpecialProductCart>
-                            ))
-                        }
+                        productData.map(ele => (
+                            <SpecialProductCart product={ele}></SpecialProductCart>
+                        ))
+                    }
                     </Swiper>              
+                   
                 </div>
             </div>
         </section>
