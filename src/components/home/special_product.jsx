@@ -78,11 +78,11 @@ function SpecialProductSection () {
                     <Swiper
                         slidesPerView={3}
                         grid={{
-                        rows: 2,
+                            rows: 2,
                         }}
                         spaceBetween={30}
                         pagination={{
-                        clickable: true,
+                            clickable: true,
                         }}
                         modules={[Grid, Pagination]}
                         className="mySwiper"
