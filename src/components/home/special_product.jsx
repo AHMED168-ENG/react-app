@@ -13,8 +13,8 @@ function SpecialProductSection () {
     let productData = [
         {
             img1 : "/images/mobile.jpg",
-            img2 : "/images/mobile2.png",
-            img3 : "/images/mobile3.png",
+            img2 : "/images/mobile2.jpg",
+            img3 : "/images/mobile3.jpg",
             type : "sony",
             rate : 4.5,
             header: 'hero session action camera with 8mb',
@@ -37,7 +37,6 @@ function SpecialProductSection () {
             days : 743,
             productPercentage : "10%"
         },
-
         {
             img1 : "/images/speker1.jpg",
             img2 : "/images/speker2.jpg",
@@ -50,7 +49,7 @@ function SpecialProductSection () {
             productPercentage : "60%"
         },
         {
-            img1 : "/images/smart_phone.jpg",
+            img1 : "/images/smart_phone.png",
             img2 : "/images/black_mike.jpg",
             img3 : "/images/watch.jpg",
             type : "bajaj",
@@ -72,7 +71,7 @@ function SpecialProductSection () {
         {
             img2 : "/images/laptop.jpg",
             img1 : "/images/watch.jpg",
-            img3 : "/images/smart_phone.jpg",
+            img3 : "/images/smart_phone.png",
             date : "11 june 2022",
             type : "sony",
             header: 'amera soman detram sandra elit cursus',
