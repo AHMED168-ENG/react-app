@@ -6,6 +6,8 @@ import About from './pages/about';
 import Contact from './pages/contact';
 import Header from './components/header';
 import Footer from './components/Footer';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function App() {
   return (

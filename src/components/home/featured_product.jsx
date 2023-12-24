@@ -65,11 +65,10 @@ function FeatureProductSection () {
                     <OwlCarousel className='owl-theme' 
                         loop={true}
                         margin={20}
-                        nav={false}
-                        dots={true}
+                        nav={true}
+                        dots={false}
                         autoplay={true}
                         autoplayTimeout={50000}
-                        items={4}
                         responsive={
                             {0: {
                                 items: 1,

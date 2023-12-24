@@ -11,7 +11,7 @@ import { BiShoppingBag } from "react-icons/bi";
 function ProductCart (prop) {
     return ( 
         <>
-        <div className="product_cart">
+        <div className="product_cart item">
             <div className="cart-image position-relative">
                 <img src={prop.cart.img1} alt="" />
                 <div className="over-img position-absolute">

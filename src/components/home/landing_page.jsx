@@ -1,7 +1,5 @@
 
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { Link } from 'react-router-dom';
 import "../../scss/home/landing_page.scss"
 
@@ -17,8 +15,8 @@ function LandingPage () {
                             <OwlCarousel className='owl-theme' 
                                 loop={true}
                                 margin={10}
-                                nav={true}
-                                dots={false}
+                                nav={false}
+                                dots={true}
                                 autoplay={true}
                                 autoplayTimeout={5000}
                                 items={4}
