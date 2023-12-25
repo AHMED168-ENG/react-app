@@ -1,5 +1,6 @@
 import BrandPage from "../components/home/brand";
 import CategorySection from "../components/home/category";
+import FamousProductSection from "../components/home/famous_product";
 import FeatureProductSection from "../components/home/featured_product";
 import LandingPage from "../components/home/landing_page";
 import LatestNewsSection from "../components/home/latest_news";
@@ -13,6 +14,7 @@ export default function Home () {
             <ServicePage></ServicePage>
             <CategorySection></CategorySection>
             <FeatureProductSection></FeatureProductSection>
+            <FamousProductSection></FamousProductSection>
             <SpecialProductSection></SpecialProductSection>
             <LatestNewsSection></LatestNewsSection>
             <BrandPage></BrandPage>
