@@ -12,13 +12,24 @@
         width: 50%;
         padding:20px;
         .parian-image {
-            object-fit: contain;
             width:100%;
             aspect-ratio: 1/1.5;
             img {
                 width: 100%;
                 height:100%;
+                object-fit: contain;
+
             }
+        }
+        .product_discount {
+            top:5px;
+            left:10px;
+            background:$color_E5A764;
+            border-radius: 10px;
+            padding:2px 10px;
+            color:#000;
+            font-size:10px;
+            font-weight: 700;
         }
         .product_action {
             top:0;
@@ -48,10 +59,11 @@
                 aspect-ratio: 1/1;
                 border:1px solid #ddd;
                 padding:15px;
-
+                border-radius: 5px;
                 img {
                     width:100%;
-                    height: 100%
+                    height: 100%;
+                    object-fit: contain
                 };
             }
         }

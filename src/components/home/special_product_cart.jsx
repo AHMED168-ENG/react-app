@@ -23,6 +23,9 @@ function SpecialProductCartSection (props) {
                     <div><IoGitCompareOutline /></div>
                     <div><IoEyeOutline /></div>
                 </div>
+                <div className="product_discount position-absolute">
+                    -20%
+                </div>
                 <div className="child-image">
                     <Swiper 
                         slidesPerView={2}
