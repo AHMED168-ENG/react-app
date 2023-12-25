@@ -45,7 +45,7 @@ function SpecialProductCartSection (props) {
                     </Swiper>
                 </div>
             </div>
-            <div className="product-details py-3">
+            <div className="product-details py-4">
                 <span className="product-type">{props.product.type}</span>
                 <h2 className="text-capitalize product-title">{props.product.header}</h2>
                 <div className="rate">
