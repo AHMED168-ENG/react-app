@@ -17,7 +17,7 @@ function FamousProductSection () {
                                 <p>from $399or $16.62/mo. for 24mo.</p>
                             </div>
                             <div className="image">
-                                <img src="images/clock1.jpg" alt="" />
+                                <img src="images/clock1.png" alt="" />
                             </div>
                         </div>
                     </div>
@@ -29,7 +29,7 @@ function FamousProductSection () {
                                 <p>27-inch 5k Retina display</p>
                             </div>
                             <div className="image">
-                                <img src="images/laptop.jpg" alt="" />
+                                <img src="images/lap2.jpg" alt="" />
                             </div>
                         </div>
                     </div>

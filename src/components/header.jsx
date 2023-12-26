@@ -96,7 +96,7 @@ export default function Header() {
                                 </div>
                                 <div className="menu">
                                     <ul className="menu_links d-flex p-0 m-0 gap-4">
-                                        <Link to="/home">Home</Link>
+                                        <Link to="/">Home</Link>
                                         <Link to="/our-store">our store</Link>
                                         <Link to="/blogs">blogs</Link>
                                         <Link to="/contact">contact</Link>

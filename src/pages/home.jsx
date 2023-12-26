@@ -1,3 +1,4 @@
+import HelmetComponent from "../components/helmet";
 import BrandPage from "../components/home/brand";
 import CategorySection from "../components/home/category";
 import FamousProductSection from "../components/home/famous_product";
@@ -10,6 +11,7 @@ import SpecialProductSection from "../components/home/special_product";
 export default function Home () {
     return ( 
         <>
+            <HelmetComponent title="home"></HelmetComponent>
             <LandingPage></LandingPage>
             <ServicePage></ServicePage>
             <CategorySection></CategorySection>
