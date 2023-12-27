@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import OurStore from './pages/our_store';
+import Blogs from './pages/blogs';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path='our-store' element={<OurStore/>}></Route>
               <Route path='about' element={<About/>}></Route>
               <Route path='contact' element={<Contact/>}></Route>
+              <Route path='blogs' element={<Blogs/>}></Route>
           </Route>
         </Routes>
         <Footer></Footer>

@@ -11,6 +11,7 @@ function Store() {
             type : "sony",
             rate : 4.5,
             header: 'hero session action camera with 8mb',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$60.00",
             oldPrice : "$75.00",
             discount : "35%",
@@ -24,6 +25,7 @@ function Store() {
             type : "havelis",
             rate : 4,
             header: 'samsong galaxy note 10+ mobile phone sml',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$60.00",
             oldPrice : "$75.00",
             discount : "40%",
@@ -36,6 +38,7 @@ function Store() {
             img3 : "/images/speker3.jpg",
             type : "havelis",
             header: 'vite magnes fuces laoreet bluetooth',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$90.00",
             oldPrice : "$260.00",
             days : 598,
@@ -48,7 +51,8 @@ function Store() {
             type : "bajaj",
             date : "11 june 2022",
             header: 'amera soman detram sandra elit cursus',
-            oldPrice : "$260.00",
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
+            price : "$260.00",
             days : 598,
             productPercentage : "10%"        
         },
@@ -58,7 +62,8 @@ function Store() {
             img3 : "/images/yellow_headphone.jpg",
             type : "havelis",
             header: 'a beautiful sunday morning renaissance',
-            oldPrice : "$260.00",
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
+            price : "$260.00",
             days : 598,
             productPercentage : "10%"          },
         {
@@ -68,7 +73,8 @@ function Store() {
             date : "11 june 2022",
             type : "sony",
             header: 'amera soman detram sandra elit cursus',
-            oldPrice : "$260.00",
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
+            price : "$260.00",
             days : 598,
             productPercentage : "20%" 
         },
@@ -79,6 +85,7 @@ function Store() {
             date : "11 june 2022",
             type : "bajaj",
             header: 'amera soman detram sandra elit cursus',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$220.00"
         },
         {
@@ -87,6 +94,7 @@ function Store() {
             img3 : "/images/speker3.jpg",
             type : "havelis",
             header: 'vite magnes fuces laoreet bluetooth',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$90.00",
             oldPrice : "$260.00",
             days : 598,
@@ -99,6 +107,7 @@ function Store() {
             type : "sony",
             rate : 4.5,
             header: 'hero session action camera with 8mb',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$60.00",
             oldPrice : "$75.00",
             discount : "35%",
@@ -112,6 +121,7 @@ function Store() {
             type : "havelis",
             rate : 4,
             header: 'samsong galaxy note 10+ mobile phone sml',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$60.00",
             oldPrice : "$75.00",
             discount : "40%",
@@ -124,6 +134,7 @@ function Store() {
             img3 : "/images/speker3.jpg",
             type : "havelis",
             header: 'vite magnes fuces laoreet bluetooth',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$90.00",
             oldPrice : "$260.00",
             days : 598,
@@ -136,6 +147,7 @@ function Store() {
             type : "bajaj",
             date : "11 june 2022",
             header: 'amera soman detram sandra elit cursus',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             oldPrice : "$260.00",
             days : 598,
             productPercentage : "10%"        
@@ -146,6 +158,7 @@ function Store() {
             img3 : "/images/yellow_headphone.jpg",
             type : "havelis",
             header: 'a beautiful sunday morning renaissance',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             oldPrice : "$260.00",
             days : 598,
             productPercentage : "10%"          },
@@ -156,6 +169,7 @@ function Store() {
             date : "11 june 2022",
             type : "sony",
             header: 'amera soman detram sandra elit cursus',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             oldPrice : "$260.00",
             days : 598,
             productPercentage : "20%" 
@@ -167,6 +181,7 @@ function Store() {
             date : "11 june 2022",
             type : "bajaj",
             header: 'amera soman detram sandra elit cursus',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$220.00"
         },
         {
@@ -175,6 +190,7 @@ function Store() {
             img3 : "/images/speker3.jpg",
             type : "havelis",
             header: 'vite magnes fuces laoreet bluetooth',
+            paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
             price : "$90.00",
             oldPrice : "$260.00",
             days : 598,
@@ -197,16 +213,16 @@ function Store() {
                     </div>
                     <div className="set-grid d-flex align-items-center gap-2">
                         <span className="total-product">21 products</span>
-                        <div className={`image , ${grid === 3 ? "active" : "" }`} onClick={() => setGrid(3)}>
+                        <div className={`image ${grid === 3 ? "active" : "" }`} onClick={() => setGrid(3)}>
                             <img src="/images/gr4.svg" alt="" />
                         </div>
-                        <div className={`image , ${grid === 4 ? "active" : "" }`} onClick={() => setGrid(4)}>
+                        <div className={`image ${grid === 4 ? "active" : "" }`} onClick={() => setGrid(4)}>
                             <img src="/images/gr3.svg" alt="" />
                         </div>
-                        <div className={`image , ${grid === 6 ? "active" : "" }`} onClick={() => setGrid(6)}>
+                        <div className={`image ${grid === 6 ? "active" : "" }`} onClick={() => setGrid(6)}>
                             <img src="/images/gr2.svg" alt="" />
                         </div>
-                        <div className={`image , ${grid === 12 ? "active" : "" }`} onClick={() => setGrid(12)}>
+                        <div className={`image ${grid === 12 ? "active" : "" }`} onClick={() => setGrid(12)}>
                             <img src="/images/gr.svg" alt="" />
                         </div>
                     </div>

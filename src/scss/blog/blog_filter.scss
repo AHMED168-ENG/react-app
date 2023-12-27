@@ -1,0 +1,31 @@
+@import '../variables.scss';
+
+
+.blog-filter {
+    .filter-product {
+        box-shadow:5px 5px 10px rgba(0,0,0,0.05) , -5px -5px 10px rgba(0,0,0,0.05);
+        border-radius: 10px;
+        overflow: hidden;
+        h4 {
+            color:$color_1c1c1b;
+            font-size: 17px;
+            font-weight: 500;
+        }   
+    }
+    .filter-category {
+        ul {
+            li {
+                padding-left:10px;
+                font-size:15px;
+                cursor: pointer;
+                font-weight: 400;
+                color:$color_777777
+            }
+            li:not(:last-of-type) {
+                margin-bottom:10px
+            }
+        }
+    }
+
+    
+}

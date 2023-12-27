@@ -13,19 +13,19 @@ function ProductCart (prop) {
     let {grid} = prop
     return ( 
         <> 
-        <div className="product_cart item">
+        <div className={`product_cart item position-relative ${location.pathname === "/our-store" && grid === 12  ? "grid12 grid" : "" } ${location.pathname === "/our-store" && grid === 6  ? "grid6 grid" : "" }`}>
+            <div className="product_action position-absolute d-flex flex-column">
+                <CiHeart />
+                <IoGitCompareOutline />
+                <IoEyeOutline />
+                <BiShoppingBag />
+            </div>
             <div className="cart-image position-relative">
-                <div className="image" style={{width: location.pathname === "/our-store" && (grid === 12 || grid === 6) ?  "35%" : "100%"}}>
+                <div className="image">
                     <img src={prop.cart.img1} alt="" />
                 </div>
-                <div className="over-img position-absolute" style={{width: location.pathname === "/our-store" && (grid === 12 || grid === 6) ?  "35%" : "100%"}}>
+                <div className="over-img position-absolute">
                     <img src={prop.cart.img2} alt="" />
-                </div>
-                <div className="product_action position-absolute d-flex flex-column">
-                    <CiHeart />
-                    <IoGitCompareOutline />
-                    <IoEyeOutline />
-                    <BiShoppingBag />
                 </div>
                 {
                     prop.cart.discount ? ( 
@@ -50,7 +50,15 @@ function ProductCart (prop) {
                     starDimension="15px"
                     starSpacing="0px"
                 />
-                <span className={`product-price d-block mt-1 ${prop.cart.oldPrice ? "active" : ""}` }>{prop.cart.price} <span> {prop.cart.oldPrice}</span> </span>
+                {
+                    location.pathname === "/our-store" ? (
+                        <p>{prop.cart.paragraph}</p>
+                     ) : ""
+                }
+                <div className={`product-price d-block mt-1` }>
+                    <span>{prop.cart.price} </span>
+                    <span> {prop.cart.oldPrice}</span> 
+                </div>
             </div>
         </div>
             
