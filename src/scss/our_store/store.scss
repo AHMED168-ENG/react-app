@@ -1,0 +1,53 @@
+@import '../variables.scss';
+
+
+.store {
+    .product-sort{
+        border-radius: 10px;
+        .sort-by {
+            span {
+                text-transform: capitalize;
+                color:$color_1c1c1b;
+                font-weight: 600;
+            }
+            select {
+                padding:5px 15px;
+                width:200px;
+                background-color:$color_f5f5f7;
+                border:1px solid #ddd;
+                outline: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+        .set-grid {
+            align-items: center;
+            .total-product {
+                text-transform: capitalize;
+                color:$color_1c1c1b;
+                font-weight: 600;
+            }
+            .image {
+                cursor: pointer;
+                width:28px;
+                height:28px;
+                aspect-ratio: 1/1;
+                padding:8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $color_ededed;
+                border-radius: 5px;
+                &.active {
+                    background-color: #adb5bd;
+                    color:white
+                }
+                img {
+                    width:100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

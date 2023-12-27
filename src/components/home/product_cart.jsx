@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../../scss/home/product_cart.scss"
 // import ReactStars from "react-rating-stars-component";
 import StarRatings from "react-star-ratings";
@@ -9,12 +9,16 @@ import { IoEyeOutline } from "react-icons/io5";
 import { BiShoppingBag } from "react-icons/bi";
 
 function ProductCart (prop) {
+    let location = useLocation();
+    let {grid} = prop
     return ( 
-        <>
+        <> 
         <div className="product_cart item">
             <div className="cart-image position-relative">
-                <img src={prop.cart.img1} alt="" />
-                <div className="over-img position-absolute">
+                <div className="image" style={{width: location.pathname === "/our-store" && (grid === 12 || grid === 6) ?  "35%" : "100%"}}>
+                    <img src={prop.cart.img1} alt="" />
+                </div>
+                <div className="over-img position-absolute" style={{width: location.pathname === "/our-store" && (grid === 12 || grid === 6) ?  "35%" : "100%"}}>
                     <img src={prop.cart.img2} alt="" />
                 </div>
                 <div className="product_action position-absolute d-flex flex-column">
