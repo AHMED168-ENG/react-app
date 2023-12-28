@@ -1,0 +1,22 @@
+
+@import '../variables.scss';
+
+.shipping-policy {
+    background-color: $color_ededed;
+    .policy {
+        background-color: white;
+        border-radius: 15px;;
+        padding:20px;
+        box-shadow:5px 5px 10px rgba(0,0,0,0.05) , -5px -5px 10px rgba(0,0,0,0.05);
+        .item {
+            h4 {
+                font-size: 19px;
+                font-weight: 500;
+            }
+            p {
+                font-size: 15px;
+                color:$color_777777
+            }
+        }
+    }
+}

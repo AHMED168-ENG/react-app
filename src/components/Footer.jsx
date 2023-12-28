@@ -64,19 +64,19 @@ export default function Footer() {
                                     <h3 className="text-capitalize text-white mb-4">information</h3>
                                     <ul className="list-unstyled">
                                         <li>
-                                            <Link className="text-capitalize text-white" to="/">privacy police</Link>
+                                            <Link className="text-capitalize text-white" to="/privacy-policy">privacy police</Link>
                                         </li>
                                         <li>
-                                            <Link className="text-capitalize text-white" to="/">refund police</Link>
+                                            <Link className="text-capitalize text-white" to="/refund-policy">refund police</Link>
                                         </li>
                                         <li>
-                                            <Link className="text-capitalize text-white" to="/">shipping police</Link>
+                                            <Link className="text-capitalize text-white" to="/shipping-police">shipping police</Link>
                                         </li>
                                         <li>
-                                            <Link className="text-capitalize text-white" to="/">terms of service</Link>
+                                            <Link className="text-capitalize text-white" to="/terms-condition">terms of service</Link>
                                         </li>
                                         <li>
-                                            <Link className="text-capitalize text-white" to="/">blogs</Link>
+                                            <Link className="text-capitalize text-white" to="/blogs">blogs</Link>
                                         </li>
                                     </ul>
                                 </div>
@@ -95,7 +95,7 @@ export default function Footer() {
                                             <Link className="text-capitalize text-white" to="/">faq</Link>
                                         </li>
                                         <li>
-                                            <Link className="text-capitalize text-white" to="/">contact</Link>
+                                            <Link className="text-capitalize text-white" to="/contact">contact</Link>
                                         </li>
                                         <li>
                                             <Link className="text-capitalize text-white" to="/">size chart</Link>
