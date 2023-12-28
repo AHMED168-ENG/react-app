@@ -33,18 +33,16 @@ function BlogDetails() {
                         </div>
                     </div>
                     <div className="comment mt-3">
-                        <h4>leave a comment</h4>
+                        <h4 className="text-capitalize mb-4">leave a comment</h4>
                         <form action="">
-                            <div className="input">
-                                <input className="form-control" type="text" name="" id="" placeholder="name" />
+                            <div className="input d-flex gap-3">
+                                <input className="form-control w-100" type="text" name="" id="" placeholder="name" />
+                                <input className="form-control w-100" type="email" name="" id="" placeholder="email" />
                             </div>
                             <div className="input">
-                                <input className="form-control" type="email" name="" id="" placeholder="email" />
+                                <textarea placeholder="comment" className="form-control" name=""></textarea>
                             </div>
-                            <div className="input">
-                                <textarea className="form-control" name=""></textarea>
-                            </div>
-                            <button className="mt-3 text-capitalize">post comment</button>
+                            <button className="mt-5 text-capitalize">post comment</button>
                         </form>
                     </div>
                 </div>
