@@ -32,7 +32,7 @@ function BlogDetails() {
                             <a href="/"><IoLogoPinterest></IoLogoPinterest></a>
                         </div>
                     </div>
-                    <div className="comment mt-5">
+                    <div className="comment mt-3">
                         <h4>leave a comment</h4>
                         <form action="">
                             <div className="input">
