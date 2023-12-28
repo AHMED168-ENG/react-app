@@ -16,7 +16,7 @@ function NewsCart (prop) {
                 </span>
                 <h2 className="cart-head text-capitalize">{prop.cart.header}</h2>
                 <p className="text-capitalize ">{prop.cart.paragraph}</p>
-                <Link className="text-uppercase text-white d-inline-block" to="/">{prop.cart.button}</Link>
+                <Link to="/blog-details" className="text-uppercase text-white d-inline-block">{prop.cart.button}</Link>
             </div>
         </div>
             

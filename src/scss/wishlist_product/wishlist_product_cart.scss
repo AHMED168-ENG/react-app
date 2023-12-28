@@ -2,7 +2,7 @@
 @import '../variables.scss';
 
 
-.compar-product-cart {
+.wishlist-product-cart {
     .close {
         top:10px;
         right:10px;
@@ -35,7 +35,6 @@
         }
 
     }
-
     .product-details {
         padding:15px;
         h3 {
@@ -63,29 +62,6 @@
                         font-weight: 400;
                         color:$color_777777;
                         font-size: 14px;
-                    }
-                }
-                > li:not(:last-of-type) {
-                    border-bottom: 1px solid $color_777777;
-                }
-                li.color {
-                    span {
-                        width:25px;
-                        height:25px;
-                        border-radius: 50%;
-                    }
-                }
-                li.price {
-                    span {
-                        font-size: 15px;
-                        color:$color_fc353c;
-                        font-weight: 600;
-                    }
-                    span:nth-of-type(2) {
-                        text-decoration: line-through;
-                        color:$color_777777;
-                        font-weight: 400;
-
                     }
                 }
             }

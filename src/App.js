@@ -11,6 +11,12 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import OurStore from './pages/our_store';
 import Blogs from './pages/blogs';
 import ComparProductPage from './pages/compar_product';
+import WishlistProductPage from './pages/wishlist_product';
+import LoginPage from './pages/login';
+import ForgetPasswordPage from './pages/forget_password';
+import RegisterPage from './pages/register';
+import ResetPasswordPage from './pages/reset_password';
+import BlogDetails from './pages/blogs_details';
 
 function App() {
   return (
@@ -24,7 +30,13 @@ function App() {
               <Route path='about' element={<About/>}></Route>
               <Route path='contact' element={<Contact/>}></Route>
               <Route path='blogs' element={<Blogs/>}></Route>
+              <Route path='blog-details' element={<BlogDetails/>}></Route>
               <Route path='compar-product' element={<ComparProductPage/>}></Route>
+              <Route path='wishlist-product' element={<WishlistProductPage/>}></Route>
+              <Route path='login' element={<LoginPage/>}></Route>
+              <Route path='sign-up' element={<RegisterPage/>}></Route>
+              <Route path='forget-password' element={<ForgetPasswordPage/>}></Route>
+              <Route path='reset-password' element={<ResetPasswordPage/>}></Route>
           </Route>
         </Routes>
         <Footer></Footer>

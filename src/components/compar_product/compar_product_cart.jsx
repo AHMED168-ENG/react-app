@@ -29,9 +29,9 @@ function compar_product_cart(props) {
                 </h3>
                 <div className="info">
                     <ul className="list-unstyled m-0 p-0">
-                        <li className="d-flex text-capitalize price">
-                            <span>$100.00</span>
-                            <span></span>
+                        <li className="d-flex gap-2 align-items-center text-capitalize price">
+                            <span>{product.price}</span>
+                            <span>{product.oldPrice}</span>
                         </li>
                         <li className="d-flex text-capitalize brand">
                             <span>brand : </span>

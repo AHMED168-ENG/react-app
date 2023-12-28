@@ -50,6 +50,10 @@
             padding:7px 15px;
             border-radius: 25px;
             font-size:12px;
+            transition: 0.5s;
+            &:hover {
+                background-color: $color_febd69;
+            }
         }
     }
 }

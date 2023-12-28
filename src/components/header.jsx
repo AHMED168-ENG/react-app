@@ -45,14 +45,14 @@ export default function Header() {
                                     <p className="mb-0">compar <br /> product </p>
                                 </Link>
 
-                                <Link className="link text-white d-flex gap-6">
+                                <Link to="/wishlist-product" className="link text-white d-flex gap-6">
                                     <div className="image">
                                         <img src="/images/wishlist.svg" alt="" />
                                     </div>
                                     <p className="mb-0">favorite <br /> wishlist </p>
                                 </Link>
 
-                                <Link className="link text-white d-flex gap-6">
+                                <Link to="/login" className="link text-white d-flex gap-6">
                                     <div className="image">
                                         <img src="/images/user.svg" alt="" />
                                     </div>
