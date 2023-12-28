@@ -11,7 +11,7 @@ function BlogDetails() {
         <>
             <div className="blog-details">
                 <div className="blog-details-wrapper">
-                    <header className="mb-4">
+                    <header className="mb-3">
                         <h2 className="text-capitalize">A butefull sunday morning renaissance</h2>
                     </header>
                     <div className="images">
@@ -20,19 +20,19 @@ function BlogDetails() {
                         </div>
                     </div>
                     <p className="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ab facere quas id architecto illo, minus corrupti quos quasi   vitae,     explicabo a aliquam excepturi Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ab facere quas id architecto illo, minus corrupti quos quasi   vitae, explicabo a aliquam excepturi </p>
-                    <div className="date d-flex gap-3 align-items-center">
+                    <div className="date my-4 d-flex gap-3 align-items-center">
                         <span>11 june 2022</span>
                         <span>kajat korat</span>
                     </div>
-                    <div className="social my-5 d-flex align-items-center justify-content-between">
-                        <Link to="/blogs"><IoIosArrowRoundBack></IoIosArrowRoundBack> <span className="text-capitalize">back to blogs</span></Link>
-                        <div className="icons">
+                    <div className="social py-4 d-flex align-items-center justify-content-between">
+                        <Link to="/blogs" className="d-flex align-items-center gap-2"><IoIosArrowRoundBack></IoIosArrowRoundBack> <span className="text-capitalize">back to blogs</span></Link>
+                        <div className="icons d-flex gap-4">
                             <a href="/"><FaFacebookSquare></FaFacebookSquare></a>
                             <a href="/"><FaTwitter></FaTwitter></a>
                             <a href="/"><IoLogoPinterest></IoLogoPinterest></a>
                         </div>
                     </div>
-                    <div className="comment">
+                    <div className="comment mt-5">
                         <h4>leave a comment</h4>
                         <form action="">
                             <div className="input">
