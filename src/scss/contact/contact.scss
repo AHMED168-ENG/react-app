@@ -1,0 +1,69 @@
+@import '../variables.scss';
+
+
+.contact-component {
+    background:$color_ededed;
+    .content {
+        padding:30px;
+        background:white;
+        border-radius: 10px;
+        ;
+    }
+    .form {
+        form {
+            > .input:not(:last-of-type) {
+                margin-bottom:20px;
+            }
+            .input {
+                input , textarea {
+                    width:100%;
+                    background:$color_f5f5f7;
+                    padding:10px;;
+                    border:0;
+                    outline: 0;
+                    font-size: 15px;
+                    border-radius: 3px;
+                    &::-webkit-input-placeholder {
+                        text-transform: capitalize;
+                    }
+                }
+                textarea {
+                    height: 150px;
+                }
+            }
+            button {
+                padding: 7px 35px;
+                border-radius: 25px;
+                font-size: 15px;
+                color: white;
+                display: inline-block;
+                background: #232f3e;
+                transition: 0.5s;
+                text-transform: capitalize;
+                margin:10px 0 0
+            }
+        }
+
+    }
+
+    .right {
+        .info {
+            ul {
+                li {
+                    font-size:14px;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    color:$color_777777;
+                    svg {
+                        color:$color_777777;
+                        font-size:16px;
+                    }
+                }
+                li:not(:last-of-type) {
+                    margin-bottom:15px;
+                }
+            }
+        }
+    }
+}
