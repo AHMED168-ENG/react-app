@@ -38,7 +38,7 @@ export default function Header() {
                         </div>
                         <div className="col-lg-4">
                             <div className="header_mid_links d-flex align-items-center justify-content-around">
-                                <Link to="" className="link text-white d-flex gap-6">
+                                <Link to="/compar-product" className="link text-white d-flex gap-6">
                                     <div className="image">
                                         <img src="/images/compare.svg" alt="" />
                                     </div>

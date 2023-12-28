@@ -10,6 +10,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import OurStore from './pages/our_store';
 import Blogs from './pages/blogs';
+import ComparProductPage from './pages/compar_product';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path='about' element={<About/>}></Route>
               <Route path='contact' element={<Contact/>}></Route>
               <Route path='blogs' element={<Blogs/>}></Route>
+              <Route path='compar-product' element={<ComparProductPage/>}></Route>
           </Route>
         </Routes>
         <Footer></Footer>

@@ -6,7 +6,6 @@ function StoreFilter() {
     while(colors.length < 54) {
         const randomColor = Math.floor(Math.random() * 360)
         colors.push(`hsl(${randomColor}deg, 100%, 30%)`)
-        console.log(colors)
     }
 
     return ( 
