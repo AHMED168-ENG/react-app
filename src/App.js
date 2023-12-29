@@ -21,6 +21,7 @@ import PrivacyPolicyPage from './pages/policy/privacy_policy';
 import RefundPolicyPage from './pages/policy/refund_policy';
 import ShippingPolicyPage from './pages/policy/shipping_policy';
 import TermsConditionPage from './pages/policy/terms_condition';
+import ProductDetailsPage from './pages/product_details';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path='/' element={<Layout />} >
               <Route index path='' element={<Home/>}></Route>
               <Route path='our-store' element={<OurStore/>}></Route>
+              <Route path='product-details' element={<ProductDetailsPage/>}></Route>
               <Route path='about' element={<About/>}></Route>
               <Route path='contact' element={<Contact/>}></Route>
               <Route path='blogs' element={<Blogs/>}></Route>

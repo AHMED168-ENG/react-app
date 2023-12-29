@@ -40,7 +40,7 @@ function ProductCart (prop) {
                 <span className="product-type text-uppercase mb-2 d-block">
                     {prop.cart.type}    
                 </span>
-                <Link className="product-head text-capitalize mb-1">{prop.cart.header}</Link>
+                <Link to="/product-details" className="product-head text-capitalize mb-1">{prop.cart.header}</Link>
                 <StarRatings
                     rating={3.5}
                     starRatedColor="#ffd700"
