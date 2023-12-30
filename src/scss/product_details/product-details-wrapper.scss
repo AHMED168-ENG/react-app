@@ -9,5 +9,101 @@
         background:white;
         box-shadow:5px 5px 10px rgba(0,0,0,0.05) , -5px -5px 10px rgba(0,0,0,0.05);
         border-radius: 10px;
+        margin-bottom:80px;
+
     }
+    .product-description {
+        margin-bottom:80px;
+        h4 {
+            font-size: 25px;;
+        }
+        p {
+            font-size: 15px;
+            color:$color_777777;
+            background-color: white;
+            box-shadow:5px 5px 10px rgba(0,0,0,0.05) , -5px -5px 10px rgba(0,0,0,0.05);
+            border-radius: 10px
+        }
+    }
+    .product-review {
+        h4 {
+            font-size: 25px;;
+        }
+        .product-review-wrapper {
+            border-radius: 10px;
+            background:white;
+            .head {
+                border-bottom:1px solid #eee;
+                .left {
+                    h4 {
+                        font-size: 18px;;
+
+                    }
+                }
+                .right {
+                    button {
+                        background-color: transparent;
+                        border:0;
+                        border-bottom: 1px solid #ddd;
+                        padding:0 0 0px 0;
+                        font-size: 14px;
+                        color:$color_777777;
+                        outline: none;
+                    }
+                }
+            }
+            .write-review {
+                transition: 0.5s;
+                max-height: 0px;
+                overflow: hidden;
+                &.active {
+                    max-height: 700px;
+                }
+                h5 {
+                    font-size: 16px;
+                    font-weight: 400;
+                    color:$color_777777;
+                }
+                .input {
+                    label {
+                        display: block;
+                        text-transform: capitalize;
+                        margin-bottom:4px;
+                        color:$color_777777;
+                        font-size: 15px;
+                    }
+                    input , textarea {
+                        border:1px solid #eee;
+                        padding:7px 10px;
+                        font-size: 15px;
+                        width: 100%;
+                        outline: none;
+                    }
+                    input::-webkit-input-placeholder  , textarea::-webkit-input-placeholder {
+                        color:$color_777777;
+                        text-transform: capitalize;
+                    }
+                    textarea {
+                        height: 200px;
+                    }
+                }
+                .submit {
+                    display: flex;
+                    justify-content: end;
+                    button {
+                        padding:7px 35px;
+                        border:0;
+                        outline: 0;
+                        border-radius: 20px;
+                        color:white;
+                        font-size: 14px;
+                        font-weight: 400;
+                        transition: 0.5s;
+                        background-color: $color_232f3e;
+                    }
+                }
+            }
+        }
+    }
+
 }

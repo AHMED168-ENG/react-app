@@ -22,8 +22,22 @@ import RefundPolicyPage from './pages/policy/refund_policy';
 import ShippingPolicyPage from './pages/policy/shipping_policy';
 import TermsConditionPage from './pages/policy/terms_condition';
 import ProductDetailsPage from './pages/product_details';
+import Swal from 'sweetalert2';
 
 function App() {
+   
+  window.Swal = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });  
+
   return (
    <>
     <BrowserRouter>

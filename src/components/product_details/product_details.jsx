@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import "../../scss/product_details/product_details.scss"
 import StarRatings from "react-star-ratings"
 import { MdOutlineFavoriteBorder } from "react-icons/md";
@@ -13,7 +13,18 @@ import { BsShare } from "react-icons/bs";
 
 export default function ProductDetails() {  
   const [listNumber , setNumber] = useState(1)
-
+  function copyToClipboard() {
+    var textField = document.createElement('textarea')
+    textField.innerText = window.location.href
+    document.body.appendChild(textField)
+    textField.select()
+    document.execCommand('copy')
+    window.Swal.fire({
+      icon: "success",
+      title: "Copy Link Successful"
+    });
+    textField.remove()
+  };
     return (
       <div className="product-details py-4">
         <header>
@@ -168,16 +179,14 @@ export default function ProductDetails() {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consectetur tempora velit inventore molestias, quae, expedita facere ipsa obcaecati </p>
                       </div>
                   </li>
-                  <li className={`item ${listNumber === 5 ? "active" : ""}`} onClick={() => setNumber(5)}>
+                  <li className="item">
                       <div className="head d-flex justify-content-between align-items-center">
-                          <div className="left d-flex gap-2  align-items-center">
+                          <div className="left d-flex gap-2  align-items-center" onClick={() => { 
+                            copyToClipboard();
+                            }}>
                             <BsShare></BsShare>
                             <span className="text-capitalize">share</span>
                           </div>
-                          <FaChevronDown></FaChevronDown>
-                      </div>
-                      <div className="body">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consectetur tempora velit inventore molestias, quae, expedita facere ipsa obcaecati </p>
                       </div>
                   </li>
        
