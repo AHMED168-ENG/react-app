@@ -181,25 +181,25 @@ export default function ProductDetails() {
                       </div>
                   </li>
                   <li className="payment py-4">
-                    <h5 className="text-capitalize text-center">payment methods</h5>
+                    <h5 className="text-capitalize text-center mb-3">payment methods</h5>
                     <div className="methods d-flex gap-2 justify-content-center">
                       <div className="method">
-                        <img src="../../../public/images/payment/payment2.png" alt="" />
+                        <img src="images/payment/payment2.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="../../../public/images/payment/payment3.png" alt="" />
+                        <img src="images/payment/payment3.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="../../../public/images/payment/payment4.png" alt="" />
+                        <img src="images/payment/payment8.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="../../../public/images/payment/payment5.png" alt="" />
+                        <img src="images/payment/payment5.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="../../../public/images/payment/payment6.png" alt="" />
+                        <img src="images/payment/payment6.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="../../../public/images/payment/payment7.png" alt="" />
+                        <img src="images/payment/payment7.png" alt="" />
                       </div>
                     </div>
                   </li>

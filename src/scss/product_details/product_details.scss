@@ -202,7 +202,10 @@
             }
 
             li.payment {
-                
+                background:$color_ededed;
+                h5 {
+                    font-size: 20px;
+                }
             }
         }
     }
