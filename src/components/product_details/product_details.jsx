@@ -193,13 +193,13 @@ export default function ProductDetails() {
                         <img src="images/payment/three.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="images/payment/payment5.png" alt="" />
+                        <img src="images/payment/four.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="images/payment/payment6.png" alt="" />
+                        <img src="images/payment/fif.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="images/payment/payment7.png" alt="" />
+                        <img src="images/payment/sex.png" alt="" />
                       </div>
                     </div>
                   </li>
