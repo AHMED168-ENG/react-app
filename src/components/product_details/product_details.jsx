@@ -184,13 +184,13 @@ export default function ProductDetails() {
                     <h5 className="text-capitalize text-center mb-3">payment methods</h5>
                     <div className="methods d-flex gap-2 justify-content-center">
                       <div className="method">
-                        <img src="images/payment/payment2.png" alt="" />
+                        <img src="images/payment/one.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="images/payment/payment3.png" alt="" />
+                        <img src="images/payment/tow.png" alt="" />
                       </div>
                       <div className="method">
-                        <img src="images/payment/payment8.png" alt="" />
+                        <img src="images/payment/three.png" alt="" />
                       </div>
                       <div className="method">
                         <img src="images/payment/payment5.png" alt="" />
