@@ -162,7 +162,6 @@
                 .item {
                     margin:0;
                     .head {
-                        border-bottom:1px solid #eee;
                         cursor: pointer;
                         padding:9px 0px;
                         .left {
@@ -198,13 +197,31 @@
                         }
                     }
                 }
-
+                .item:not(:last-of-type) {
+                    .head {
+                        border-bottom:1px solid #eee;
+                    }
+                }
             }
 
             li.payment {
                 background:$color_ededed;
                 h5 {
-                    font-size: 20px;
+                    font-size: 18px;
+                }
+                .methods {
+                    .method {
+                        width:40px;
+                        aspect-ratio: 1/0.7;
+                        background-color: white;
+                        border-radius: 3px;
+                        border-radius: 5px;
+                        img {
+                            width:100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
                 }
             }
         }

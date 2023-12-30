@@ -105,7 +105,7 @@ export default function ProductDetails() {
                   <button className="buy text-uppercase">buy it now</button>
                 </div>
             </li>
-            <li className="favorite-compare d-flex align-items-center gap-3 mb-5" >
+            <li className="favorite-compare d-flex align-items-center gap-3 mb-4" >
                 <button className="d-flex align-items-center gap-2">
                   <MdOutlineFavoriteBorder></MdOutlineFavoriteBorder>
                   <span className="text-capitalize">add to favorite</span>
@@ -115,7 +115,7 @@ export default function ProductDetails() {
                   <span className="text-capitalize">add to compare</span>
                 </button>
             </li>
-            <li className="drop-list">
+            <li className="drop-list mb-4">
               <ul className="list-unstyled">
                   <li className={`item ${listNumber === 1 ? "active" : ""}`} onClick={() => setNumber(1)}>
                       <div className="head d-flex justify-content-between align-items-center">
@@ -180,31 +180,32 @@ export default function ProductDetails() {
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consectetur tempora velit inventore molestias, quae, expedita facere ipsa obcaecati </p>
                       </div>
                   </li>
-                  <li className="payment py-4">
-                    <h5 className="text-capitalize text-center mb-3">payment methods</h5>
-                    <div className="methods d-flex gap-2 justify-content-center">
-                      <div className="method">
-                        <img src="images/payment/one.png" alt="" />
-                      </div>
-                      <div className="method">
-                        <img src="images/payment/tow.png" alt="" />
-                      </div>
-                      <div className="method">
-                        <img src="images/payment/three.png" alt="" />
-                      </div>
-                      <div className="method">
-                        <img src="images/payment/four.png" alt="" />
-                      </div>
-                      <div className="method">
-                        <img src="images/payment/fif.png" alt="" />
-                      </div>
-                      <div className="method">
-                        <img src="images/payment/sex.png" alt="" />
-                      </div>
-                    </div>
-                  </li>
+       
               </ul>
             </li>
+            <li className="payment py-3">
+                    <h5 className="text-capitalize text-center mb-3">payment methods</h5>
+                    <div className="methods d-flex gap-1 justify-content-center">
+                      <Link className="method">
+                        <img src="images/payment/one.png" alt="" />
+                      </Link>
+                      <Link className="method">
+                        <img src="images/payment/tow.png" alt="" />
+                      </Link>
+                      <Link className="method">
+                        <img src="images/payment/sex.png" alt="" />
+                      </Link>
+                      <Link className="method">
+                        <img src="images/payment/four.png" alt="" />
+                      </Link>
+                      <Link className="method">
+                        <img src="images/payment/fif.png" alt="" />
+                      </Link>
+                      <Link className="method">
+                        <img src="images/payment/eght.png" alt="" />
+                      </Link>
+                    </div>
+                  </li>
           </ul>
         </div>
       </div>
