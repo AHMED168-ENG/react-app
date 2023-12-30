@@ -4,8 +4,67 @@ import ProductDetails from "./product_details";
 import StarRatings from "react-star-ratings";
 import ReactStars from "react-rating-stars-component";
 import { useState } from "react";
+import OwlCarousel from 'react-owl-carousel';
+import ProductCart from "../home/product_cart";
+
 
 export default function ProductDetailsWrapper(props) {
+let productData = [
+    {
+        img1 : "/images/headphone.jpg",
+        img2 : "/images/yellow_headphone.jpg",
+        type : "havelis",
+        header: 'a beautiful sunday morning renaissance',
+        price : "$100.00"
+    },
+    {
+        img1 : "/images/camera_classic.jpg",
+        img2 : "/images/camera.jpg",
+        type : "sony",
+        header: 'sed ut perspiciatis unde omnis',
+        price : "$100.00"
+    },
+    {
+        img1 : "/images/tab1.jpg",
+        img2 : "/images/tab.jpg",
+        type : "havelis",
+        header: 'vite magnes fuces laoreet porttitor',
+        oldPrice : "$55.22",
+        price : "$500.00",
+        discount : "-33%"
+    },
+    {
+        img1 : "/images/speaker.jpg",
+        img2 : "/images/black_mike.jpg",
+        type : "bajaj",
+        date : "11 june 2022",
+        header: 'amera soman detram sandra elit cursus',
+        price : "$100.00",
+    },
+    {
+        img1 : "/images/headphone.jpg",
+        img2 : "/images/yellow_headphone.jpg",
+        type : "havelis",
+        header: 'a beautiful sunday morning renaissance',
+        price : "$100.00"
+    },
+    {
+        img2 : "/images/smartWatch.jpg",
+        img1 : "/images/watch.jpg",
+        date : "11 june 2022",
+        type : "sony",
+        header: 'amera soman detram sandra elit cursus',
+        price : "$220.00"
+    },
+    {
+        img1 : "/images/black_mike.jpg",
+        img2 : "/images/speaker.jpg",
+        date : "11 june 2022",
+        type : "bajaj",
+        header: 'amera soman detram sandra elit cursus',
+        price : "$220.00"
+    }
+]
 const {product} = props
 const [isReview , setReview] = useState(false)
 function ratingChanged(newRating) {
@@ -28,13 +87,13 @@ function ratingChanged(newRating) {
                 <h4 className="text-capitalize mb-3">description</h4>
                 <p className="p-4">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit porro nihil excepturi. Optio quaerat laudantium cum distinctio nam, velit eaque et odit alias, fuga quia est, id fugit blanditiis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit porro nihil excepturi. Optio quaerat laudantium cum distinctio nam, velit  nam, velit eaque et odit alias, fuga quia est, id fugit  eaque et odit alias, fuga quia est, id fugit blanditiis  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit porro nihil excepturi. Optio quaerat laudantium cum distinctio nam, velit eaque et odit alias, fuga quia est, id fugit blanditiis! !Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit porro nihil excepturi. Optio quaerat laudantium cum  nam, velit eaque et odit alias, fuga quia est, id fugit  distinctio nam, velit eaque et odit alias, fuga quia est, id fugit blanditiis!"</p>
             </div>
-            <div className="product-review ">
-                <h4 className="text-capitalize mb-3">review</h4>
+            <div className="product-review">
+                <h4 className="text-capitalize mb-3">reviews</h4>
                 <div className="product-review-wrapper py-5 px-4">
                     <div className="head d-flex align-items-end justify-content-between pb-3 mb-3">
                         <div className="left">
                             <h4 className="text-capitalize ">custom reviews</h4>
-                            <div className="stars d-flex gap-2 ">
+                            <div className="stars d-flex gap-2 align-items-center">
                                 <StarRatings
                                     rating={4.5}
                                     starRatedColor="#ffd700"
@@ -44,6 +103,7 @@ function ratingChanged(newRating) {
                                     starDimension="15px"
                                     starSpacing="0px"
                                 />
+                                <span>based on (2) reviews</span>
                             </div>
                         </div>
                         <div className="right">
@@ -135,7 +195,7 @@ function ratingChanged(newRating) {
                                     <span className="title d-block">Good</span>
                                     <div className="date">
                                         <span className="writer">admin</span>
-                                        <span>on</span>
+                                        <span> on </span>
                                         <span className="date">Jun 20, 2022</span>
                                     </div>
                                     <p className="message">great stuff, i think i will get more orders from you guis</p>
@@ -147,6 +207,74 @@ function ratingChanged(newRating) {
                         </ul>
                     </div>
                 </div>
+            </div>
+            <div className="our-popular-product">
+                        <header className=" mb-3">
+                            <h4 className="text-capitalize">our popular product</h4>
+                        </header>
+                        <div className="products">                
+                            <OwlCarousel className='owl-theme'
+                                
+                                loop={true}
+                                margin={20}
+                                nav={true}
+                                dots={false}
+                                autoplay={true}
+                                autoplayTimeout={50000}
+                                responsive={
+                                    {0: {
+                                        items: 1,
+                                    },
+                                    450: {
+                                        items: 2,
+                                    },
+                                    600: {
+                                        items: 4,
+                                    },
+                                    1000: {
+                                        items: 6,
+                                    }}
+                                }
+                                >
+                                {productData.map((ele , index) => ( 
+                                    <ProductCart key={index} cart={ele}></ProductCart>
+                                ))}    
+                            </OwlCarousel>
+                        </div>
+            </div>
+            <div className="our-popular-product">
+                        <header className=" mb-3">
+                            <h4 className="text-capitalize">our featured product</h4>
+                        </header>
+                        <div className="products">                
+                            <OwlCarousel className='owl-theme'
+                                
+                                loop={true}
+                                margin={20}
+                                nav={true}
+                                dots={false}
+                                autoplay={true}
+                                autoplayTimeout={50000}
+                                responsive={
+                                    {0: {
+                                        items: 1,
+                                    },
+                                    450: {
+                                        items: 2,
+                                    },
+                                    600: {
+                                        items: 4,
+                                    },
+                                    1000: {
+                                        items: 6,
+                                    }}
+                                }
+                                >
+                                {productData.map((ele , index) => ( 
+                                    <ProductCart key={index} cart={ele}></ProductCart>
+                                ))}    
+                            </OwlCarousel>
+                        </div>
             </div>
         </div>
     </div>
