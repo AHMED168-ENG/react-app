@@ -92,7 +92,7 @@ function ratingChanged(newRating) {
                     <div className="comments">
                         <ul className="list-unstyled">
                             <li>
-                                <div className="comment">
+                                <div className="comment py-3 mb-3">
                                     <StarRatings
                                         rating={4}
                                         starRatedColor="#ffd700"
@@ -105,24 +105,24 @@ function ratingChanged(newRating) {
                                     <span className="title d-block">Good</span>
                                     <div className="date">
                                         <span className="writer">admin</span>
-                                        <span>on</span>
+                                        <span> on </span>
                                         <span className="date">Jun 20, 2022</span>
                                     </div>
                                     <p className="message">great stuff, i think i will get more orders from you guis</p>
-                                </div>
-                                <ul className="list-unstyled">
-                                    <li>
-                                        <h5>- Digitic</h5>
-                                        <p>think you for approach great stuff, i think i will get more orders from you guis</p>
-                                    </li>
-                                </ul>
-                                <div className="report-comment">
-                                    <button>report as inappropriate</button>
+                                    <div className="report-comment d-flex justify-content-end mb-3">
+                                        <button>report as inappropriate</button>
+                                    </div>
+                                    <ul className="list-unstyled">
+                                        <li className="p-3">
+                                            <h5>- Digitic</h5>
+                                            <p>think you for approach great stuff, i think i will get more orders from you guis</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </li>
 
                             <li>
-                                <div className="comment">
+                                <div className="comment pt-3 mb-3">
                                     <StarRatings
                                         rating={3}
                                         starRatedColor="#ffd700"
@@ -139,9 +139,9 @@ function ratingChanged(newRating) {
                                         <span className="date">Jun 20, 2022</span>
                                     </div>
                                     <p className="message">great stuff, i think i will get more orders from you guis</p>
-                                </div>
-                                <div className="report-comment">
-                                    <button>report as inappropriate</button>
+                                    <div className="report-comment d-flex justify-content-end mb-3">
+                                        <button>report as inappropriate</button>
+                                    </div>                                
                                 </div>
                             </li>
                         </ul>
