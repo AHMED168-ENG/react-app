@@ -1,26 +1,64 @@
+import "../../scss/product_details/product_details_images_show.scss"
 import React from 'react';
-import ReactImageZoom from 'react-image-zoom';
-
+import ReactImageMagnify from 'react-image-magnify';
+import { CiZoomIn } from "react-icons/ci";
 
 export default function ProductDetailsImageShow() {  
-    const props = {width: 400, height: 250, zoomWidth: 500, img: "images/headphone/one.jpg"}  
+    function setAttribute (src ,dimension , alt = "image") { 
+      return {
+            enlargedImagePosition : "over",
+            shouldUsePositiveSpaceLens	: true,
+            smallImage: { 
+                alt: alt,
+                isFluidWidth: true,
+                src:src,
+            },
+            largeImage: {
+              src: src,
+              ...dimension
+          }
+          }
+      }
+    
+    
     return (
-      <div className="product-details-image-show p-5 ">
-        <div className="images gap-2 d-flex flex-wrap">
-            <div className="image w-100">
-                 <ReactImageZoom {...props} />
+      <div className="product-details-image-show p-4 ">
+        <div className="images d-flex gap-4 flex-wrap">
+            <div className="image position-relative">
+              <CiZoomIn className="position-absolute"></CiZoomIn>
+              <ReactImageMagnify {...setAttribute("images/headphone/one.jpg" , {
+                  width: 1800,
+                  height: 1800,
+                }
+              )} />
             </div>
-            <div className="image">
-            <ReactImageZoom {...props} />
+            <div className="image position-relative">
+              <CiZoomIn className="position-absolute"></CiZoomIn>
+              <ReactImageMagnify {...setAttribute("images/headphone/white.jpg" , {
+                  width: 800,
+                  height: 800,
+                })} />
             </div>
-            <div className="image">
-            <ReactImageZoom {...props} />
+            <div className="image position-relative">
+              <CiZoomIn className="position-absolute"></CiZoomIn>
+              <ReactImageMagnify {...setAttribute("images/headphone/black.jpg" , {
+                  width: 800,
+                  height: 800,
+                })} />
             </div>
-            <div className="image">
-            <ReactImageZoom {...props} />
+            <div className="image position-relative">
+              <CiZoomIn className="position-absolute"></CiZoomIn>
+              <ReactImageMagnify {...setAttribute("images/headphone/blak2.jpg" , {
+                  width: 800,
+                  height: 800,
+                })} />
             </div>
-            <div className="image">
-            <ReactImageZoom {...props} />
+            <div className="image position-relative">
+              <CiZoomIn className="position-absolute"></CiZoomIn>
+              <ReactImageMagnify {...setAttribute("images/headphone/black3.jpg" , {
+                  width: 800,
+                  height: 800,
+                })} />
             </div>
         </div>
       </div>

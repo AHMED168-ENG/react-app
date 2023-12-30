@@ -1,0 +1,13 @@
+
+
+@import '../variables.scss';
+
+
+.product-details-wrapper {
+    background:$color_ededed;
+    .product-info {
+        background:white;
+        box-shadow:5px 5px 10px rgba(0,0,0,0.05) , -5px -5px 10px rgba(0,0,0,0.05);
+        border-radius: 10px;
+    }
+}
