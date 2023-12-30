@@ -86,6 +86,65 @@ function ratingChanged(newRating) {
                         <div className="submit mt-3">
                             <button>submit review</button>
                         </div>
+                        <hr />
+                    </div>
+
+                    <div className="comments">
+                        <ul className="list-unstyled">
+                            <li>
+                                <div className="comment">
+                                    <StarRatings
+                                        rating={4}
+                                        starRatedColor="#ffd700"
+                                        numberOfStars={5}
+                                        color="#ededed"
+                                        name='rating'
+                                        starDimension="15px"
+                                        starSpacing="0px"
+                                    />
+                                    <span className="title d-block">Good</span>
+                                    <div className="date">
+                                        <span className="writer">admin</span>
+                                        <span>on</span>
+                                        <span className="date">Jun 20, 2022</span>
+                                    </div>
+                                    <p className="message">great stuff, i think i will get more orders from you guis</p>
+                                </div>
+                                <ul className="list-unstyled">
+                                    <li>
+                                        <h5>- Digitic</h5>
+                                        <p>think you for approach great stuff, i think i will get more orders from you guis</p>
+                                    </li>
+                                </ul>
+                                <div className="report-comment">
+                                    <button>report as inappropriate</button>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div className="comment">
+                                    <StarRatings
+                                        rating={3}
+                                        starRatedColor="#ffd700"
+                                        numberOfStars={5}
+                                        color="#ededed"
+                                        name='rating'
+                                        starDimension="15px"
+                                        starSpacing="0px"
+                                    />
+                                    <span className="title d-block">Good</span>
+                                    <div className="date">
+                                        <span className="writer">admin</span>
+                                        <span>on</span>
+                                        <span className="date">Jun 20, 2022</span>
+                                    </div>
+                                    <p className="message">great stuff, i think i will get more orders from you guis</p>
+                                </div>
+                                <div className="report-comment">
+                                    <button>report as inappropriate</button>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
