@@ -68,7 +68,6 @@ let productData = [
 const {product} = props
 const [isReview , setReview] = useState(false)
 function ratingChanged(newRating) {
-    console.log(newRating)
 }
   return (
     <div className="product-details-wrapper py-5">
@@ -79,7 +78,7 @@ function ratingChanged(newRating) {
                         <ProductDetailsImageShow images={product.images}></ProductDetailsImageShow>
                     </div>
                     <div className="col-md-6 p-0">
-                        <ProductDetails></ProductDetails>
+                        <ProductDetails setReview={setReview}></ProductDetails>
                     </div>
                 </div>
             </div>
@@ -87,7 +86,7 @@ function ratingChanged(newRating) {
                 <h4 className="text-capitalize mb-3">description</h4>
                 <p className="p-4">"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit porro nihil excepturi. Optio quaerat laudantium cum distinctio nam, velit eaque et odit alias, fuga quia est, id fugit blanditiis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit porro nihil excepturi. Optio quaerat laudantium cum distinctio nam, velit  nam, velit eaque et odit alias, fuga quia est, id fugit  eaque et odit alias, fuga quia est, id fugit blanditiis  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit porro nihil excepturi. Optio quaerat laudantium cum distinctio nam, velit eaque et odit alias, fuga quia est, id fugit blanditiis! !Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam fugit porro nihil excepturi. Optio quaerat laudantium cum  nam, velit eaque et odit alias, fuga quia est, id fugit  distinctio nam, velit eaque et odit alias, fuga quia est, id fugit blanditiis!"</p>
             </div>
-            <div className="product-review">
+            <div className="product-review" id="addReview">
                 <h4 className="text-capitalize mb-3">reviews</h4>
                 <div className="product-review-wrapper py-5 px-4">
                     <div className="head d-flex align-items-end justify-content-between pb-3 mb-3">

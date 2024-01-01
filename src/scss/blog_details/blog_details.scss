@@ -24,6 +24,11 @@
         font-size: 16px;
         color:$color_777777;
         font-style: italic;
+        padding:20px;
+        border-radius: 10px;;
+        box-shadow:5px 5px 10px rgba(0,0,0,0.05) , -5px -5px 10px rgba(0,0,0,0.05);
+        background-color: white;
+
     }
     .date {
         color:$color_777777;

@@ -3,7 +3,8 @@ import "../scss/header.scss"
 import { BsSearch } from 'react-icons/bs';
 
 
-export default function Header() {
+export default function Header(props) {
+    const {activeSidePar} = props
     return (
        <>
         <header>
@@ -59,7 +60,7 @@ export default function Header() {
                                     <p className="mb-0">login in <br /> my account </p>
                                 </Link>
 
-                                <Link className="gap-15 link cart text-white d-flex justify-content-center ">
+                                <button onClick={() => activeSidePar(true)} className="gap-15 link cart text-white d-flex justify-content-center bg-transparent border-0 outline-0">
                                     <div className="image">
                                         <img src="/images/cart.svg" alt="" />
                                     </div>
@@ -67,7 +68,7 @@ export default function Header() {
                                         <span className="count test-white bg-white text-dark d-flex align-items-center justify-content-center">0</span>
                                         <span className="badge">$ 500</span>
                                     </dev>
-                                </Link>
+                                </button>
                             
                             </div>
                         </div>

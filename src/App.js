@@ -23,6 +23,10 @@ import ShippingPolicyPage from './pages/policy/shipping_policy';
 import TermsConditionPage from './pages/policy/terms_condition';
 import ProductDetailsPage from './pages/product_details';
 import Swal from 'sweetalert2';
+import CartSideParComponent from './components/cart-side-par';
+import ProductCartPage from './pages/product_cart';
+import { useState } from 'react';
+import CheckOutPage from './pages/check_out';
 
 function App() {
    
@@ -38,10 +42,14 @@ function App() {
     },
   });  
 
+  const [sidePar , activeSidePar] = useState(false)
+
+
   return (
    <>
     <BrowserRouter>
-        <Header></Header>
+        <Header activeSidePar={activeSidePar}></Header>
+        <CartSideParComponent activeSidePar={activeSidePar} sidePar={sidePar}></CartSideParComponent>
         <Routes>
           <Route path='/' element={<Layout />} >
               <Route index path='' element={<Home/>}></Route>
@@ -61,6 +69,8 @@ function App() {
               <Route path='refund-policy' element={<RefundPolicyPage/>}></Route>
               <Route path='shipping-police' element={<ShippingPolicyPage/>}></Route>
               <Route path='terms-condition' element={<TermsConditionPage/>}></Route>
+              <Route path='my-cart' element={<ProductCartPage/>}></Route>
+              <Route path='check-out' element={<CheckOutPage/>}></Route>
           </Route>
         </Routes>
         <Footer></Footer>

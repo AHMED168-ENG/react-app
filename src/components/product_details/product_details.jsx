@@ -11,7 +11,8 @@ import { useState } from "react";
 import { BsShare } from "react-icons/bs";
 
 
-export default function ProductDetails() {  
+export default function ProductDetails(props) {  
+  const {setReview} = props
   const [listNumber , setNumber] = useState(1)
   function copyToClipboard() {
     var textField = document.createElement('textarea')
@@ -46,7 +47,7 @@ export default function ProductDetails() {
           />
           <span>(2 reviews)</span>
         </div>
-        <Link to="#addReview" className="text-capitalize d-block my-3">write Review</Link>
+        <a href="#addReview" onClick={() => setReview(true)} className="text-capitalize d-block my-3">write Review</a>
         <hr />
         <div className="details">
           <ul className="list-unstyled">

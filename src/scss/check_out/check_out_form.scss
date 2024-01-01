@@ -1,0 +1,106 @@
+@import '../variables.scss';
+
+.check-out-form {
+    padding:80px 50px 80px 300px;
+    header {
+        h5 {
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .links {
+            svg {
+                font-size: 12px;;
+            }
+            a {
+                text-transform: capitalize;
+                color:$color_777777;
+                &.active {
+                    font-weight: 500;
+                    color:#555
+                }
+            }
+        }
+    }
+
+    form {
+        h4 {
+            font-size: 25px;
+            font-weight: 400;
+            color:#555
+        }
+        p {
+            font-size: 17px;
+            color:$color_777777;
+        }
+        h5 {
+            font-size: 16px;
+            color:#555
+        }
+        label {
+            color:#555
+        }
+        h3 {
+            color:#555;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .input {
+            width:100%;
+            select {
+                padding:23px 10px 5px;
+                border:1px solid #ccc;
+                width:100%;
+                font-size: 16px;
+                color:#333;
+                text-transform: capitalize;
+                border-radius: 3px;
+                background-color: #eee;
+            }
+            input {
+                background-color: #eee;
+                padding:12px 12px;
+                border:1px solid #ccc;
+                width:100%;
+                font-size: 15px;
+                color:#333;
+                border-radius: 3px;
+                &::-webkit-input-placeholder {
+                    text-transform: capitalize;
+                    color:$color_777777
+                }
+            } 
+            label {
+                top:5px;
+                left:12px;
+                font-size:14px;
+                color:$color_777777
+            }
+        }
+        .input.half {
+            width:48.5%
+        }
+        .input.quarter {
+            width:31.5%
+        }
+
+        .controlled {
+            .go-to-cart {
+                color:$color_777777;
+                span {
+                    text-transform: capitalize;
+                    font-weight: 500;
+                }
+            }
+            a.shipping {
+                background-color: $color_8E0819;
+                padding:12px 35px;
+                font-size: 15px;
+                text-transform: capitalize;
+                font-weight: 400;
+                color:white;
+                border-radius: 10px;
+            }
+        }
+    }
+}
