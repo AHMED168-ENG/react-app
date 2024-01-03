@@ -14,7 +14,7 @@ function CategorySection () {
                             <p><span>8</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/laptop.jpg" alt="" />
+                            <img src="./images/laptop.jpg" alt="" />
                         </div>
                     </div>
 
@@ -24,7 +24,7 @@ function CategorySection () {
                             <p><span>10</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/camera.jpg" alt="" />
+                            <img src="./images/camera.jpg" alt="" />
                         </div>
                     </div>
 
@@ -34,7 +34,7 @@ function CategorySection () {
                             <p><span>12</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/tv.jpg" alt="" />
+                            <img src="./images/tv.jpg" alt="" />
                         </div>
                     </div>
 
@@ -44,7 +44,7 @@ function CategorySection () {
                             <p><span>8</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/smart_watch.jpg" alt="" />
+                            <img src="./images/smart_watch.jpg" alt="" />
                         </div>
                     </div>
 
@@ -54,7 +54,7 @@ function CategorySection () {
                             <p><span>8</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/playStasion.jpg" alt="" />
+                            <img src="./images/playStasion.jpg" alt="" />
                         </div>
                     </div>
 
@@ -64,7 +64,7 @@ function CategorySection () {
                             <p><span>8</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/smart_phone.png" alt="" />
+                            <img src="./images/smart_phone.png" alt="" />
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@ function CategorySection () {
                             <p><span>8</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/headphone.jpg" alt="" />
+                            <img src="./images/headphone.jpg" alt="" />
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@ function CategorySection () {
                             <p><span>8</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/acc.jpg" alt="" />
+                            <img src="./images/acc.jpg" alt="" />
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@ function CategorySection () {
                             <p><span>3</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/speaker.jpg" alt="" />
+                            <img src="./images/speaker.jpg" alt="" />
                         </div>
                     </div>
 
@@ -104,7 +104,7 @@ function CategorySection () {
                             <p><span>3</span> items</p>
                         </div>
                         <div className="image">
-                            <img src="/images/homeapp.jpg" alt="" />
+                            <img src="./images/homeapp.jpg" alt="" />
                         </div>
                     </div>
                 </div>

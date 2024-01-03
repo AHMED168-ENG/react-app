@@ -16,7 +16,7 @@ function BlogDetails() {
                     </header>
                     <div className="images">
                         <div className="image">
-                            <img src="/images/blog-1.jpg" alt="" />
+                            <img src="./images/blog-1.jpg" alt="" />
                         </div>
                     </div>
                     <p className="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ab facere quas id architecto illo, minus corrupti quos quasi   vitae,     explicabo a aliquam excepturi Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ab facere quas id architecto illo, minus corrupti quos quasi   vitae, explicabo a aliquam excepturi </p>

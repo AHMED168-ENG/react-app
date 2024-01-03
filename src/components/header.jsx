@@ -41,28 +41,28 @@ export default function Header(props) {
                             <div className="header_mid_links d-flex align-items-center justify-content-around">
                                 <Link to="/compar-product" className="link text-white d-flex gap-6">
                                     <div className="image">
-                                        <img src="/images/compare.svg" alt="" />
+                                        <img src="./images/compare.svg" alt="" />
                                     </div>
                                     <p className="mb-0">compar <br /> product </p>
                                 </Link>
 
                                 <Link to="/wishlist-product" className="link text-white d-flex gap-6">
                                     <div className="image">
-                                        <img src="/images/wishlist.svg" alt="" />
+                                        <img src="./images/wishlist.svg" alt="" />
                                     </div>
                                     <p className="mb-0">favorite <br /> wishlist </p>
                                 </Link>
 
                                 <Link to="/login" className="link text-white d-flex gap-6">
                                     <div className="image">
-                                        <img src="/images/user.svg" alt="" />
+                                        <img src="./images/user.svg" alt="" />
                                     </div>
                                     <p className="mb-0">login in <br /> my account </p>
                                 </Link>
 
                                 <button onClick={() => activeSidePar(true)} className="gap-15 link cart text-white d-flex justify-content-center bg-transparent border-0 outline-0">
                                     <div className="image">
-                                        <img src="/images/cart.svg" alt="" />
+                                        <img src="./images/cart.svg" alt="" />
                                     </div>
                                     <dev className="gap-6 mony d-flex flex-column">
                                         <span className="count test-white bg-white text-dark d-flex align-items-center justify-content-center">0</span>
@@ -83,7 +83,7 @@ export default function Header(props) {
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle bg-transparent border-0 d-flex gap-3 align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <div className="image">
-                                            <img src="/images/menu.svg" alt="" />
+                                            <img src="./images/menu.svg" alt="" />
                                         </div>
                                         <span className="me-5">
                                             show category

@@ -5,9 +5,9 @@ import ProductCart from "../home/product_cart";
 function Store() {
     let productData = [
         {
-            img1 : "/images/mobile.jpg",
-            img2 : "/images/mobile2.jpg",
-            img3 : "/images/mobile3.jpg",
+            img1 : "./images/mobile.jpg",
+            img2 : "./images/mobile2.jpg",
+            img3 : "./images/mobile3.jpg",
             type : "sony",
             rate : 4.5,
             header: 'hero session action camera with 8mb',
@@ -19,9 +19,9 @@ function Store() {
             productPercentage : "35%"
         },
         {
-            img1 : "/images/camera10.png",
-            img2 : "/images/camera11.png",
-            img3 : "/images/camera12.png",
+            img1 : "./images/camera10.png",
+            img2 : "./images/camera11.png",
+            img3 : "./images/camera12.png",
             type : "havelis",
             rate : 4,
             header: 'samsong galaxy note 10+ mobile phone sml',
@@ -33,9 +33,9 @@ function Store() {
             productPercentage : "10%"
         },
         {
-            img1 : "/images/speker1.jpg",
-            img2 : "/images/speker2.jpg",
-            img3 : "/images/speker3.jpg",
+            img1 : "./images/speker1.jpg",
+            img2 : "./images/speker2.jpg",
+            img3 : "./images/speker3.jpg",
             type : "havelis",
             header: 'vite magnes fuces laoreet bluetooth',
             paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
@@ -45,9 +45,9 @@ function Store() {
             productPercentage : "60%"
         },
         {
-            img1 : "/images/smart_phone.png",
-            img2 : "/images/black_mike.jpg",
-            img3 : "/images/watch.jpg",
+            img1 : "./images/smart_phone.png",
+            img2 : "./images/black_mike.jpg",
+            img3 : "./images/watch.jpg",
             type : "bajaj",
             date : "11 june 2022",
             header: 'amera soman detram sandra elit cursus',
@@ -57,9 +57,9 @@ function Store() {
             productPercentage : "10%"        
         },
         {
-            img1 : "/images/headphone.jpg",
-            img2 : "/images/yellow_headphone.jpg",
-            img3 : "/images/yellow_headphone.jpg",
+            img1 : "./images/headphone.jpg",
+            img2 : "./images/yellow_headphone.jpg",
+            img3 : "./images/yellow_headphone.jpg",
             type : "havelis",
             header: 'a beautiful sunday morning renaissance',
             paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
@@ -67,9 +67,9 @@ function Store() {
             days : 598,
             productPercentage : "10%"          },
         {
-            img2 : "/images/laptop.jpg",
-            img1 : "/images/watch.jpg",
-            img3 : "/images/smart_phone.png",
+            img2 : "./images/laptop.jpg",
+            img1 : "./images/watch.jpg",
+            img3 : "./images/smart_phone.png",
             date : "11 june 2022",
             type : "sony",
             header: 'amera soman detram sandra elit cursus',
@@ -79,9 +79,9 @@ function Store() {
             productPercentage : "20%" 
         },
         {
-            img1 : "/images/black_mike.jpg",
-            img2 : "/images/speaker.jpg",
-            img3 : "/images/black_mike.jpg",
+            img1 : "./images/black_mike.jpg",
+            img2 : "./images/speaker.jpg",
+            img3 : "./images/black_mike.jpg",
             date : "11 june 2022",
             type : "bajaj",
             header: 'amera soman detram sandra elit cursus',
@@ -89,9 +89,9 @@ function Store() {
             price : "$220.00"
         },
         {
-            img1 : "/images/speker1.jpg",
-            img2 : "/images/speker2.jpg",
-            img3 : "/images/speker3.jpg",
+            img1 : "./images/speker1.jpg",
+            img2 : "./images/speker2.jpg",
+            img3 : "./images/speker3.jpg",
             type : "havelis",
             header: 'vite magnes fuces laoreet bluetooth',
             paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
@@ -101,9 +101,9 @@ function Store() {
             productPercentage : "60%"
         },
         {
-            img1 : "/images/mobile.jpg",
-            img2 : "/images/mobile2.jpg",
-            img3 : "/images/mobile3.jpg",
+            img1 : "./images/mobile.jpg",
+            img2 : "./images/mobile2.jpg",
+            img3 : "./images/mobile3.jpg",
             type : "sony",
             rate : 4.5,
             header: 'hero session action camera with 8mb',
@@ -115,9 +115,9 @@ function Store() {
             productPercentage : "35%"
         },
         {
-            img1 : "/images/camera10.png",
-            img2 : "/images/camera11.png",
-            img3 : "/images/camera12.png",
+            img1 : "./images/camera10.png",
+            img2 : "./images/camera11.png",
+            img3 : "./images/camera12.png",
             type : "havelis",
             rate : 4,
             header: 'samsong galaxy note 10+ mobile phone sml',
@@ -129,9 +129,9 @@ function Store() {
             productPercentage : "10%"
         },
         {
-            img1 : "/images/speker1.jpg",
-            img2 : "/images/speker2.jpg",
-            img3 : "/images/speker3.jpg",
+            img1 : "./images/speker1.jpg",
+            img2 : "./images/speker2.jpg",
+            img3 : "./images/speker3.jpg",
             type : "havelis",
             header: 'vite magnes fuces laoreet bluetooth',
             paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
@@ -141,9 +141,9 @@ function Store() {
             productPercentage : "60%"
         },
         {
-            img1 : "/images/smart_phone.png",
-            img2 : "/images/black_mike.jpg",
-            img3 : "/images/watch.jpg",
+            img1 : "./images/smart_phone.png",
+            img2 : "./images/black_mike.jpg",
+            img3 : "./images/watch.jpg",
             type : "bajaj",
             date : "11 june 2022",
             header: 'amera soman detram sandra elit cursus',
@@ -153,9 +153,9 @@ function Store() {
             productPercentage : "10%"        
         },
         {
-            img1 : "/images/headphone.jpg",
-            img2 : "/images/yellow_headphone.jpg",
-            img3 : "/images/yellow_headphone.jpg",
+            img1 : "./images/headphone.jpg",
+            img2 : "./images/yellow_headphone.jpg",
+            img3 : "./images/yellow_headphone.jpg",
             type : "havelis",
             header: 'a beautiful sunday morning renaissance',
             paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
@@ -163,9 +163,9 @@ function Store() {
             days : 598,
             productPercentage : "10%"          },
         {
-            img2 : "/images/laptop.jpg",
-            img1 : "/images/watch.jpg",
-            img3 : "/images/smart_phone.png",
+            img2 : "./images/laptop.jpg",
+            img1 : "./images/watch.jpg",
+            img3 : "./images/smart_phone.png",
             date : "11 june 2022",
             type : "sony",
             header: 'amera soman detram sandra elit cursus',
@@ -175,9 +175,9 @@ function Store() {
             productPercentage : "20%" 
         },
         {
-            img1 : "/images/black_mike.jpg",
-            img2 : "/images/speaker.jpg",
-            img3 : "/images/black_mike.jpg",
+            img1 : "./images/black_mike.jpg",
+            img2 : "./images/speaker.jpg",
+            img3 : "./images/black_mike.jpg",
             date : "11 june 2022",
             type : "bajaj",
             header: 'amera soman detram sandra elit cursus',
@@ -185,9 +185,9 @@ function Store() {
             price : "$220.00"
         },
         {
-            img1 : "/images/speker1.jpg",
-            img2 : "/images/speker2.jpg",
-            img3 : "/images/speker3.jpg",
+            img1 : "./images/speker1.jpg",
+            img2 : "./images/speker2.jpg",
+            img3 : "./images/speker3.jpg",
             type : "havelis",
             header: 'vite magnes fuces laoreet bluetooth',
             paragraph : "hero session action camera with 8mb hero session action camera with 8mb hero session action camera with 8mb",
@@ -214,16 +214,16 @@ function Store() {
                     <div className="set-grid d-flex align-items-center gap-2">
                         <span className="total-product">21 products</span>
                         <div className={`image ${grid === 3 ? "active" : "" }`} onClick={() => setGrid(3)}>
-                            <img src="/images/gr4.svg" alt="" />
+                            <img src="./images/gr4.svg" alt="" />
                         </div>
                         <div className={`image ${grid === 4 ? "active" : "" }`} onClick={() => setGrid(4)}>
-                            <img src="/images/gr3.svg" alt="" />
+                            <img src="./images/gr3.svg" alt="" />
                         </div>
                         <div className={`image ${grid === 6 ? "active" : "" }`} onClick={() => setGrid(6)}>
-                            <img src="/images/gr2.svg" alt="" />
+                            <img src="./images/gr2.svg" alt="" />
                         </div>
                         <div className={`image ${grid === 12 ? "active" : "" }`} onClick={() => setGrid(12)}>
-                            <img src="/images/gr.svg" alt="" />
+                            <img src="./images/gr.svg" alt="" />
                         </div>
                     </div>
                 </div>

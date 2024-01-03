@@ -14,7 +14,7 @@ export default function Footer() {
                             <div className="col-md-5">
                                 <div className="footer_upper_right d-flex align-items-center gap-4">
                                     <div className="icon text-white">
-                                        <img src="/images/newsletter.png" alt="" />
+                                        <img src="./images/newsletter.png" alt="" />
                                     </div>
                                     <h2 className="text-white mb-0">sign up for news letter</h2>
                                 </div>
@@ -132,12 +132,12 @@ export default function Footer() {
                                     <div className="apps d-flex align-items-center gap-1 mt-5">
                                         <div className="app ">
                                             <a href="/">
-                                                <img src="/images/App-Store.png" alt="" />
+                                                <img src="./images/App-Store.png" alt="" />
                                             </a>
                                         </div>
                                         <div className="app">
                                             <a href="/">
-                                                <img src="/images/play.jpg" alt="" />
+                                                <img src="./images/play.jpg" alt="" />
                                             </a>
                                         </div>
                                     </div>

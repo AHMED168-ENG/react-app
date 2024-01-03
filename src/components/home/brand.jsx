@@ -14,49 +14,49 @@ function BrandPage () {
                         <div className="brand mx-4">
                             <div className="image">
                                 <Link to="/">
-                                    <img src="/images/brand-01.png" alt="" />
+                                    <img src="./images/brand-01.png" alt="" />
                                 </Link>
                             </div>
                         </div>
                         <div className="brand mx-4">
                             <div className="image">
                                 <Link to="/">
-                                    <img src="/images/brand-02.png" alt="" />
+                                    <img src="./images/brand-02.png" alt="" />
                                 </Link>
                             </div>
                         </div>
                         <div className="brand mx-4">
                             <div className="image">
                                 <Link to="/">
-                                    <img src="/images/brand-03.png" alt="" />
+                                    <img src="./images/brand-03.png" alt="" />
                                 </Link>
                             </div>
                         </div>
                         <div className="brand mx-4">
                             <div className="image">
                                 <Link to="/">
-                                    <img src="/images/brand-04.png" alt="" />
+                                    <img src="./images/brand-04.png" alt="" />
                                 </Link>
                             </div>
                         </div>
                         <div className="brand mx-4">
                             <div className="image">
                                 <Link to="/">
-                                    <img src="/images/brand-05.png" alt="" />
+                                    <img src="./images/brand-05.png" alt="" />
                                 </Link>
                             </div>
                         </div>
                         <div className="brand mx-4">
                             <div className="image">
                                 <Link to="/">
-                                    <img src="/images/brand-06.png" alt="" />
+                                    <img src="./images/brand-06.png" alt="" />
                                 </Link>
                             </div>
                         </div>
                         <div className="brand mx-4">
                             <div className="image">
                                 <Link to="/">
-                                    <img src="/images/brand-07.png" alt="" />
+                                    <img src="./images/brand-07.png" alt="" />
                                 </Link>
                             </div>
                         </div>

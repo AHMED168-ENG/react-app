@@ -36,7 +36,7 @@ function LandingPage () {
                                 }>
                                 <div className='item position-relative'>
                                     <div className="img">
-                                        <img src="/images/main-banner-1.jpg" alt="" />
+                                        <img src="./images/main-banner-1.jpg" alt="" />
                                     </div>
                                     <div className="over position-absolute">
                                         <h4 className='text-uppercase'>supercharged for pros</h4>
@@ -48,7 +48,7 @@ function LandingPage () {
 
                                 <div className='item position-relative'>
                                     <div className="img">
-                                        <img src="/images/main-banner.jpg" alt="" />
+                                        <img src="./images/main-banner.jpg" alt="" />
                                     </div>
                                     <div className="over position-absolute">
                                         <h4 className='text-uppercase'>supercharged for pros</h4>
@@ -66,7 +66,7 @@ function LandingPage () {
                                 <div className="col-md-6">
                                     <div className='item position-relative'>
                                         <div className="img">
-                                            <img src="/images/catbanner-01.jpg" alt="" />
+                                            <img src="./images/catbanner-01.jpg" alt="" />
                                         </div>
                                         <div className="over position-absolute">
                                             <h4 className='text-uppercase'>best sale</h4>
@@ -78,7 +78,7 @@ function LandingPage () {
                                 <div className="col-md-6">
                                     <div className='item position-relative'>
                                         <div className="img">
-                                            <img src="/images/catbanner-02.jpg" alt="" />
+                                            <img src="./images/catbanner-02.jpg" alt="" />
                                         </div>
                                         <div className="over position-absolute">
                                             <h4 className='text-uppercase'>new arrival</h4>
@@ -90,7 +90,7 @@ function LandingPage () {
                                 <div className="col-md-6">
                                     <div className='item position-relative'>
                                         <div className="img">
-                                            <img src="/images/catbanner-03.jpg" alt="" />
+                                            <img src="./images/catbanner-03.jpg" alt="" />
                                         </div>
                                         <div className="over position-absolute">
                                             <h4 className='text-uppercase'>15% off</h4>
@@ -102,7 +102,7 @@ function LandingPage () {
                                 <div className="col-md-6">
                                     <div className='item position-relative'>
                                         <div className="img">
-                                            <img src="/images/catbanner-04.jpg" alt="" />
+                                            <img src="./images/catbanner-04.jpg" alt="" />
                                         </div>
                                         <div className="over position-absolute">
                                             <h4 className='text-uppercase'>free engraving</h4>

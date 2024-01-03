@@ -5,8 +5,8 @@ function ComparProductComponent() {
     let productData = [
         {
             header: 'amera soman detram sandra elit cursus 33/55.6',
-            img1 : "/images/mobile.jpg",
-            img2 : "/images/mobile2.jpg",
+            img1 : "./images/mobile.jpg",
+            img2 : "./images/mobile2.jpg",
             brand : "sony",
             type : "speakers",
             sku : "skuoss",
@@ -18,8 +18,8 @@ function ComparProductComponent() {
         },
         {
             header: 'vite magnes fuces 42mm/55hh laoreet bluetooth',
-            img1 : "/images/camera10.png",
-            img2 : "/images/camera11.png",
+            img1 : "./images/camera10.png",
+            img2 : "./images/camera11.png",
             brand : "havelis",
             type : "tablet computer",
             sku : "skuoo4",
@@ -29,8 +29,8 @@ function ComparProductComponent() {
             oldPrice : "$75.00",
         },
         {
-            img1 : "/images/speker1.jpg",
-            img2 : "/images/speker2.jpg",
+            img1 : "./images/speker1.jpg",
+            img2 : "./images/speker2.jpg",
             type : "watched",
             header: 'vite magnes fuces laoreet bluetooth vite magnes fuces',
             price : "$90.00",
@@ -41,8 +41,8 @@ function ComparProductComponent() {
             sku : "skuoo5",
         },
         {
-            img1 : "/images/smart_phone.png",
-            img2 : "/images/black_mike.jpg",
+            img1 : "./images/smart_phone.png",
+            img2 : "./images/black_mike.jpg",
             type : "camera lances",
             header: 'amera soman detram sandra elit cursus',
             price : "$90.00",
@@ -54,8 +54,8 @@ function ComparProductComponent() {
         },
         {
             header: 'vite magnes fuces 42mm/55hh laoreet bluetooth',
-            img1 : "/images/camera10.png",
-            img2 : "/images/camera11.png",
+            img1 : "./images/camera10.png",
+            img2 : "./images/camera11.png",
             brand : "havelis",
             type : "tablet computer",
             sku : "skuoo4",
@@ -65,8 +65,8 @@ function ComparProductComponent() {
             oldPrice : "$75.00",
         },
         {
-            img1 : "/images/laptop.jpg",
-            img2 : "/images/watch.jpg",
+            img1 : "./images/laptop.jpg",
+            img2 : "./images/watch.jpg",
             type : "watched",
             header: 'vite magnes fuces laoreet bluetooth vite magnes fuces',
             price : "$90.00",
@@ -77,8 +77,8 @@ function ComparProductComponent() {
             sku : "skuoo5",
         },
         {
-            img1 : "/images/smart_phone.png",
-            img2 : "/images/black_mike.jpg",
+            img1 : "./images/smart_phone.png",
+            img2 : "./images/black_mike.jpg",
             type : "camera lances",
             header: 'amera soman detram sandra elit cursus',
             price : "$90.00",
