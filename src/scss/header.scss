@@ -1,7 +1,23 @@
 @import './variables.scss';
 
 
+header.active {
+    > div:nth-of-type(1) {
+        display: none !important;
+    }
+    position: fixed;
+    z-index: 500;
+    top:0;
+    left:0;
+    width:100%;
+    transition:all 1s linear;
+    transform:translateY(-100%);
+}
 
+
+header.animation {
+    transform:translateY(0%);
+}
 .header_top {
     background: $color_131921;
     border-bottom:1px solid $color_3b4149;
@@ -119,4 +135,82 @@
             }
         }
     }
+}
+
+@keyframes navbar {
+    0% {
+        transform:translateY(-100%);
+    } 100% {
+        transform:translateY(0%);
+    }
+}
+
+
+
+@media (max-width:1000px) {
+    header {
+        .container-xxl {
+            padding :0 
+        }
+        .row > div  {
+            padding:0 5px
+        }
+    }
+    .header_top {
+        p{
+            font-size: 14px !important;
+        }
+        .row , .row > div {
+            padding:0 !important
+        }
+   } 
+   .header_mid_links {
+        .link {
+            .image {
+                width:25px !important;
+                height:25px !important;
+                img {
+                    width:100%;
+                    height:100%
+                }
+            }
+            p {
+                line-height: 1.1;
+                font-weight: 200;
+                font-size:10px !important;
+                text-transform:capitalize
+            }
+        }
+   }
+}
+
+@media (max-width:800px) {
+    .header_top {
+        p{
+            font-size: 13px !important;
+        }
+        .row , .row > div {
+            padding:0
+        }
+   } 
+   .header_bottom .menu .menu_links a, .header_bottom .menu .menu_links .main .dropdown button {
+    color: white;
+    text-transform: capitalize;
+    font-weight: 300;
+    font-size: 10px !important;
+    }
+    .header_bottom .main .dropdown button {
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width:400px) {
+    .header_top {
+        p{
+            font-size: 12px !important;
+        }
+        .row , .row > div {
+            padding:0
+        }
+   } 
 }

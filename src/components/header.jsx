@@ -1,21 +1,41 @@
 import { Link } from "react-router-dom"
 import "../scss/header.scss"
 import { BsSearch } from 'react-icons/bs';
+import { useRef, useState } from "react";
 
 
 export default function Header(props) {
+    const header = useRef(null)
+    const [headerStyle , setHeaderStyle] = useState({})
     const {activeSidePar} = props
+    let scrollY = 0
+    window.onscroll = (e) => {
+        const headerHeight = header.current.offsetHeight
+        if(window.pageYOffset > 500) {
+            if(window.pageYOffset < scrollY) {
+                header.current.className = "active animation"
+                document.body.style.paddingTop = `${headerHeight}px`
+            } else {
+                header.current.className = "active"
+            }
+            scrollY = window.pageYOffset
+        } else {
+            document.body.style.paddingTop = `0px`
+            header.current.className = ""
+        }
+
+    }
     return (
        <>
-        <header>
+        <header ref={header} style={headerStyle}>
             <div className="header_top py-2">
                 <div className="container-xxl">
                     <div className="row">
-                        <div className="col-md-6">
-                            <p className="mb-0 text-white">Free shaping over $100 & free Return</p>
+                        <div className="col-md-6 ">
+                            <p className="mb-0 text-white text-md-start text-center">Free shaping over $100 & free Return</p>
                         </div>
-                        <div className="col-md-6">
-                            <p className="mb-0 text-end">
+                        <div className="col-md-6 ">
+                            <p className="mb-0 text-end text-md-end text-center">
                                 <span className="text-white">Hotline </span>
                                 <a className="text-white" href="tel:+20 1024756410">+20 1024756410</a>
                             </p>
@@ -23,15 +43,15 @@ export default function Header(props) {
                     </div>
                 </div>
             </div>
-            <div className="header_mid py-3">
+            <div className="header_mid py-md-3 py-2 ">
                 <div className="container-xxl">
                     <div className="row">
-                        <div className="col-lg-2 ">
+                        <div className="col-lg-2 d-none d-md-block">
                             <div className="logo">
                                 <Link to="/" className="text-white">Dev Corner</Link>
                             </div>
                         </div>
-                        <div className="col-lg-6" >
+                        <div className="col-lg-6 mb-2 mb-md-0" >
                             <div className="input-group">
                                 <input type="text" className="form-control outline-none" placeholder="search product hear..." aria-label="search product hear..." aria-describedby="basic-addon2" />
                                 <span className="input-group-text" id="basic-addon2"><BsSearch></BsSearch></span>
@@ -60,7 +80,7 @@ export default function Header(props) {
                                     <p className="mb-0">login in <br /> my account </p>
                                 </Link>
 
-                                <button onClick={() => activeSidePar(true)} className="gap-15 link cart text-white d-flex justify-content-center bg-transparent border-0 outline-0">
+                                <button onClick={() => activeSidePar(true)} className="gap-15 link cart text-white d-flex justify-content-center align-items-center bg-transparent border-0 outline-0">
                                     <div className="image">
                                         <img src="./images/cart.svg" alt="" />
                                     </div>
@@ -79,13 +99,13 @@ export default function Header(props) {
                 <div className="container-xxl">
                     <div className="row align-items-center">
                         <div className="col-md-12">
-                            <div className="main d-flex gap-5 align-items-center ">
+                            <div className="main d-flex gap-2 gap-md-5 align-items-center ">
                                 <div className="dropdown">
                                     <button className="btn btn-secondary dropdown-toggle bg-transparent border-0 d-flex gap-3 align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                         <div className="image">
                                             <img src="./images/menu.svg" alt="" />
                                         </div>
-                                        <span className="me-5">
+                                        <span className="me-md-5 ">
                                             show category
                                         </span>
                                     </button>
@@ -96,7 +116,7 @@ export default function Header(props) {
                                     </ul>
                                 </div>
                                 <div className="menu">
-                                    <ul className="menu_links d-flex p-0 m-0 gap-4">
+                                    <ul className="menu_links d-flex p-0 m-0 gap-md-4 gap-2">
                                         <Link to="/">Home</Link>
                                         <Link to="/our-store">our store</Link>
                                         <Link to="/blogs">blogs</Link>
@@ -109,7 +129,6 @@ export default function Header(props) {
                 </div>
             </div>
         </header>
-
        </>
     )
 }

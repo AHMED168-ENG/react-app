@@ -10,7 +10,7 @@ function LandingPage () {
         <section className="landingPage py-5">
             <div className="container-xxl">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 mb-3 mb-md-0">
                         <div className="right_banner">
                             <OwlCarousel className='owl-theme' 
                                 loop={true}
