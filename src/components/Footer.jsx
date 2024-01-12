@@ -1,5 +1,4 @@
 
-import { BsSearch } from "react-icons/bs"
 import "../scss/footer.scss"
 import { FaFacebook, FaInstagram, FaPinterest, FaYoutube } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';

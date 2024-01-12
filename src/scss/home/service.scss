@@ -28,16 +28,44 @@
 }   
 
 
-@media (max-width : 900px) {
+@media (max-width : 1200px) {
+    .servicePage .item .details h4 {
+        font-size: 15px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        margin: 0;
+    }
+    .servicePage .item .details p {
+        font-size: 15px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+}
+
+@media (max-width : 1000px) {
     .servicePage {
         background:$color_f5f5f7;
         .item {
             width:calc(100% / 2);
             justify-content: start !important;
         }
+
     }
 }
-@media (max-width : 700px) {
+@media (max-width : 800px) {
+    .servicePage {
+        background:$color_f5f5f7;
+        .item {
+            width:calc(100% );
+            justify-content: start !important;
+        }
+    }
+}
+@media (max-width : 480px) {
     .servicePage {
         background:$color_f5f5f7;
         .item {

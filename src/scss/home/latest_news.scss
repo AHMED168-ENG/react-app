@@ -9,3 +9,32 @@
         }
     }
 }
+
+
+@media (max-width : 1200px) {
+
+}
+
+@media (max-width : 1000px) {
+
+}
+@media (max-width : 800px) {
+    .latestNewsSection {
+        header {
+            h2 {
+                font-size:20px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+@media (max-width : 480px) {
+    .latestNewsSection {
+        header {
+            h2 {
+                font-size:18px;
+                font-weight: 500;
+            }
+        }
+    }
+}

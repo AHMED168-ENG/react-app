@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
  
-import { Grid, Pagination } from 'swiper/modules';
+import { Autoplay, Grid, Pagination } from 'swiper/modules';
 
 
 function SpecialProductSection () {
@@ -110,18 +110,39 @@ function SpecialProductSection () {
                 </header>
                 <div className="products">  
                     <Swiper
-                        slidesPerView={3}
+                      breakpoints={{
+                            400:{
+                            slidesPerView:1,
+                            },
+                            639: {
+                            slidesPerView: 2,
+                            },
+                            1200:{
+                            slidesPerView:3
+                            },
+                            1500:{
+                            slidesPerView:3
+                            },
+                            1700:{
+                            slidesPerView:3
+                            }
+                        }}
+                        speed={1000}
+                        // slidesPerView={3}
                         grid={{
                             rows: 2,
                             fill: "row",
                         }}
-                        autoplay={true}
+                        autoplay={{
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        }}
                         loop={true}
                         spaceBetween={30}
                         pagination={{
                             clickable: true,
                         }}
-                        modules={[Grid]}
+                        modules={[Grid , Autoplay]}
                         className="mySwiper"
                     >
                         {

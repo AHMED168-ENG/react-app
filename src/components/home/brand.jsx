@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 function BrandPage () {
     return ( 
         <>
-        <section className="brandPage py-5">
+        <section className="brandPage pb-5 py-md-5">
             <div className="container-xxl">
                 <div className="marque_inside d-flex px-2">
                     <Marquee>

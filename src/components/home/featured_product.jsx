@@ -63,9 +63,9 @@ function FeatureProductSection () {
     ]
     return ( 
         <>
-        <section className="FeatureProductSection py-5">
+        <section className="FeatureProductSection pt-5 py-md-5">
             <div className="container-xxl overflow-hidden">
-                <header className=" mb-4">
+                <header className=" mb-2 mb-md-4">
                     <h2 className="text-uppercase">Featured collections </h2>
                 </header>
                 <div className="products">                

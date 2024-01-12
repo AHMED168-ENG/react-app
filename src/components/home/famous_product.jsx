@@ -8,7 +8,7 @@ function FamousProductSection () {
         <>
         <section className="famousProductSection py-5">
             <div className="container-xxl">
-                <div className="row">
+                <div className="row row-gap-4">
                     <div className="col-md-3">
                         <div className="item">
                             <div className="details">

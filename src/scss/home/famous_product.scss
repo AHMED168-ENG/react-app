@@ -58,3 +58,30 @@
         }
     }
 }
+
+
+@media (max-width : 1200px) {
+
+}
+
+@media (max-width : 1000px) {
+
+}
+@media (max-width : 800px) {
+    .famousProductSection {
+        .item {
+            .details {
+                h4 {
+                    font-size:20px;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}
+@media (max-width : 480px) {
+
+}

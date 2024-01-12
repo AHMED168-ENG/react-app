@@ -27,7 +27,7 @@ export default function ProductDetails(props) {
     textField.remove()
   };
     return (
-      <div className="product-details py-4">
+      <div className="product-details-page py-4">
         <header>
           <h3 className="text-capitalize pt-4 pb-3">kids headphone bulk 10 pack multi colored for students</h3>
         </header>

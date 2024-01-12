@@ -7,7 +7,7 @@ function ServicePage () {
         <>
         <section className="servicePage py-5">
             <div className="container-xxl">
-                <div className="d-flex flex-wrap justify-content-between align-items-center">
+                <div className="d-flex flex-wrap justify-content-between align-items-center row-gap-4">
                   
                     <div className="item d-flex align-items-center justify-content-center mb-3 mb-md-0 gap-3">
                         <div className="image">

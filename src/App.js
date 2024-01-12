@@ -28,7 +28,6 @@ import { useState } from 'react';
 import CheckOutPage from './pages/check_out';
 
 function App() {
-   
   window.Swal = Swal.mixin({
     toast: true,
     position: "top-end",
@@ -42,7 +41,6 @@ function App() {
   });  
 
   const [SidePar , ActiveSidePar] = useState(false)
-
 
   return (
    <>

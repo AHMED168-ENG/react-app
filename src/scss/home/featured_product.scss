@@ -28,3 +28,33 @@
     }
 }
 
+
+@media (max-width : 1200px) {
+
+}
+
+@media (max-width : 1000px) {
+
+}
+@media (max-width : 800px) {
+    .FeatureProductSection {
+        .owl-theme .owl-nav {
+            top: -62px;
+            right: 30px;
+        }
+         header h2 {
+            font-size: 19px;
+         }
+    }
+}
+@media (max-width : 480px) {
+    .FeatureProductSection {
+        .owl-theme .owl-nav {
+            top: -62px;
+            right: 35px;
+        }
+         header h2 {
+            font-size: 17px;
+         }
+    }
+}

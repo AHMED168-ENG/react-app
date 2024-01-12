@@ -10,13 +10,16 @@ import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
 import { Link } from "react-router-dom";
+import { Autoplay } from "swiper/modules";
+import { useState } from "react";
 
 function SpecialProductCartSection (props) {
+    const [src , setSrc] = useState(null)
     return (    
         <div className="item special-product-cart p-2 d-flex">
             <div className="product-assets position-relative">
                 <div className="parian-image mb-2">
-                    <img src={props.product.img1} alt="" />
+                    <img src={src ? src : props.product.img1} alt="" />
                 </div>
                 <div className="product_action position-absolute d-flex flex-column">
                     <div><CiHeart /></div>
@@ -29,17 +32,33 @@ function SpecialProductCartSection (props) {
                 <div className="child-image">
                     <Swiper 
                         slidesPerView={2}
-                        autoplay={true}
                         spaceBetween={10}
+                        speed={1000}
+                        autoplay={{
+                            delay: 1500,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
+                        modules={[ Autoplay]}
                         className="mySwiper">
                         <SwiperSlide>
-                            <div className="image">
-                                <img src={props.product.img2} alt="" />
+                            <div className="image" >
+                                <img src={props.product.img2} onClick={() => setSrc(props.product.img2)} alt="" />
                             </div>
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className="image">
-                                <img src={props.product.img3}  alt="" />
+                                <img src={props.product.img3} onClick={() => setSrc(props.product.img3)} alt="" />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="image">
+                                <img src={props.product.img2} onClick={() => setSrc(props.product.img2)} alt="" />
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className="image">
+                                <img src={props.product.img3} onClick={() => setSrc(props.product.img3)} alt="" />
                             </div>
                         </SwiperSlide>
                     </Swiper>
@@ -67,7 +86,7 @@ function SpecialProductCartSection (props) {
                         {props.product.oldPrice}
                     </span>
                 </div>
-                <div className="days-of-discount d-flex align-items-center gap-2">
+                <div className="days-of-discount d-flex align-items-md-center flex-column flex-md-row ali gap-2">
                     <div className="days d-flex gap-2">
                         <span>{props.product.days}</span>
                         <span className="text-capitalize">days</span>
