@@ -40,7 +40,14 @@
                 background: #232f3e;
                 transition: 0.5s;
                 text-transform: capitalize;
-                margin:10px 0 0
+                margin:10px 0 0;
+                transition: 0.5s;
+                border:0;
+                &:hover {
+                    background-color: transparent;
+                    color:#232f3e;
+                    font-weight: 500;
+                }
             }
         }
 
@@ -56,6 +63,7 @@
                     align-items: center;
                     color:$color_777777;
                     svg {
+                        width:22px;
                         color:$color_777777;
                         font-size:16px;
                     }
@@ -66,4 +74,32 @@
             }
         }
     }
+}
+
+
+
+@media (max-width:1200px) {
+
+}
+
+@media (max-width:1000px) {
+    .contact-component {
+        .content {
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
+    .contact-component .form form button {
+        width:100%;
+        border:0;
+    }
+}
+
+@media (max-width:800px) {
+
+}
+
+@media (max-width:400px) {
+
 }

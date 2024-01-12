@@ -3,6 +3,7 @@ import HelmetComponent from "../components/helmet";
 
 
 export default function CheckOutPage () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="check out"></HelmetComponent>

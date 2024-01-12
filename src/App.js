@@ -49,7 +49,7 @@ function App() {
         <CartSideParComponent activeSidePar={ActiveSidePar} sidePar={SidePar}></CartSideParComponent>
         <Routes>
           <Route path='/' element={<Layout />} >
-              <Route index path='' element={<Home/>}></Route>
+              <Route index path='' element={<Home />}></Route>
               <Route path='our-store' element={<OurStore/>}></Route>
               <Route path='product-details' element={<ProductDetailsPage/>}></Route>
               <Route path='contact' element={<Contact/>}></Route>

@@ -5,6 +5,7 @@ import PrivacyPolicyComponent from "../../components/policy/privacy_policy";
 
 
 export default function PrivacyPolicyPage () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="privacy policy"></HelmetComponent>

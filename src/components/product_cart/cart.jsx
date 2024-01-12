@@ -8,8 +8,8 @@ function CartComponent(props) {
     return <>
         <div className="cart position-relative py-5">
             <div className="container-xxl">
-                <div className="table-wrapper">
-                    <table className="table">
+                <div className="table-wrapper table-responsive">
+                    <table className="table ">
                         <thead>
                             <tr>
                             <th scope="col text-uppercase">product</th>

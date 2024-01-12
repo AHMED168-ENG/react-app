@@ -2,9 +2,25 @@
 @import './variables.scss';
 
 .cart-side-par {
+    .closeIcon {
+        width: 25px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        top:15px;
+        left:15px;
+        z-index: 5;
+        background:rgba(0,0,0,0.3);
+        svg {
+            font-size: 16px;
+        }
+    }
+    overflow-y: scroll;
     width:100%;
     height: 100%;
-    z-index: 60;
+    z-index: 6000;
     right:0;
     transition: 0.5s;
     opacity: 0;
@@ -105,4 +121,25 @@
             transform:translateX(0%);
         }
     }
+}
+
+
+@media (max-width:1200px) {
+    .cart-side-par .cart-side-par-wrapper {
+        width:100%
+    }
+}
+
+@media (max-width:1000px) {
+    .cart-side-par .cart-side-par-wrapper {
+        width:100%
+    }
+}
+
+@media (max-width:800px) {
+
+}
+
+@media (max-width:400px) {
+
 }

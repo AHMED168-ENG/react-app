@@ -1,13 +1,19 @@
 import { FaRegTrashCan } from "react-icons/fa6";
 import "../scss/cart_side_par.scss"
 import { Link } from "react-router-dom";
+import { GrClose } from "react-icons/gr";
 
 
 function CartSideParComponent(props) {
     const {sidePar , activeSidePar} = props
+    function activeSideParFn() {
+        document.body.classList.remove("hide")
+        activeSidePar(false)
+    }
     return ( 
         <>
             <div className={`cart-side-par position-fixed top-0 right-0 height-100 d-flex justify-content-end ${sidePar ? "active" : ""}`} onClick={(e) => activeSidePar(false)}>
+                <div className="closeIcon position-absolute"><GrClose className=" " onClick={(e) => activeSideParFn()}></GrClose></div>
                 <div className="cart-side-par-wrapper " onClick={(e) => e.stopPropagation()}>
                     <ul className="list-unstyled product-details">
                         <li className="p-3">
@@ -40,7 +46,7 @@ function CartSideParComponent(props) {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="product-trash" onClick={(e) => activeSidePar(false)}>
+                                <div className="product-trash" onClick={(e) => activeSideParFn()}>
                                     <FaRegTrashCan></FaRegTrashCan>
                                 </div>
                             </div>
@@ -75,7 +81,7 @@ function CartSideParComponent(props) {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="product-trash" onClick={(e) => activeSidePar(false)}>
+                                <div className="product-trash" onClick={(e) => activeSideParFn()}>
                                     <FaRegTrashCan></FaRegTrashCan>
                                 </div>
                             </div>
@@ -110,7 +116,7 @@ function CartSideParComponent(props) {
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="product-trash" onClick={(e) => activeSidePar(false)}>
+                                <div className="product-trash" onClick={(e) => activeSideParFn()}>
                                     <FaRegTrashCan></FaRegTrashCan>
                                 </div>
                             </div>
@@ -128,8 +134,8 @@ function CartSideParComponent(props) {
                             </div>
                         </li>
                         <li className="buttons d-flex align-items-center gap-2 justify-content-center py-4">
-                            <Link  onClick={(e) => activeSidePar(false)} to="/my-cart" className="text-capitalize">view cart</Link>
-                            <Link onClick={(e) => activeSidePar(false)} to="/my-cart" className="text-capitalize">view cart</Link>
+                            <Link  onClick={(e) => activeSideParFn()} to="/my-cart" className="text-capitalize">view cart</Link>
+                            <Link onClick={(e) => activeSideParFn()} to="/my-cart" className="text-capitalize">view cart</Link>
                         </li>
                     </ul>
                 </div>

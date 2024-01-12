@@ -5,6 +5,7 @@ import HelmetComponent from "../components/helmet";
 
 
 export default function ForgetPasswordPage () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="forget password"></HelmetComponent>

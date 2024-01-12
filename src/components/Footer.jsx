@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <>
             <footer>
-                <div className="footer_upper d-flex py-4">
+                <div className="footer_upper d-flex py-lg-2 py-3 py-xl-4">
                     <div className="container-xxl">
                         <div className="row align-items-center">
                             <div className="col-md-5">
@@ -30,7 +30,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="footer_mid py-5">
+                <div className="footer_mid py-xl-5 pt-sm-5 pt-4 pb-4">
                     <div className="container-xxl">
                         <div className="row">
                             <div className="col-md-3">

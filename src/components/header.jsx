@@ -79,7 +79,7 @@ export default function Header(props) {
                                 <p className="mb-0">login in account </p>
                             </Link>
 
-                            <button onClick={() => {activeSidePar(true) ; closeMenu()} } className="gap-2 px-0 link cart text-white d-flex align-items-center bg-transparent border-0 outline-0">
+                            <button onClick={() => {activeSidePar(true) ; closeMenu() ; document.body.classList.add("hide")} } className="gap-2 px-0 link cart text-white d-flex align-items-center bg-transparent border-0 outline-0">
                                 <div className="image">
                                     <img src="./images/cart.svg" alt="" />
                                 </div>
@@ -141,7 +141,7 @@ export default function Header(props) {
                                     <span className="input-group-text" id="basic-addon2"><BsSearch></BsSearch></span>
                                 </div>
                             </div>
-                            <div className="col-xl-4 col-md-5 d-md-block d-none">
+                            <div className="col-xl-4 px-md-2 p-0 col-md-5 d-md-block d-none">
                                 <div className="header_mid_links d-flex align-items-center justify-content-between">
                                     <Link to="/compar-product" className="link text-white d-flex gap-6">
                                         <div className="image">

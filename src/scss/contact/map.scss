@@ -14,3 +14,23 @@
         }
     }
 }
+
+@media (max-width:1200px) {
+
+}
+
+@media (max-width:1000px) {
+    .map .iframe {
+        aspect-ratio: 1/0.6;
+    }
+}
+
+@media (max-width:800px) {
+    .map .iframe {
+        aspect-ratio: 1/0.7;
+    }
+}
+
+@media (max-width:400px) {
+
+}

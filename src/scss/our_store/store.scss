@@ -2,6 +2,9 @@
 
 
 .store {
+    .row {
+        margin:0 -12.5px !important
+    }
     .product-sort{
         border-radius: 10px;
         .sort-by {
@@ -50,4 +53,31 @@
             }
         }
     }
+}
+
+
+@media (max-width:1200px) {
+
+}
+
+@media (max-width:1000px) {
+    .store {
+
+    }
+    .store .product-sort .sort-by select {
+        flex: 1;
+    }
+}
+
+@media (max-width:800px) {
+    .store .product-sort .sort-by span {
+        font-size: 14px;
+    }
+    .store .product-sort .set-grid .total-product {
+        font-size: 14px;
+    }
+}
+
+@media (max-width:400px) {
+
 }

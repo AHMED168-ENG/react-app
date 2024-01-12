@@ -5,9 +5,8 @@ import ProductDetailsWrapper from "../components/product_details/product_details
 
 
 export default function ProductDetailsPage () {
-    const product = {
-
-    }
+    window.scrollTo(0,0)
+    const product = {}
     return ( 
         <>
             <HelmetComponent title="product one"></HelmetComponent>

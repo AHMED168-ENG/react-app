@@ -5,6 +5,7 @@ import StoreWrapper from "../components/our-store/store_wrapper";
 
 
 export default function OurStore () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="our store"></HelmetComponent>

@@ -18,7 +18,7 @@ function LoginComponent(props) {
                                 <input type="password" placeholder="password" />
                             </div>
                             <Link className="mb-3 d-block" to="/forget-password">forget your password</Link>
-                            <div className="buttons d-flex align-items-center justify-content-center gap-3">
+                            <div className="buttons flex-column flex-md-row row-gap-0 d-flex align-items-center justify-content-center gap-3">
                                 <button className="text-capitalize color-white">login</button>
                                 <Link to="/sign-up">sign up</Link>
                             </div>

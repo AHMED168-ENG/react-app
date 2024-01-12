@@ -6,6 +6,7 @@ import CartComponent from "../components/product_cart/cart";
 
 
 export default function ProductCartPage () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="my cart"></HelmetComponent>

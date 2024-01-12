@@ -22,7 +22,7 @@ function RegisterComponent(props) {
                             <div className="input">
                                 <input type="password" placeholder="password" />
                             </div>
-                            <div className="buttons d-flex align-items-center justify-content-center gap-3">
+                            <div className="buttons flex-column flex-md-row row-gap-0 d-flex align-items-center justify-content-center gap-3">
                                 <button className="text-capitalize color-white">create</button>
                             </div>
                         </form>

@@ -23,7 +23,7 @@ export default function ProductDetailsImageShow() {
     
     return (
       <div className="product-details-image-show p-4 ">
-        <div className="images d-flex gap-4 flex-wrap">
+        <div className="images d-flex row-md-gap-4 row-gap-3 column-gap-2 column-md-gap-3 flex-wrap justify-content-between"> 
             <div className="image position-relative">
               <CiZoomIn className="position-absolute"></CiZoomIn>
               <ReactImageMagnify {...setAttribute("images/headphone/one.jpg" , {

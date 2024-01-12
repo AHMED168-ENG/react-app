@@ -3,6 +3,7 @@ import Breadcrumb from "../components/breadcrumb";
 import HelmetComponent from "../components/helmet";
 
 export default function BlogDetails () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="Blog details"></HelmetComponent>

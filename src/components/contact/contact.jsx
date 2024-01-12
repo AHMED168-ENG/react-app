@@ -7,13 +7,13 @@ import { FaInfo } from "react-icons/fa";
 function ContactComponent() {
     return ( 
         <>
-            <div className="contact-component py-5">
+            <div className="contact-component pb-5 py-lg-5">
                 <div className="container-xxl">
                     <div className="content">
-                        <div className="row">
-                            <div className="col-md-6">
+                        <div className="row row-gap-2">
+                            <div className="col-lg-6 order-2 order-lg-1"> 
                                 <div className="left">
-                                    <h4 className="text-capitalize mb-4">contact</h4>
+                                    <h4 className="text-capitalize mb-lg-4 mb-3">contact</h4>
                                     <div className="form">
                                         <form action="">
                                             <div className="input">
@@ -33,9 +33,9 @@ function ContactComponent() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-6"> 
+                            <div className="col-lg-6 order-1 order-lg-2"> 
                                 <div className="right">
-                                    <h4 className="text-capitalize mb-4">get in touch with us</h4>
+                                    <h4 className="text-capitalize mb-lg-4 mb-3">get in touch with us</h4>
                                     <div className="info">
                                         <ul className="list-unstyled">
                                             <li><FaHome></FaHome> <span>33 new monotony st. ste 750 san friday ca. usa 95862</span> </li>

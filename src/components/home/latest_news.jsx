@@ -41,10 +41,10 @@ function LatestNewsSection () {
                 <header className=" mb-4">
                     <h2 className="text-uppercase">our latest news</h2>
                 </header>
-                <div className="row">
+                <div className="row row-gap-4">
                     {
                         newsData.map((ele ,index) => (
-                                <div className="col-md-3" key={index}>
+                                <div className="col-md-3 col-sm-6" key={index}>
                                     <NewsCart cart={ele}></NewsCart>
                                 </div>
                             )

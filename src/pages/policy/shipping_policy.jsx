@@ -5,6 +5,7 @@ import ShippingPolicyComponent from "../../components/policy/shipping_policy";
 
 
 export default function ShippingPolicyPage () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="shipping policy"></HelmetComponent>

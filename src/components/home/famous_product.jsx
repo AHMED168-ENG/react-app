@@ -9,7 +9,7 @@ function FamousProductSection () {
         <section className="famousProductSection py-5">
             <div className="container-xxl">
                 <div className="row row-gap-4">
-                    <div className="col-md-3">
+                    <div className="col-md-3 col-sm-6 ">
                         <div className="item">
                             <div className="details">
                                 <span className="text-uppercase">big screen</span>
@@ -21,7 +21,7 @@ function FamousProductSection () {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 col-sm-6">
                         <div className="item">
                             <div className="details">
                                 <span className="text-uppercase">studio display</span>
@@ -33,7 +33,7 @@ function FamousProductSection () {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 col-sm-6">
                         <div className="item">
                             <div className="details">
                                 <span className="text-uppercase">smarthons</span>
@@ -45,7 +45,7 @@ function FamousProductSection () {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 col-sm-6">
                         <div className="item">
                             <div className="details">
                                 <span className="text-uppercase">home speaker</span>

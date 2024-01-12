@@ -31,11 +31,11 @@ export default function ProductDetails(props) {
         <header>
           <h3 className="text-capitalize pt-4 pb-3">kids headphone bulk 10 pack multi colored for students</h3>
         </header>
-        <div className="price d-flex gap-2 my-3">
+        <div className="price d-flex gap-2 mt-3 mb-2">
           <span>$100.00</span>
           <span className="text-decoration-line-through">$150.00</span>
         </div>
-        <div className="rate my-3 d-flex gap-2">
+        <div className="rate my-md-3 my-2 d-flex gap-2">
           <StarRatings
               rating={4.5}
               starRatedColor="#ffd700"
@@ -60,10 +60,10 @@ export default function ProductDetails(props) {
               <span className="text-capitalize">categories</span>
               <span className="text-capitalize">airpods, camera, computers & laptops, headphones, minispeaker, our store, portable, speakers, smart phone, smart television, smart watches</span>
             </li>
-            <li className="tags d-flex align-items-center gap-2">
+            <li className="tags d-flex flex-wrap align-items-center gap-2">
               <span className="text-capitalize">tags</span>
               <span className="separate">:</span>
-              <span className="text-capitalize d-flex gap-3">
+              <span className="text-capitalize d-flex flex-wrap column-gap-3">
                 <span>headphone</span>
                 <span>tablet</span>
                 <span>mobile</span>
@@ -81,9 +81,9 @@ export default function ProductDetails(props) {
               <span className="separate">:</span>
               <span className="text-uppercase">541 in stock</span>
             </li>
-            <li className="size d-flex flex-column gap-2 ">
+            <li className="size d-flex flex-wrap flex-column gap-2 ">
               <span className="text-capitalize">size</span>
-              <span className="text-uppercase d-flex gap-2">
+              <span className="text-uppercase flex-wrap d-flex gap-2">
                   <span className="active">S</span>
                   <span>L</span>
                   <span>xL</span>
@@ -107,7 +107,7 @@ export default function ProductDetails(props) {
                   </span>
               </span> 
             </li>
-            <li className="product-quantity d-flex align-items-center gap-3">
+            <li className="product-quantity flex-column flex-lg-row d-flex align-items-lg-center gap-3">
                 <div className="quantity d-flex gap-4">
                   <span className="text-capitalize">quantity</span>
                   <input type="number" defaultValue={1} min={1} max={10} />
@@ -117,7 +117,7 @@ export default function ProductDetails(props) {
                   <button className="buy text-uppercase">buy it now</button>
                 </div>
             </li>
-            <li className="favorite-compare d-flex align-items-center gap-3 mb-4" >
+            <li className="favorite-compare flex-wrap d-flex align-items-center gap-3 mb-4" >
                 <button className="d-flex align-items-center gap-2">
                   <MdOutlineFavoriteBorder></MdOutlineFavoriteBorder>
                   <span className="text-capitalize">add to favorite</span>

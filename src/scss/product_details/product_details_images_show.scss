@@ -33,3 +33,41 @@
         }
     }
 }
+
+@media (max-width:1200px) {
+    .product-details-image-show .images .image {
+        aspect-ratio: 1/0.9;
+    }
+}
+
+@media (max-width:1000px) {
+    
+}
+
+@media (max-width:800px) {
+    .product-details-page {
+        padding: 0 20px !important
+    }
+    .product-details-page header h3 {
+        font-size: 19px;
+        width: 100% !important;
+    }
+    .product-details-image-show .images > .image:not(:first-of-type) {
+        width: 100% ;
+    }
+    .product-details-wrapper .product-description h4 {
+        font-size: 24px;
+        font-weight: 400;
+    }
+    .product-details-wrapper .product-review h4 {
+        font-size: 24px;
+        font-weight: 400;
+    }
+    .product-details-wrapper .product-review .product-review-wrapper .comments .comment ul {
+        padding-left: 0;
+    }
+}
+
+@media (max-width:400px) {
+
+}

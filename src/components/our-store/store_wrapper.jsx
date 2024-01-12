@@ -7,11 +7,11 @@ function StoreWrapper() {
         <>
             <div className="store-wrapper m-0 py-5">
                 <div className="container-xxl">
-                    <div className="row">
-                        <div className="col-md-3">
+                    <div className="row row-gap-4">
+                        <div className="col-lg-3">
                             <StoreFilter></StoreFilter>
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-lg-9">
                             <Store></Store>
                         </div>
                     </div>

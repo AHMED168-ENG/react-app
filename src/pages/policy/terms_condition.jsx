@@ -5,6 +5,7 @@ import TermsConditionComponent from "../../components/policy/terms_condition";
 
 
 export default function TermsConditionPage () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="terms condition"></HelmetComponent>

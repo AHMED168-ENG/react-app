@@ -4,6 +4,7 @@
     font-family: 'Rubik', sans-serif;  
 }
 body {
+  
   a {
     text-decoration: none;
   }
@@ -54,4 +55,8 @@ input:focus {
   .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
       max-width: 1450px;
   }
+}
+
+html{
+  scroll-behavior: auto !important;
 }

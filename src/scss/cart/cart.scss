@@ -3,7 +3,12 @@
 
 .cart {
     background-color: $color_ededed;
+    .table-wrapper {
+        scrollbar-width: none;
+    }
     table {
+        scrollbar-width: none;
+
         margin:0;
         thead {
             th {
@@ -16,6 +21,8 @@
             tr {
                 vertical-align: middle;
                 .product-wrapper {
+                    
+
                     .image {
                         width:120px;
                         aspect-ratio: 1/1;

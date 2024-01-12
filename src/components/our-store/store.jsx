@@ -201,8 +201,8 @@ function Store() {
     return ( 
         <>
             <div className="store m-0">
-                <div className="product-sort mb-3 bg-white d-flex align-items-center justify-content-between p-2 px-3">
-                    <div className="sort-by d-flex align-items-center gap-3">
+                <div className="product-sort mb-3 bg-white flex-column d-flex row-gap-3  flex-md-row align-items-md-center justify-content-between p-2 px-3">
+                    <div className="sort-by d-flex align-items-center gap-3 ">
                         <span>sort by</span>
                         <select name="" id="">
                             <option value="" selected className="text-capitalize">best seeling</option>
@@ -211,27 +211,29 @@ function Store() {
                             <option value="" className="text-capitalize">best seeling</option>
                         </select>
                     </div>
-                    <div className="set-grid d-flex align-items-center gap-2">
+                    <div className="set-grid d-flex align-items-center gap-2  justify-content-between justify-content-md-start">
                         <span className="total-product">21 products</span>
-                        <div className={`image ${grid === 3 ? "active" : "" }`} onClick={() => setGrid(3)}>
-                            <img src="./images/gr4.svg" alt="" />
-                        </div>
-                        <div className={`image ${grid === 4 ? "active" : "" }`} onClick={() => setGrid(4)}>
-                            <img src="./images/gr3.svg" alt="" />
-                        </div>
-                        <div className={`image ${grid === 6 ? "active" : "" }`} onClick={() => setGrid(6)}>
-                            <img src="./images/gr2.svg" alt="" />
-                        </div>
-                        <div className={`image ${grid === 12 ? "active" : "" }`} onClick={() => setGrid(12)}>
-                            <img src="./images/gr.svg" alt="" />
+                        <div className="d-flex gap-2">
+                            <div className={`image ${grid === 3 ? "active" : "" }`} onClick={() => setGrid(3)}>
+                                <img src="./images/gr4.svg" alt="" />
+                            </div>
+                            <div className={`image ${grid === 4 ? "active" : "" }`} onClick={() => setGrid(4)}>
+                                <img src="./images/gr3.svg" alt="" />
+                            </div>
+                            <div className={`image ${grid === 6 ? "active" : "" }`} onClick={() => setGrid(6)}>
+                                <img src="./images/gr2.svg" alt="" />
+                            </div>
+                            <div className={`image ${grid === 12 ? "active" : "" }`} onClick={() => setGrid(12)}>
+                                <img src="./images/gr.svg" alt="" />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="products">
-                    <div className="row">
+                    <div className="row row-gap-4">
                         {
                             productData.map((ele, index) => (
-                                <div className={`col-md-${grid} mb-3`}>
+                                <div className={`col-md-${grid}`}>
                                     <ProductCart grid={grid} key={index} cart={ele}></ProductCart>
                                 </div>
                             ))

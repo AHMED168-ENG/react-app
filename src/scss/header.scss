@@ -95,165 +95,181 @@
             }
         }
     }
-}
-header {
-    &.active {
-        > div.header_top {
-            display: none !important;
-        }
-        position: fixed;
-        z-index: 500;
-        top:0;
-        left:0;
-        width:100%;
-        transition:all 1s linear;
-        transform:translateY(-100%);
-    }
-
-    &.animation {
-        transform:translateY(0%);
-    }
-
-    .header_top {
-        background: $color_131921;
-        border-bottom:1px solid $color_3b4149;
-        .row {
-            > div {
-            p {
-                font-size : 14px;
-                text-transform: capitalize;
-                font-weight: 300;
-            } 
+    header {
+        &.active {
+            > div.header_top {
+                display: none !important;
             }
-        }
-    }
-
-    .header_mid {
-        background: $color_131921;
-        .row {
-            align-items: center;
-            > div {
-            .logo {
-                a {
-                    width:100%;
-                    display: block;
-                    aspect-ratio: 1/0.3;
-                    font-size : 30px;
-                    text-transform: capitalize;
-                    font-weight: 500;
-                    img {
-                        width:100%;
-                        height: 100%;
-                        object-fit: fill;
-                    }
-                }
-            } 
-            .input-group {
-                input {
-                    outline:none !important;
-                    font-size: 17px;
-                    box-shadow: none !important;
-                    border:none;
-                    &::-webkit-input-placeholder {
-                        font-size:14px;
-                        text-transform: capitalize;
-                    }
-                };
-
-                span {
-                    background:$color_febd69;
-                    color:white;
-                    cursor: pointer;
-                }
-            }
-            .header_mid_links {
-                    .link {
-                        .image {
-                            width:35px;
-                            height:35px;
-                            img {
-                                width:100%;
-                                height:100%
-                            }
-                        }
-                        p {
-                            line-height: 1.1;
-                            font-weight: 200;
-                            font-size:14px
-                        }
-                    }
-                    .cart {
-                        .mony {
-                            .count {
-                            border-radius: 5px;
-                            }
-                        }
-                    }
-                }
-            }
-        
-        }
-    }
-
-    .header_bottom {
-        background: $color_232f3e;
-        .menu {
-            .menu_links {
-                a , .main .dropdown button {
-                    color:white;
-                    text-transform: capitalize;
-                    font-weight: 300;
-                    font-size: 15px;
-                    
-                }
-            }
-        }
-        .menu-icon {
-            svg {
-                cursor: pointer;
-                font-size: 28px;
-            }
-        }
-        .main .dropdown  {
-            button {
-                text-transform: uppercase;
-                font-size: 16px;
-                font-weight: 200;
-                .image {
-                    width:22px;
-                    height:22px;
-                    img {
-                        width:100%;
-                        height:100%
-                    }
-                }
-            }
-            
-            .dropdown-menu {
-                width:100% !important;
-                transform :translate(0px, 42px) !important;
-                background:$color_131921;
-                padding:0;
-                li a {
-                    border-bottom:1px solid $color_3b4149 !important;
-                    font-size: 15px;
-                    text-transform: capitalize;
-                    &:hover {
-                        color:black !important
-                    }
-                }
-            }
-        }
-    }
-
-    @keyframes navbar {
-        0% {
+            position: fixed;
+            z-index: 500;
+            top:0;
+            left:0;
+            width:100%;
+            transition:all 1s linear;
             transform:translateY(-100%);
-        } 100% {
+        }
+    
+        &.animation {
             transform:translateY(0%);
         }
+    
+        .header_top {
+            background: $color_131921;
+            border-bottom:1px solid $color_3b4149;
+            .row {
+                > div {
+                p {
+                    font-size : 14px;
+                    text-transform: capitalize;
+                    font-weight: 300;
+                } 
+                }
+            }
+        }
+    
+        .header_mid {
+            background: $color_131921;
+            .row {
+                align-items: center;
+                > div {
+                .logo {
+                    a {
+                        width:100%;
+                        display: block;
+                        aspect-ratio: 1/0.3;
+                        font-size : 30px;
+                        text-transform: capitalize;
+                        font-weight: 500;
+                        img {
+                            width:100%;
+                            height: 100%;
+                            object-fit: fill;
+                        }
+                    }
+                } 
+                .input-group {
+                    input {
+                        outline:none !important;
+                        font-size: 17px;
+                        box-shadow: none !important;
+                        border:none;
+                        &::-webkit-input-placeholder {
+                            font-size:14px;
+                            text-transform: capitalize;
+                        }
+                    };
+    
+                    span {
+                        background:$color_febd69;
+                        color:white;
+                        cursor: pointer;
+                    }
+                }
+                .header_mid_links {
+                        .link {
+                            .image {
+                                width:35px;
+                                height:35px;
+                                img {
+                                    width:100%;
+                                    height:100%;
+                                }
+                                perspective: 500px;
+                            }
+                            p {
+                                line-height: 1.1;
+                                font-weight: 200;
+                                font-size:14px
+                            }
+                            &:hover {
+                                .image {
+                                    img {
+                                        animation: navbarIcon 0.5s ease-in-out backwards;
+                                    }
+                                }
+                            }
+                        }
+                        .cart {
+                            .mony {
+                                .count {
+                                border-radius: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            
+            }
+        }
+    
+        .header_bottom {
+            background: $color_232f3e;
+            .menu {
+                .menu_links {
+                    a , .main .dropdown button {
+                        color:white;
+                        text-transform: capitalize;
+                        font-weight: 300;
+                        font-size: 14px;
+                        
+                    }
+                }
+            }
+            .menu-icon {
+                svg {
+                    cursor: pointer;
+                    font-size: 28px;
+                }
+            }
+            .main .dropdown  {
+                button {
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-weight: 200;
+                    .image {
+                        width:22px;
+                        height:22px;
+                        img {
+                            width:100%;
+                            height:100%
+                        }
+                    }
+                }
+                
+                .dropdown-menu {
+                    width:100% !important;
+                    transform :translate(0px, 42px) !important;
+                    background:$color_131921;
+                    padding:0;
+                    li a {
+                        border-bottom:1px solid $color_3b4149 !important;
+                        font-size: 15px;
+                        text-transform: capitalize;
+                        &:hover {
+                            color:black !important
+                        }
+                    }
+                }
+            }
+        }
+    
+        @keyframes navbar {
+            0% {
+                transform:translateY(-100%);
+            } 100% {
+                transform:translateY(0%);
+            }
+        }
+        @keyframes navbarIcon {
+            0% {
+                transform:rotateY(0);
+            } 100% {
+                transform: rotateY(360deg);
+            }
+        }
     }
 }
+
 
 
 
@@ -325,11 +341,15 @@ header {
                 }
             }
     }
+     .header_bottom .menu .menu_links a,  .header_bottom .menu .menu_links .main .dropdown button {
+        font-size: 13px !important;
+    }
    }
 }
 
 @media (max-width:800px) {
-    header .header_mid .row > div .logo a {
+
+    .header header .header_mid .row > div .logo a {
         aspect-ratio: 1/0.4;
     }
     .header_mid .row > div .input-group input {
@@ -342,7 +362,7 @@ header {
 }
 
 @media (max-width:400px) {
-    header .header_mid .row > div .logo a {
-        aspect-ratio: 1/0.6;
+    .header header .header_mid .row > div .logo a{
+        aspect-ratio: 1/0.5;
     }
 }

@@ -3,6 +3,7 @@ import WishlistProductComponent from "../components/wishlist_product/wishlist_pr
 import HelmetComponent from "../components/helmet";
 
 export default function WishlistProductPage () {
+    window.scrollTo(0,0)
     return ( 
         <>
             <HelmetComponent title="wishlist product"></HelmetComponent>

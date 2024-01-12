@@ -85,11 +85,18 @@ function FeatureProductSection () {
                                 items: 2,
                             },
                             600: {
-                                items: 4,
+                                items: 3,
                             },
                             1000: {
+                                items: 4,
+                            },
+                            1200: {
+                                items: 5,
+                            },
+                            1400: {
                                 items: 6,
-                            }}
+                            },
+                            }
                         }
                         >
                         {productData.map((ele , index) => ( 

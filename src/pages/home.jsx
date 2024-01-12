@@ -9,6 +9,7 @@ import ServicePage from "../components/home/services";
 import SpecialProductSection from "../components/home/special_product";
 
 export default function Home () {
+    window.scrollTo(0,0 )
     return ( 
         <>
             <HelmetComponent title="home"></HelmetComponent>
