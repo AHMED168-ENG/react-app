@@ -4,10 +4,26 @@
 .cart {
     background-color: $color_ededed;
     .table-wrapper {
-        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            height: 2px !important;
+          }
+
+          &::-webkit-scrollbar-track {
+            background: #f1f1f1 !important;
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background: $color_232f3e !important;
+          }
+
+          &::-webkit-scrollbar-thumb:hover {
+            background: #555 !important;
+          }
     }
     table {
-        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            width: 2px;
+        }
 
         margin:0;
         thead {

@@ -96,8 +96,8 @@ function ComparProductComponent() {
                     <div className="row">
                         {
                             productData.map((ele , index) => (
-                                <div className="col-sm-6 col-md-4 col-lg-3 mb-3">
-                                    <ComparProductCart product={ele} key={index}></ComparProductCart>
+                                <div className="col-sm-6 col-md-4 col-lg-3 mb-3" key={index}>
+                                    <ComparProductCart product={ele}></ComparProductCart>
                                 </div>
                             ))
                         }

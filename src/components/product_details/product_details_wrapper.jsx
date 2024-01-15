@@ -125,7 +125,7 @@ function ratingChanged(newRating) {
                                 <ReactStars
                                     count={5}
                                     isHalf={true}
-                                    value={1}
+                                    defaultValue={1}
                                     onChange={ratingChanged}
                                     size={25}
                                     activeColor="#ffd700"

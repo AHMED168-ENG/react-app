@@ -38,7 +38,7 @@ function Blog() {
                 <div className="row">
                     {
                         newsData.map((ele , index) => (
-                            <div className="col-md-6 mb-4">
+                            <div className="col-md-6 mb-4" key={index}>
                                 <NewsCart cart={ele} key={index}></NewsCart>
                             </div>
                         ))

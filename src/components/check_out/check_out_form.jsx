@@ -34,14 +34,14 @@ function CheckOutFormComponent(props) {
                         <div className="input position-relative ">
                             <label htmlFor="" className="position-absolute text-capitalize">saved addresses</label>
                             <select name="" id="">
-                                <option value="" className=" text-capitalize">use a new address</option>
+                                <option defaultValue="" className=" text-capitalize">use a new address</option>
                             </select>
                         </div>
 
                         <div className="input position-relative ">
                             <label htmlFor="" className="position-absolute text-capitalize">country/region</label>
                             <select name="" id="">
-                                <option value="" className=" text-capitalize">united states</option>
+                                <option defaultValue="" className=" text-capitalize">united states</option>
                             </select>
                         </div>
                         
@@ -68,7 +68,7 @@ function CheckOutFormComponent(props) {
                         <div className="input quarter position-relative ">
                             <label htmlFor="" className="position-absolute text-capitalize">state</label>
                             <select name="" id="">
-                                <option value="" className=" text-capitalize">indiana</option>
+                                <option defaultValue="" className=" text-capitalize">indiana</option>
                             </select>
                         </div>
 

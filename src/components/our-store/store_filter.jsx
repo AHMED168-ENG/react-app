@@ -63,8 +63,8 @@ function StoreFilter() {
                         <h5 className="text-capitalize mb-3">color</h5>
                         <div className="d-flex gap-2 flex-wrap">
                             {
-                                colors.map(ele => (
-                                    <span style={{background : ele}}></span>
+                                colors.map((ele , index) => (
+                                    <span key={index} style={{background : ele}}></span>
                                 ))
                             }
                         </div>

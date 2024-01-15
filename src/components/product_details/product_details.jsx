@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "../../scss/product_details/product_details.scss"
 import StarRatings from "react-star-ratings"
 import { MdOutlineFavoriteBorder } from "react-icons/md";

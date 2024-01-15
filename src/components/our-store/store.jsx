@@ -204,11 +204,11 @@ function Store() {
                 <div className="product-sort mb-3 bg-white flex-column d-flex row-gap-3  flex-md-row align-items-md-center justify-content-between p-2 px-3">
                     <div className="sort-by d-flex align-items-center gap-3 ">
                         <span>sort by</span>
-                        <select name="" id="">
-                            <option value="" selected className="text-capitalize">best seeling</option>
-                            <option value="" className="text-capitalize">best seeling</option>
-                            <option value="" className="text-capitalize">best seeling</option>
-                            <option value="" className="text-capitalize">best seeling</option>
+                        <select name="" id="" defaultValue={2}>
+                            <option defaultValue="1" className="text-capitalize">best seeling</option>
+                            <option defaultValue="2" className="text-capitalize">best seeling</option>
+                            <option defaultValue="" className="text-capitalize">best seeling</option>
+                            <option defaultValue="" className="text-capitalize">best seeling</option>
                         </select>
                     </div>
                     <div className="set-grid d-flex align-items-center gap-2  justify-content-between justify-content-md-start">
@@ -233,7 +233,7 @@ function Store() {
                     <div className="row row-gap-4">
                         {
                             productData.map((ele, index) => (
-                                <div className={`col-md-${grid}`}>
+                                <div key={index} className={`col-md-${grid}`}>
                                     <ProductCart grid={grid} key={index} cart={ele}></ProductCart>
                                 </div>
                             ))

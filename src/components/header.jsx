@@ -7,23 +7,23 @@ import { GrClose } from "react-icons/gr";
 
 
 export default function Header(props) {
-    const header = useRef(null)
+    const headerElement = useRef(null)
     const {activeSidePar} = props
     let scrollY = 0
     const [menu , setMenu] = useState(false)
     window.onscroll = (e) => {
-        const headerHeight = header.current.offsetHeight
+        const headerHeight = headerElement.current.offsetHeight
         if(window.pageYOffset > 500) {
             if(window.pageYOffset < scrollY) {
-                header.current.className = "active animation"
+                headerElement.current.className = "active animation"
                 document.body.style.paddingTop = `${headerHeight}px`
             } else {
-                header.current.className = "active"
+                headerElement.current.className = "active"
             }
             scrollY = window.pageYOffset
         } else {
             document.body.style.paddingTop = `0px`
-            header.current.className = ""
+            headerElement.current.className = ""
         }
 
     }
@@ -83,10 +83,10 @@ export default function Header(props) {
                                 <div className="image">
                                     <img src="./images/cart.svg" alt="" />
                                 </div>
-                                <dev className=" mony d-flex">
+                                <div className=" mony d-flex">
                                     <span className="count test-white bg-white text-dark d-flex align-items-center justify-content-center">0</span>
                                     <span className="badge">$ 505.23</span>
-                                </dev>
+                                </div>
                             </button>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ export default function Header(props) {
                     </div>
                 </div>
             </div>
-            <header ref={header}>
+            <header ref={headerElement}>
                 <div ref={header_top} className="header_top py-2 d-lg-block d-none">
                     <div className="container-xxl">
                         <div className="row">
@@ -168,10 +168,10 @@ export default function Header(props) {
                                         <div className="image">
                                             <img src="./images/cart.svg" alt="" />
                                         </div>
-                                        <dev className=" mony d-flex flex-column">
+                                        <div className=" mony d-flex flex-column">
                                             <span className="count test-white bg-white text-dark d-flex align-items-center justify-content-center">0</span>
                                             <span className="badge">$ 505.23</span>
-                                        </dev>
+                                        </div>
                                     </button>
                                 
                                 </div>
@@ -202,7 +202,7 @@ export default function Header(props) {
                                     </div>
                                     <div ref={header_bottom} className="menu d-md-block d-none">
                                         <ul className="menu_links d-flex p-0 m-0 gap-3 list-unstyled">
-                                            <li><Link to="/">Home</Link></li>
+                                            <li><Link to="/dashboard">Home</Link></li>
                                             <li><Link to="/our-store">our store</Link></li>
                                             <li><Link to="/our-store">our category</Link></li>
                                             <li><Link to="/blogs">blogs</Link></li>

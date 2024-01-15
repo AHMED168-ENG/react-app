@@ -84,8 +84,8 @@ function WishlistProductComponent() {
                     <div className="row">
                         {
                             productData.map((ele , index) => (
-                                <div className="col-sm-6 col-md-4 col-lg-3 mb-3"> 
-                                    <WishlistProductCart product={ele} key={index}></WishlistProductCart>
+                                <div key={index} className="col-sm-6 col-md-4 col-lg-3 mb-3"> 
+                                    <WishlistProductCart product={ele}></WishlistProductCart>
                                 </div>
                             ))
                         }
