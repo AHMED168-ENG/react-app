@@ -1,7 +1,12 @@
 import React from 'react';
+import HelmetComponent from '../../components/helmet';
+import DashboardLoginComponent from '../../components/dashboard/login/login';
 function DashboardLogin() {
     return (
-        <h1>login</h1>
+        <>
+            <HelmetComponent title="dashboard login"></HelmetComponent>
+            <DashboardLoginComponent></DashboardLoginComponent>
+        </>
     )
 };
 

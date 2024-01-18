@@ -23,9 +23,13 @@ import CartSideParComponent from './components/cart-side-par';
 import ProductCartPage from './pages/product_cart';
 import { useState } from 'react';
 import CheckOutPage from './pages/check_out';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 import PageNotFound from './pages/404';
+import DashboardLayout from './pages/dashboard/layout';
 import DashboardLogin from './pages/dashboard/login';
 import DashboardRegister from './pages/dashboard/register';
+import DashboardForgetPasswordPage from './pages/dashboard/forget_password';
  
 function App() {
   window.Swal = Swal.mixin({
@@ -55,7 +59,7 @@ function App() {
       }
       <Routes>
         <Route path='/' element={<Outlet />} >
-            <Route index path='' element={<Home />}></Route>
+            <Route index element={<Home />}></Route>
             <Route path='our-store' element={<OurStore/>} />
             <Route path='product-details' element={<ProductDetailsPage/>}></Route>
             <Route path='contact' element={<Contact/>}></Route>
@@ -73,8 +77,18 @@ function App() {
             <Route path='terms-condition' element={<TermsConditionPage/>}></Route>
             <Route path='my-cart' element={<ProductCartPage/>}></Route>
             <Route path='check-out' element={<CheckOutPage/>}></Route>
-        </Route>
-
+            <Route path='dashboard' element={<Outlet/>}> 
+              <Route index element={< DashboardLayout/>} >
+                  
+              </Route>
+              <Route path='login' element={<DashboardLogin/>}></Route>
+              <Route path='forget-password' element={<DashboardForgetPasswordPage/>}></Route>
+              <Route path='register' element={<DashboardRegister/>}></Route>
+          </Route>
+          <Route
+              path="*"
+              element={<PageNotFound />}/>
+          </Route>
       </Routes>
       {
         !location.pathname.startsWith("/dashboard") && sitPathName.includes(location.pathname) ? 

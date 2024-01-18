@@ -6,7 +6,6 @@ import {
   TeamOutlined,
   UserOutlined,
 } from '@ant-design/icons';
-import { MenuProps } from "antd";
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { Outlet } from 'react-router-dom';
 
@@ -66,7 +65,7 @@ function DashboardLayout() {
               borderRadius: borderRadiusLG,
             }}
           >
-           {/* <Outlet></Outlet> */}
+           <Outlet></Outlet>
           </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>

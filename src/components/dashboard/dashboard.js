@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DashboardName() {
+export default function Dashboard() {
   return (
     <>
       <h1>ahmedahmedahmedahmedahmedahmedahmedahmed</h1>
