@@ -40,9 +40,13 @@
             .input:not(:last-of-type) {
                 margin-bottom:20px
             }
-            a {
+            a.forget-password-button {
+                font-size: 14px;
+                text-transform: capitalize;
+                text-align: right;
+            }
+            a.login {
                 display: block;
-                margin-top:20px;
                 width:100%;
                 padding:10px 15px;
                 background-color:  $color_FFD233;

@@ -30,6 +30,7 @@ import DashboardLayout from './pages/dashboard/layout';
 import DashboardLogin from './pages/dashboard/login';
 import DashboardRegister from './pages/dashboard/register';
 import DashboardForgetPasswordPage from './pages/dashboard/forget_password';
+import DashboardPage from './pages/dashboard/dashboard';
  
 function App() {
   window.Swal = Swal.mixin({
@@ -78,8 +79,8 @@ function App() {
             <Route path='my-cart' element={<ProductCartPage/>}></Route>
             <Route path='check-out' element={<CheckOutPage/>}></Route>
             <Route path='dashboard' element={<Outlet/>}> 
-              <Route index element={< DashboardLayout/>} >
-                  
+              <Route path="" element={<DashboardLayout/>} >
+                  <Route index element={<DashboardPage/>}></Route>
               </Route>
               <Route path='login' element={<DashboardLogin/>}></Route>
               <Route path='forget-password' element={<DashboardForgetPasswordPage/>}></Route>

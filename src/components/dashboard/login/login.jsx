@@ -15,7 +15,8 @@ function DashboardLoginComponent() {
                     <div className="input">
                         <input type="password" className="form-control" placeholder="enter password"/>
                     </div>
-                    <Link to="/dashboard">Login</Link>
+                    <Link className="forget-password-button text-right d-block my-3 text-decoration-underline" to="/dashboard/forget-password">forget password ?</Link>
+                    <Link className="login" to="/dashboard">Login</Link>
                 </form>
             </div>
         </div>

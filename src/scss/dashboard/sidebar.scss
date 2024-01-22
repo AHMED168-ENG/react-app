@@ -1,0 +1,29 @@
+@import '../variables.scss';
+
+
+.dashboard-sidebar {
+    overflow:scroll !important;
+    .demo-logo-vertical {
+        > div {
+            width:100%;
+            background: rgba(255,255,255,0.2) ;
+            height: 55px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            width:100%;
+            aspect-ratio: 1/0.5;
+            img {
+                width:100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }   
+    }
+    .ant-menu-title-content {
+        font-size: 16px;
+        font-weight: 300 !important;
+    }
+}
