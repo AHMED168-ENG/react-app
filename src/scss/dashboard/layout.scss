@@ -1,0 +1,17 @@
+
+@import '../variables.scss';
+
+
+.layout.collapsedDiv {
+    max-width: calc(100% - 80px) !important;
+    margin-left:80px !important;
+}
+.layout {
+    max-width: 87% !important;
+    margin-left:13% !important;
+    transition:all 0.2s 0s;
+    -webkit-transition:all 0.2s 0s;
+    -moz-transition:all 0.2s 0s;
+    -ms-transition:all 0.2s 0s;
+    -o-transition:all 0.2s 0s;
+}

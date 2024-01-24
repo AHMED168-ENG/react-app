@@ -2,7 +2,12 @@
 
 
 .dashboard-sidebar {
-    overflow:scroll !important;
+    position:fixed !important;
+    top:0;
+    left:0;
+    height:100vh;
+    overflow: hidden;
+    overflow-y: scroll;
     .demo-logo-vertical {
         > div {
             width:100%;

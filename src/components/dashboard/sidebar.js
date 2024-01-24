@@ -181,6 +181,198 @@ const DashboardSidebar = (props) => {
 
             ],
           },
+          {
+            key: '/dashboard/order',
+            icon: <FaClipboardList className='fs-6' />,
+            label: 'Order',
+            children : [
+              {
+                key: '/dashboard/order',
+                icon: <FaClipboardList className='fs-6' />,
+                label: 'Order List',
+              },
+              {
+                key: '/dashboard/order/add',
+                icon: <FaClipboardList className='fs-6' />,
+                label: 'Add Order',
+              },
+
+            ],
+          },
+          {
+            key: '/dashboard/blog',
+            icon: <FaBloggerB className='fs-6' />,
+            label: 'Blog',
+            children : [
+              {
+                key: '/dashboard/Blog',
+                icon: <ImBlog className='fs-6' />,
+                label: 'Blog List',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <ImBlog className='fs-6' />,
+                label: 'Add Blog',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <FaBloggerB className='fs-6' />,
+                label: 'Add Blog Category',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <FaBloggerB className='fs-6' />,
+                label: 'Blog Category List',
+              },
+
+            ],
+          },
+          {
+            key: '/dashboard/enquiries',
+            icon: <SiGooglebigquery className='fs-6' />,
+            label: 'Enquiries',
+            children : [
+              {
+                key: '/dashboard/enquiries',
+                icon: <SiGooglebigquery className='fs-6' />,
+                label: 'Enquiries List',
+              },
+              {
+                key: '/dashboard/enquiries/add',
+                icon: <SiGooglebigquery className='fs-6' />,
+                label: 'Add Enquiries',
+              },
+
+            ],
+          },
+          {
+            key: '/dashboard/order',
+            icon: <FaClipboardList className='fs-6' />,
+            label: 'Order',
+            children : [
+              {
+                key: '/dashboard/order',
+                icon: <FaClipboardList className='fs-6' />,
+                label: 'Order List',
+              },
+              {
+                key: '/dashboard/order/add',
+                icon: <FaClipboardList className='fs-6' />,
+                label: 'Add Order',
+              },
+
+            ],
+          },
+          {
+            key: '/dashboard/blog',
+            icon: <FaBloggerB className='fs-6' />,
+            label: 'Blog',
+            children : [
+              {
+                key: '/dashboard/Blog',
+                icon: <ImBlog className='fs-6' />,
+                label: 'Blog List',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <ImBlog className='fs-6' />,
+                label: 'Add Blog',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <FaBloggerB className='fs-6' />,
+                label: 'Add Blog Category',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <FaBloggerB className='fs-6' />,
+                label: 'Blog Category List',
+              },
+
+            ],
+          },
+          {
+            key: '/dashboard/enquiries',
+            icon: <SiGooglebigquery className='fs-6' />,
+            label: 'Enquiries',
+            children : [
+              {
+                key: '/dashboard/enquiries',
+                icon: <SiGooglebigquery className='fs-6' />,
+                label: 'Enquiries List',
+              },
+              {
+                key: '/dashboard/enquiries/add',
+                icon: <SiGooglebigquery className='fs-6' />,
+                label: 'Add Enquiries',
+              },
+
+            ],
+          },
+          {
+            key: '/dashboard/order',
+            icon: <FaClipboardList className='fs-6' />,
+            label: 'Order',
+            children : [
+              {
+                key: '/dashboard/order',
+                icon: <FaClipboardList className='fs-6' />,
+                label: 'Order List',
+              },
+              {
+                key: '/dashboard/order/add',
+                icon: <FaClipboardList className='fs-6' />,
+                label: 'Add Order',
+              },
+
+            ],
+          },
+          {
+            key: '/dashboard/blog',
+            icon: <FaBloggerB className='fs-6' />,
+            label: 'Blog',
+            children : [
+              {
+                key: '/dashboard/Blog',
+                icon: <ImBlog className='fs-6' />,
+                label: 'Blog List',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <ImBlog className='fs-6' />,
+                label: 'Add Blog',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <FaBloggerB className='fs-6' />,
+                label: 'Add Blog Category',
+              },
+              {
+                key: '/dashboard/Blog/add',
+                icon: <FaBloggerB className='fs-6' />,
+                label: 'Blog Category List',
+              },
+
+            ],
+          },
+          {
+            key: '/dashboard/enquiries',
+            icon: <SiGooglebigquery className='fs-6' />,
+            label: 'Enquiries',
+            children : [
+              {
+                key: '/dashboard/enquiries',
+                icon: <SiGooglebigquery className='fs-6' />,
+                label: 'Enquiries List',
+              },
+              {
+                key: '/dashboard/enquiries/add',
+                icon: <SiGooglebigquery className='fs-6' />,
+                label: 'Add Enquiries',
+              },
+
+            ],
+          },
         ]}
       />
   </Sider>

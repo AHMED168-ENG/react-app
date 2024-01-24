@@ -5,7 +5,8 @@
     header {
         h2 {
             color:$color_131921;
-            font-size: 32px;
+            font-size: 25px;
+            font-weight: 400;            
         }
         .head-right {
             button {
@@ -57,7 +58,7 @@
                 .content-price{
                     span {
                         font-size: 25px;
-                        font-weight: 500;
+                        font-weight: 400;
                         color:#333
                     }
                 }
@@ -132,5 +133,145 @@
             }
         }
     }
+    .charts {
 
+        > div:nth-of-type(1) {
+            canvas {
+                width: 100% !important;
+            }
+        }
+
+        > div:nth-of-type(2) {
+            canvas {
+                text-align: center !important;
+            }
+        }
+        .charts-header {
+            h2 {
+                color:$color_131921;
+                font-size: 25px;
+                font-weight: 400;            
+            }
+        }
+    }
+    .latest-orders {
+        .charts-header {
+            h2 {
+                color:$color_131921;
+                font-size: 25px;
+                font-weight: 400;            
+            }
+        }
+    }
+    .recent {
+        .resent-activity {
+            box-shadow:5px 5px 10px rgba(0,0,0,0.05) , -5px -5px 10px rgba(0,0,0,0.05);
+            background:white;
+            .resent-activity-header {
+                h4 {
+                    font-size: 19px;
+                    color:#222;
+                }
+                svg {
+                    cursor: pointer;
+                }
+            }
+            .resent-activity-body {
+                padding-left: 20px;
+                position:relative;
+                &::after{
+                    content:"";
+                    position:absolute;
+                    width:2px;
+                    height: calc(100% - 10px);
+                    background-color: #ccc;
+                    top:52%;
+                    left: 0;
+                    transform: translate(0 , -50%);
+                    -webkit-transform: translate(0 , -50%);
+                    -moz-transform: translate(0 , -50%);
+                    -ms-transform: translate(0 , -50%);
+                    -o-transform: translate(0 , -50%);
+}  
+                ul {
+                    li {
+                        span {
+                            position:relative;
+                            font-size:15px;
+                            color:$color_777777;
+                            font-weight: 500;
+                            &::after{
+                                z-index: 5;
+                                content:"";
+                                position:absolute;
+                                top:6px;
+                                left:-20px;
+                                width:12px;
+                                height: 12px;
+                                border-radius: 50%;
+                                -webkit-border-radius: 50%;
+                                -moz-border-radius: 50%;
+                                -ms-border-radius: 50%;
+                                -o-border-radius: 50%;
+                                background-color: $color_FFD233;
+                                transform: translate(-50% , 0);
+                                -webkit-transform: translate(-50% , 0);
+                                -moz-transform: translate(-50% , 0);
+                                -ms-transform: translate(-50% , 0);
+                                -o-transform: translate(-50% , 0);
+                            }  
+                        }
+                        p {
+                            color:#000;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+        .resent-review {
+            box-shadow:5px 5px 10px rgba(0,0,0,0.05) , -5px -5px 10px rgba(0,0,0,0.05);
+            background:white;
+            .resent-review-header {
+                h4 {
+                    font-size: 19px;
+                    color:#555;
+                    margin: 0;
+                }
+                svg {
+                    cursor: pointer;
+                }
+                border-bottom:1px solid #ddd;
+            }
+            .resent-review-body {
+                ul {
+                    li {
+                        padding:13.5px 0;
+                        .element {
+                            .image {
+                                width:50px;
+                                height: 50px;
+                                img {
+                                    width:100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                            .info {
+                                h4 {
+                                    font-size: 15px;
+                                }
+                                p {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                    li:not(:last-of-type) {
+                        border-bottom:1px solid #ddd
+                    }
+                }
+            }
+        }
+    }
 }
