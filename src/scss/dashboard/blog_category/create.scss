@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.create-blog-category {
+    .form {
+        form {
+            > .input {
+                padding: 15px;
+                background-color: white;
+                input {
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+}

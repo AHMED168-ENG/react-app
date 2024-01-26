@@ -1,6 +1,6 @@
 import "../../../scss/dashboard/product/all.scss"
 import React, { useEffect, useState } from 'react';
-import { Dropdown, Modal, Switch, Table, Tag, Upload } from 'antd';
+import { Dropdown, InputNumber, Modal, Select, Switch, Table, Tag, Upload } from 'antd';
 import DashboardBreadcrumb from '../bradcrump';
 import { IoSearchSharp } from "react-icons/io5";
 import { Area } from '@ant-design/charts';
@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 
 function DashboardAllProductComponent() {
@@ -34,10 +36,6 @@ function DashboardAllProductComponent() {
         {
           title: 'Price',
           dataIndex: 'price',
-          sorter: {
-            compare: (a, b) => a.price,
-            multiple: 3,
-          },
         },
         {
           title: 'Category',
@@ -119,6 +117,7 @@ function DashboardAllProductComponent() {
       {
           key: '2',
           title: 'title',
+          description:"description",
           price: "200.2 $",
           category: "category 1",
           brands: "Adidas",
@@ -133,6 +132,7 @@ function DashboardAllProductComponent() {
       {
           key: '2',
           title: 'title',
+          description:"description",
           price: "200.2 $",
           category: "category 1",
           brands: "Adidas",
@@ -147,6 +147,7 @@ function DashboardAllProductComponent() {
       {
           key: '2',
           title: 'title',
+          description:"description",
           price: "200.2 $",
           category: "category 1",
           brands: "Adidas",
@@ -161,6 +162,7 @@ function DashboardAllProductComponent() {
       {
           key: '2',
           title: 'title',
+          description:"description",
           price: "200.2 $",
           category: "category 1",
           brands: "Adidas",
@@ -175,6 +177,7 @@ function DashboardAllProductComponent() {
       {
           key: '2',
           title: 'title',
+          description:"description",
           price: "200.2 $",
           category: "category 1",
           brands: "Adidas",
@@ -189,6 +192,7 @@ function DashboardAllProductComponent() {
       {
           key: '2',
           title: 'title',
+          description:"description",
           price: "200.2 $",
           category: "category 1",
           brands: "Adidas",
@@ -203,6 +207,7 @@ function DashboardAllProductComponent() {
       {
           key: '2',
           title: 'title',
+          description:"description",
           price: "200.2 $",
           category: "category 1",
           brands: "Adidas",
@@ -215,7 +220,9 @@ function DashboardAllProductComponent() {
           Actions: '1',
       },
     ];
-
+    const onChangeTable = (pagination, filters, sorter, extra) => {
+      console.log('params', pagination, filters, sorter, extra);
+    };
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([
@@ -620,72 +627,156 @@ function DashboardAllProductComponent() {
                 <div className="header-modal">
                     <h5 className='text-capitalize text-center'>Create Product</h5>
                 </div>
-                  <form action="" className='d-flex flex-column gap-2'>
+                <form action="" className='d-flex flex-column gap-2'>
                     <div className="input">
-                      <label htmlFor="fName" className='text-capitalize'>first name</label>
-                      <input id='fName' type="text" className='form-control' />
+                      <label htmlFor="title" className='text-capitalize'>title</label>
+                      <input id='title' type="text" className='form-control' />
                     </div>
                     <div className="input">
-                      <label htmlFor="lName" className='text-capitalize'>last name</label>
-                      <input type="text" id='lName' className='form-control' />
+                      <label htmlFor="description" className='text-capitalize'>Description</label>
+                      <CKEditor
+                        config={{
+                          items: [
+                            'undo', 'redo',
+                            '|', 'heading',
+                            '|', 'fontfamily', 'fontsize', 'fontColor', 'fontBackgroundColor',
+                            '|', 'bold', 'italic', 'strikethrough', 'subscript', 'superscript', 'code',
+                            '|', 'link', 'uploadImage', 'blockQuote', 'codeBlock',
+                            '|', 'alignment',
+                            '|', 'bulletedList', 'numberedList', 'todoList', 'outdent', 'indent'
+                        ],
+                        shouldNotGroupWhenFull: true                    
+                        }}
+                        editor={ ClassicEditor }
+                        data="<p>product description</p>"
+                        onChange={ ( event , editor ) => {
+                            console.log( editor.getData() );
+                        }}
+                      />
                     </div>
                     <div className="input">
-                      <label htmlFor="email" className='text-capitalize'>email</label>
-                      <input type="email" id='email' className='form-control' />
+                      <label htmlFor="price" className='text-capitalize'>price with dollar</label>
+                      <input type="number" id='price' className='form-control' />
                     </div>
                     <div className="input">
-                      <label htmlFor="password" className='text-capitalize'>password</label>
-                      <input type="password" id='password' className='form-control' />
+                      <label htmlFor="category" className='text-capitalize'>category</label>
+                      <Select
+                        defaultValue=""
+                        className='d-block'
+                        style={{ width: "100%" , "background":"#eee !important"}}
+                        onChange={(value) => console.log(value)}
+                        options={[
+                          { value: 'category1', label: 'category1' },
+                          { value: 'category2', label: 'category2' },
+                          { value: 'category3', label: 'category3' },
+                          { value: 'category4', label: 'category4' },
+                        ]}
+                      />
                     </div>
                     <div className="input">
-                      <label htmlFor="resetPassword" className='text-capitalize'>reset password</label>
-                      <input type="password" id='resetPassword' className='form-control' />
+                      <label htmlFor="brand" className='text-capitalize'>brand</label>
+                      <Select
+                        mode="multiple"
+                        allowClear
+                        className='d-block'
+                        style={{ width: "100%" , "background":"#eee !important"}}
+                        onChange={(value) => console.log(value)}
+                        options={[
+                          { value: 'brand1', label: 'brand1' },
+                          { value: 'brand2', label: 'brand2' },
+                          { value: 'brand3', label: 'brand3' },
+                          { value: 'brand4', label: 'brand4' },
+                        ]}
+                      />
                     </div>
                     <div className="input">
-                      <label htmlFor="mobile" className='text-capitalize'>mobile</label>
-                      <input type="text" id='mobile' className='form-control' />
+                      <label htmlFor="quantity" className='text-capitalize'>quantity</label>
+                      <InputNumber
+                        style={{ width: "100%" , "background":"#eee !important"}}
+                        min={1} max={10} defaultValue={3} onChange={(value) => console.log(value)} />
                     </div>
-               
                     <div className="input">
-                      <label htmlFor="role" className='text-capitalize'>role</label>
-                      <select name="role" id="role" className='form-control'>
-                        <option value="user"></option>
-                        <option value="user">User</option>
-                        <option value="admin">Admin</option>
-                        <option value="super admin">super Admin</option>
-                      </select>
+                      <label htmlFor="discount" className='text-capitalize'>discount</label>
+                      <InputNumber 
+                        style={{ width: "100%" , "background":"#eee !important"}}
+                        min={1} max={10} defaultValue={3} onChange={(value) => console.log(value)} />
                     </div>
-               
-                    <div className="input ">
-                      <label htmlFor="address" className='text-capitalize'>address</label>
-                      <input type="text" id='address' className='form-control' />
+                    <div className="input">
+                      <label className='text-capitalize'>discount type</label>
+                      <Select
+                        defaultValue={"amount"}
+                        className='d-block'
+                        style={{ width: "100%" , "background":"#eee !important"}}
+                        onChange={(value) => console.log(value)}
+                        options={[
+                          { value: 'amount', label: 'amount' },
+                          { value: 'dollar', label: 'dollar' }
+                        ]}
+                      />
+                    </div>
+                    <div className="input">
+                      <label htmlFor="sold" className='text-capitalize'>sold</label>
+                      <InputNumber 
+                        style={{ width: "100%" , "background":"#eee !important"}}
+                        min={1} max={10} defaultValue={3} onChange={(value) => console.log(value)} />
+                    </div>
+                    <div className="input">
+                      <label htmlFor="colors" className='text-capitalize'>colors</label>
+                      <Select
+                        className='d-block select-color'
+                        style={{ width: "100%" , "background":"#eee !important"}}
+                        onChange={(value) => console.log(value)}
+                      >
+                        <option value="">
+                          <span style={{background:"red"}}></span> red
+                        </option>
+                        <option value="">
+                          <span style={{background:"green"}}></span> green
+                        </option>
+                        <option value="">
+                          <span style={{background:"yellow"}}></span> yellow
+                        </option>
+                      </Select>
+                    </div>
+                    <div className="input">
+                      <label htmlFor="tags" className='text-capitalize'>tags</label>
+                      <Select
+                        mode="multiple"
+                        allowClear
+                        className='d-block'
+                        style={{ width: "100%" , "background":"#eee !important"}}
+                        onChange={(value) => console.log(value)}
+                        options={[
+                          { value: 'tags1', label: 'tags1' },
+                          { value: 'tags2', label: 'tags2' },
+                          { value: 'tags3', label: 'tags3' },
+                          { value: 'tags4', label: 'tags4' },
+                        ]}
+                      />
+                    </div>
+                    <div className="input">
+                      <label htmlFor="product images" className='text-capitalize'>product Images</label>
+                      <Upload
+                        action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+                        listType="picture-card"
+                        fileList={fileList}
+                        onChange={onChange}
+                        onPreview={onPreview}
+                        className="avatar-uploader"
+                      >
+                        {fileList.length < 5 && '+ Upload'}
+                      </Upload>
                     </div>
                     <div className='d-flex gap-5 mb-4'>
                       <div className="input">
-                        <label htmlFor="fName" className='text-capitalize d-block'>is Blocked</label>
-                        <Switch defaultChecked onChange={(checked) => {
-                          console.log(checked)
-                        }} />
-                      </div>
-                      <div className="input">
-                        <label htmlFor="fName" className='text-capitalize d-block'>is Active</label>
+                        <label className='text-capitalize d-block'>is Active</label>
                         <Switch defaultChecked onChange={(checked) => {
                           console.log(checked)
                         }} />
                       </div>
                     </div>
-                    <div className="input">
-                      <ImgCrop rotationSlider>
-                        <Upload
-                          action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
-                          listType="picture-card"
-                          fileList={fileList}
-                          onChange={onChange}
-                          onPreview={onPreview}
-                        >
-                          {fileList.length < 5 && '+ Upload'}
-                        </Upload>
-                      </ImgCrop>
+                    <div className="">
+                      <button className='btn btn-primary btn-block w-100'>Create</button>
                     </div>
                   </form>
                 </Modal>
@@ -704,7 +795,6 @@ function DashboardAllProductComponent() {
                   </button>
 
                   <input
-                    onInput="searchAchivement"
                     type="text"
                     className="textbox"
                     placeholder="Search"
@@ -712,7 +802,7 @@ function DashboardAllProductComponent() {
                 </form>
             </div>
             <div className="table-wrapper">
-              <Table pagination={false} columns={columns} dataSource={data} onChange={onChange} />
+              <Table pagination={false} columns={columns} dataSource={data} onChange={onChangeTable} />
             </div>
         </div>
     )

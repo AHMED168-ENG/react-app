@@ -88,7 +88,7 @@ const DashboardSidebar = (props) => {
                 label: 'Product Category List',
               },
               {
-                key: '/dashboard/category/add',
+                key: '/dashboard/product-category/add',
                 icon: <TbCategory2 className='fs-6' />,
                 label: 'Add product Category',
               },
@@ -172,12 +172,12 @@ const DashboardSidebar = (props) => {
             label: 'Blog',
             children : [
               {
-                key: '/dashboard/Blog',
+                key: '/dashboard/blog',
                 icon: <ImBlog className='fs-6' />,
                 label: 'Blog List',
               },
               {
-                key: '/dashboard/Blog/add',
+                key: '/dashboard/blog/add',
                 icon: <ImBlog className='fs-6' />,
                 label: 'Add Blog',
               },
@@ -195,17 +195,17 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/Blog-category',
+            key: '/dashboard/blog-category',
             icon: <TbCategory2 className='fs-6' />,
             label: 'Blog Category',
             children : [
               {
-                key: '/dashboard/Blog-category',
+                key: '/dashboard/blog-category',
                 icon: <TbCategory2 className='fs-6' />,
                 label: 'Blog Category List',
               },
               {
-                key: '/dashboard/category/add',
+                key: '/dashboard/blog-category/add',
                 icon: <TbCategory2 className='fs-6' />,
                 label: 'Add Blog Category',
               },

@@ -1,8 +1,4 @@
-import {Outlet, Route, Routes } from 'react-router-dom';
-import DashboardLayout from './pages/dashboard/layout';
-import DashboardLogin from './pages/dashboard/login';
-import PageNotFound from './pages/404';
-import DashboardRegister from './pages/dashboard/register';
+import {Routes } from 'react-router-dom';
 
 function Dashboard() { 
   return (

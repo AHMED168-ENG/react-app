@@ -8,6 +8,7 @@ import DashboardFooter from '../../components/dashboard/footer';
 
 const { Content } = Layout;
 const LayoutComponent = () => {
+  window.scrollTo(0,0)
   const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout>

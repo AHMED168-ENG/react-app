@@ -98,6 +98,9 @@ function DashboardCreateCustomerComponent() {
               }} />
             </div>
           </div>
+          <div className="">
+            <button className='btn btn-primary btn-block w-100'>Create</button>
+          </div>
         </form>
       </div>
     </div>

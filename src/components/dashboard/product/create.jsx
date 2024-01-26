@@ -2,15 +2,13 @@
 import React, { useState } from 'react';
 import DashboardBreadcrumb from '../bradcrump';
 import ImgCrop from 'antd-img-crop';
-import { Select, Switch, Upload } from 'antd';
+import { Select, Switch, Upload , InputNumber } from 'antd';
 import "../../../scss/dashboard/product/create.scss";
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function DashboardCreateProductComponent() {
-  const [fileList, setFileList] = useState([
-
-  ]);
+  const [fileList, setFileList] = useState([]);
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
@@ -95,55 +93,93 @@ function DashboardCreateProductComponent() {
             />
           </div>
           <div className="input">
-            <label htmlFor="resetPassword" className='text-capitalize'>reset password</label>
-            <input type="password" id='resetPassword' className='form-control' />
+            <label htmlFor="quantity" className='text-capitalize'>quantity</label>
+            <InputNumber 
+              style={{ width: "100%" , "background":"#eee !important"}}
+              min={1} max={10} defaultValue={3} onChange={(value) => console.log(value)} />
           </div>
           <div className="input">
-            <label htmlFor="mobile" className='text-capitalize'>mobile</label>
-            <input type="text" id='mobile' className='form-control' />
+            <label htmlFor="discount" className='text-capitalize'>discount</label>
+            <InputNumber 
+              style={{ width: "100%" , "background":"#eee !important"}}
+              min={1} max={10} defaultValue={3} onChange={(value) => console.log(value)} />
           </div>
-   
           <div className="input">
-            <label htmlFor="role" className='text-capitalize'>role</label>
-            <select name="role" id="role" className='form-control'>
-              <option value="user"></option>
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-              <option value="super admin">super Admin</option>
-            </select>
+            <label className='text-capitalize'>discount type</label>
+            <Select
+              defaultValue={"amount"}
+              className='d-block'
+              style={{ width: "100%" , "background":"#eee !important"}}
+              onChange={(value) => console.log(value)}
+              options={[
+                { value: 'amount', label: 'amount' },
+                { value: 'dollar', label: 'dollar' }
+              ]}
+            />
           </div>
-      
-          <div className="input ">
-            <label htmlFor="address" className='text-capitalize'>address</label>
-            <input type="text" id='address' className='form-control' />
-          </div>
-
           <div className="input">
-            <ImgCrop rotationSlider>
-              <Upload
-                action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
-                listType="picture-card"
-                fileList={fileList}
-                onChange={onChange}
-                onPreview={onPreview}
-              >
-                {fileList.length < 5 && '+ Upload'}
-              </Upload>
-            </ImgCrop>
+            <label htmlFor="sold" className='text-capitalize'>sold</label>
+            <InputNumber 
+              style={{ width: "100%" , "background":"#eee !important"}}
+              min={1} max={10} defaultValue={3} onChange={(value) => console.log(value)} />
+          </div>
+          <div className="input">
+            <label htmlFor="colors" className='text-capitalize'>colors</label>
+            <Select
+              className='d-block select-color'
+              style={{ width: "100%" , "background":"#eee !important"}}
+              onChange={(value) => console.log(value)}
+            >
+              <option value="">
+                <span style={{background:"red"}}></span> red
+              </option>
+              <option value="">
+                <span style={{background:"green"}}></span> green
+              </option>
+              <option value="">
+                <span style={{background:"yellow"}}></span> yellow
+              </option>
+            </Select>
+          </div>
+          <div className="input">
+            <label htmlFor="tags" className='text-capitalize'>tags</label>
+            <Select
+              mode="multiple"
+              allowClear
+              className='d-block'
+              style={{ width: "100%" , "background":"#eee !important"}}
+              onChange={(value) => console.log(value)}
+              options={[
+                { value: 'tags1', label: 'tags1' },
+                { value: 'tags2', label: 'tags2' },
+                { value: 'tags3', label: 'tags3' },
+                { value: 'tags4', label: 'tags4' },
+              ]}
+            />
+          </div>
+          <div className="input">
+            <label htmlFor="product images" className='text-capitalize'>product Images</label>
+            <Upload
+              action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
+              listType="picture-card"
+              fileList={fileList}
+              onChange={onChange}
+              onPreview={onPreview}
+              className="avatar-uploader"
+            >
+              {fileList.length < 5 && '+ Upload'}
+            </Upload>
           </div>
           <div className='d-flex gap-5 mb-4'>
             <div className="input">
-              <label htmlFor="fName" className='text-capitalize d-block'>is Blocked</label>
+              <label className='text-capitalize d-block'>is Active</label>
               <Switch defaultChecked onChange={(checked) => {
                 console.log(checked)
               }} />
             </div>
-            <div className="input">
-              <label htmlFor="fName" className='text-capitalize d-block'>is Active</label>
-              <Switch defaultChecked onChange={(checked) => {
-                console.log(checked)
-              }} />
-            </div>
+          </div>
+          <div className="">
+            <button className='btn btn-primary btn-block w-100'>Create</button>
           </div>
         </form>
       </div>

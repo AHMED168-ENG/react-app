@@ -28,13 +28,24 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import PageNotFound from './pages/404';
 import DashboardLayout from './pages/dashboard/layout';
 import DashboardLogin from './pages/dashboard/login';
-import DashboardRegister from './pages/dashboard/register';
 import DashboardForgetPasswordPage from './pages/dashboard/forget_password';
 import DashboardPage from './pages/dashboard/dashboard';
 import DashboardCustomerCreate from './pages/dashboard/customer/create';
 import DashboardCustomerAll from './pages/dashboard/customer/all';
 import DashboardProductAll from './pages/dashboard/product/all';
 import DashboardProductCreate from './pages/dashboard/product/create';
+import DashboardProductCategoryAll from './pages/dashboard/product_category/all';
+import DashboardProductCategoryCreate from './pages/dashboard/product_category/create';
+import DashboardBrandAll from './pages/dashboard/brand/all';
+import DashboardBrandCreate from './pages/dashboard/brand/create';
+import DashboardCouponAll from './pages/dashboard/coupon/all';
+import DashboardCouponCreate from './pages/dashboard/coupon/create';
+import DashboardColorCreate from './pages/dashboard/color/create';
+import DashboardColorAll from './pages/dashboard/color/all';
+import DashboardBlogAll from './pages/dashboard/blog/all';
+import DashboardBlogCreate from './pages/dashboard/blog/create';
+import DashboardBlogCategoryCreate from './pages/dashboard/blog_categorys/create';
+import DashboardBlogCategoryAll from './pages/dashboard/blog_categorys/all';
  
 function App() {
   window.Swal = Swal.mixin({
@@ -93,10 +104,33 @@ function App() {
                     <Route index element={<DashboardProductAll/>}></Route>
                     <Route path='add' element={<DashboardProductCreate/>}></Route>
                   </Route>
+                  <Route path='product-category' element={<Outlet/>}>
+                    <Route index element={<DashboardProductCategoryAll/>}></Route>
+                    <Route path='add' element={<DashboardProductCategoryCreate />}></Route>
+                  </Route>
+                  <Route path='brand' element={<Outlet/>}>
+                    <Route index element={<DashboardBrandAll/>}></Route>
+                    <Route path='add' element={<DashboardBrandCreate />}></Route>
+                  </Route>
+                  <Route path='coupon' element={<Outlet/>}>
+                    <Route index element={<DashboardCouponAll/>}></Route>
+                    <Route path='add' element={<DashboardCouponCreate />}></Route>
+                  </Route>
+                  <Route path='color' element={<Outlet/>}>
+                    <Route index element={<DashboardColorAll/>}></Route>
+                    <Route path='add' element={<DashboardColorCreate />}></Route>
+                  </Route>
+                  <Route path='blog' element={<Outlet/>}>
+                    <Route index element={<DashboardBlogAll/>}></Route>
+                    <Route path='add' element={<DashboardBlogCreate />}></Route>
+                  </Route>
+                  <Route path='blog-category' element={<Outlet/>}>
+                    <Route index element={<DashboardBlogCategoryAll/>}></Route>
+                    <Route path='add' element={<DashboardBlogCategoryCreate />}></Route>
+                  </Route>
               </Route>
               <Route path='login' element={<DashboardLogin/>}></Route>
               <Route path='forget-password' element={<DashboardForgetPasswordPage/>}></Route>
-              <Route path='register' element={<DashboardRegister/>}></Route>
           </Route>
           <Route
               path="*"

@@ -111,7 +111,7 @@ function DashboardAllCustomerComponent() {
     const data = [
     {
         key: '1',
-        FirstName: 'John',
+        FirstName: 'ahmed',
         LastName: 'Brown',
         Email: "ahmed.dev@gmail.com",
         Mobile: "01024756410",
@@ -172,7 +172,9 @@ function DashboardAllCustomerComponent() {
     },
   
     ];
-
+    const onChangeTable = (pagination, filters, sorter, extra) => {
+      console.log('params', pagination, filters, sorter, extra);
+    };
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
@@ -201,9 +203,7 @@ function DashboardAllCustomerComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about image upload /\/\/\/\/\/\//\/\/\/\/\
-    const [fileList, setFileList] = useState([
-
-    ]);
+    const [fileList, setFileList] = useState([]);
     const onChange = ({ fileList: newFileList }) => {
       setFileList(newFileList);
     };
@@ -328,7 +328,6 @@ function DashboardAllCustomerComponent() {
                   </button>
 
                   <input
-                    onInput="searchAchivement"
                     type="text"
                     class="textbox"
                     placeholder="Search"
@@ -336,7 +335,7 @@ function DashboardAllCustomerComponent() {
                 </form>
             </div>
             <div className="table-wrapper">
-              <Table pagination={false} columns={columns} dataSource={data} onChange={onChange} />
+              <Table pagination={false} columns={columns} dataSource={data} onChange={onChangeTable} />
             </div>
         </div>
     )
