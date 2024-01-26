@@ -235,11 +235,9 @@
             .resent-review-header {
                 h4 {
                     font-size: 19px;
-                    color:#666;
+                    color:#222;
                     margin: 0;
-                    &:hover {
-                        text-decoration: underline;
-                    }
+               
                 }
                 svg {
                     cursor: pointer;
@@ -249,7 +247,7 @@
             .resent-review-body {
                 ul {
                     li {
-                        padding:13.5px 0;
+                        padding:11.6px 0;
                         .element {
                             .image {
                                 width:50px;
@@ -263,6 +261,10 @@
                             .info {
                                 h4 {
                                     font-size: 15px;
+                                    color:#333;
+                                    &:hover {
+                                        text-decoration: underline;
+                                    }
                                 }
                                 p {
                                     font-size: 14px;

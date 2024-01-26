@@ -1,0 +1,22 @@
+
+
+.breadcrumb {
+    background:white;
+    
+    p {
+        font-size:16px;
+        text-transform: capitalize;
+        font-weight: 500;
+        a {
+            color:#000;
+        }
+        span:last-of-type {
+            opacity: 0.7;
+        }
+        a:first-of-type {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}

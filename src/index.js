@@ -12,7 +12,7 @@ root.render(
   <React.StrictMode>
       <BrowserRouter>
           <App enableSmoothScroll={false} />
-          <Dashboard enableSmoothScroll={false} />
+          {/* <Dashboard enableSmoothScroll={false} /> */}
       </BrowserRouter>
   </React.StrictMode>
 );

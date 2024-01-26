@@ -2,7 +2,7 @@ import React from 'react'
 import "../../scss/dashboard/dashboard/dashboard.scss"
 import { BsArrowDownLeft , BsArrowUpRight } from "react-icons/bs";
 import { CiMenuKebab } from "react-icons/ci";
-import { Dropdown, Select } from 'antd';
+import { Dropdown, Select, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import { TiArrowUnsorted } from "react-icons/ti";
 import { Column , Pie } from '@ant-design/plots';
@@ -99,38 +99,12 @@ export default function Dashboard() {
 
   ];
 
-  const pieData = [
-    {
-      type: '分类一',
-      value: 27,
-    },
-    {
-      type: '分类二',
-      value: 25,
-    },
-    {
-      type: '分类三',
-      value: 18,
-    },
-    {
-      type: '分类四',
-      value: 15,
-    },
-    {
-      type: '分类五',
-      value: 10,
-    },
-    {
-      type: '其他',
-      value: 5,
-    },
-  ];
-
   const tableData = [
     {
       key: '1',
       name: 'John Brown',
       age: 32,
+      status : "green",
       color:"red",
       address: 'New York No. 1 Lake Park',
     },
@@ -138,6 +112,7 @@ export default function Dashboard() {
       key: '2',
       name: 'Joe Black',
       age: 42,
+      status : "warning",
       color:"green",
       address: 'London No. 1 Lake Park',
     },
@@ -145,6 +120,7 @@ export default function Dashboard() {
       key: '3',
       name: 'Jim Green',
       age: 32,
+      status : "success",
       color:"yellow",
       address: 'Sydney No. 1 Lake Park',
     },
@@ -152,6 +128,15 @@ export default function Dashboard() {
       key: '4',
       name: 'Jim Red',
       age: 32,
+      status : "geekblue",
+      color:"blue",
+      address: 'London No. 2 Lake Park',
+    },
+    {
+      key: '5',
+      name: 'Jim Red',
+      age: 32,
+      status : "red",
       color:"blue",
       address: 'London No. 2 Lake Park',
     },
@@ -280,19 +265,26 @@ export default function Dashboard() {
       ...getColumnSearchProps('age'),
     },
     {
+      title: 'Status',
+      dataIndex: 'status',
+      key: 'status',
+      render: (tags) => {
+        return <span >
+          <Tag color={tags}>
+            {tags}
+          </Tag>
+        </span>
+      },
+      width: '20%',
+    },
+    {
       title: 'color',
       dataIndex: 'color',
       key: 'color',
       width: '20%',
       ...getColumnSearchProps('color'),
     },
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-      width: '20%',
-      ...getColumnSearchProps('age'),
-    },
+
     {
       width: '20%',
       title: 'Address',
@@ -305,34 +297,36 @@ export default function Dashboard() {
   ];
   return (
     <div className="dashboard">
-      <header className='mb-5 px-3 d-flex align-items-center justify-content-between'>
-        <h2 className='text-capitalize'>Dashboard</h2>
-        <div className='head-right d-flex gap-2'>
-          <Select
-            suffixIcon={<TiArrowUnsorted />}
-            defaultValue="7 october 2022"
-            // onChange={}
-            options={[
-              {
-                value: '7 october 2022',
-                label: '7 october 2022',
-              },
-              {
-                value: '7 october 2022',
-                label: '7 october 2022',
-              },
-              {
-                value: 'Yiminghe',
-                label: 'yiminghe',
-              },
-              {
-                value: 'disabled',
-                label: 'Disabled',
-                disabled: true,
-              },
-            ]}
-          />
-          <button className='text-capitalize'>Export</button>
+      <header className='mb-5 px-3 '>
+        <div className='bg-white p-3 d-flex align-items-center justify-content-between'>
+          <h2 className='text-capitalize'>Dashboard</h2>
+          <div className='head-right d-flex gap-2'>
+            <Select
+              suffixIcon={<TiArrowUnsorted />}
+              defaultValue="7 october 2022"
+              // onChange={}
+              options={[
+                {
+                  value: '7 october 2022',
+                  label: '7 october 2022',
+                },
+                {
+                  value: '7 october 2022',
+                  label: '7 october 2022',
+                },
+                {
+                  value: 'Yiminghe',
+                  label: 'yiminghe',
+                },
+                {
+                  value: 'disabled',
+                  label: 'Disabled',
+                  disabled: true,
+                },
+              ]}
+            />
+            <button className='text-capitalize'>Export</button>
+          </div>
         </div>
       </header>
       <div className="statistics">
@@ -500,8 +494,8 @@ export default function Dashboard() {
             <div className="content p-4">
                 <div className="content-header mb-3 d-flex justify-content-between">
                     <h5 className='text-capitalize'>total orders</h5>
-                              <Dropdown
-                      align={{ offset: [0, 40] }}
+                      <Dropdown
+                        align={{ offset: [0, 40] }}
                         menu={{
                           items : [{
                               key: 'notification1',
@@ -561,7 +555,7 @@ export default function Dashboard() {
                 data,
                 xField: 'type',
                 yField: 'sales',
-                colors : ["#001122", "#003322", "#004422", "#005522", "#006622", "#007722", "#008822" ] ,
+                colorField:'l(270) 0:#7facebeb 0.5:#7ec2f3 1:#1890ff' ,
                 label: {
                   style: {
                     fill: '#ddd444',

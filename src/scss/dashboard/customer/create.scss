@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.create-customer {
+    .form {
+        form {
+            > .input {
+                padding: 15px;
+                background-color: white;
+                input {
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+}

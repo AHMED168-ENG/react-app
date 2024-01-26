@@ -4,6 +4,7 @@ import DashboardMenu from '../../components/dashboard/menu';
 import DashboardSidebar from '../../components/dashboard/sidebar';
 import { Outlet } from 'react-router-dom';
 import "../../scss/dashboard/layout.scss"
+import DashboardFooter from '../../components/dashboard/footer';
 
 const { Content } = Layout;
 const LayoutComponent = () => {
@@ -23,6 +24,7 @@ const LayoutComponent = () => {
         >
           <Outlet></Outlet>
         </Content>
+        <DashboardFooter></DashboardFooter>
       </Layout>
     </Layout>
   );
