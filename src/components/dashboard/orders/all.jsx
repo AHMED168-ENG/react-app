@@ -1,6 +1,6 @@
-import "../../../scss/dashboard/brand/all.scss"
+import "../../../scss/dashboard/blog/all.scss"
 import React, { useEffect, useState } from 'react';
-import { Dropdown, Modal, Switch, Table, Tag } from 'antd';
+import { Dropdown,Table } from 'antd';
 import DashboardBreadcrumb from '../bradcrump';
 import { IoSearchSharp } from "react-icons/io5";
 import { Area } from '@ant-design/charts';
@@ -9,34 +9,39 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
-import { BrandServer } from "../../../store/reducers/brand/brand_server";
 import { useDispatch, useSelector } from "react-redux";
+import { OrderServer } from "../../../store/reducers/order/order_server";
+// DashboardOrdersComponent
 
-
-function DashboardBrandComponent() {
+function DashboardOrdersComponent() {
     let page = 1
     const dispatch = useDispatch()
-    const brands = useSelector(state => state.brandReducer.brands)
+    const orders = useSelector(state => state.orderReducer.orders)
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
-          title: 'title',
-          dataIndex: 'title',
+          title: 'order status',
+          dataIndex: 'order_status',
           sorter: {
-            compare: (a, b) => a.title.localeCompare(b.title),
+            compare: (a, b) => a.order_status.localeCompare(b.order_status),
             multiple: 3,
           },
+        },       
+        {
+          title: 'name',
+          dataIndex: 'ordered_by',
+          render(ordered_by) {
+            return ordered_by.firstName + " " + ordered_by.lastName
+          }
         },
         {
-          title: 'Active',
-          dataIndex: 'active',
-          render: (tags) => {
-            return (<Tag color={`${tags ? "green" : "red"}`}> 
-                      {tags ? "yes" : "false"}
-                  </Tag>)
-           
-          },
+          title: 'email',
+          dataIndex: 'ordered_by',
+          render(ordered_by) {
+            return ordered_by.email
+          }
         },
+       
         {
           title: 'Actions',
           dataIndex: 'Actions',
@@ -48,21 +53,21 @@ function DashboardBrandComponent() {
                 items : [{
                     key: 'edit',
                     label: (
-                      <Link to={`/dashboard/ProductCategory/${id}`}>
-                        <CiEdit> </CiEdit> Edit Brand
+                      <Link to={`/dashboard/orders/${id}`}>
+                        <CiEdit> </CiEdit> Edit blog
                       </Link>
                     ),
                   },
                   {
                     key: 'notification3',
                     label: (
-                      <button><MdOutlineNotificationsActive></MdOutlineNotificationsActive> Active Brand</button>
+                      <button><MdOutlineNotificationsActive></MdOutlineNotificationsActive> Active blog</button>
                     ),
                   },
                   {
                     key: 'notification2',
                     label: (
-                      <button><MdDeleteOutline></MdDeleteOutline> Delete Brand</button>
+                      <button><MdDeleteOutline></MdDeleteOutline> Delete blog</button>
                     ),
                   }]
               }}
@@ -75,7 +80,7 @@ function DashboardBrandComponent() {
           },
         },
     ];
-    const data = brands.docs || [];
+    const data = orders.docs || [];
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
@@ -83,7 +88,7 @@ function DashboardBrandComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
-      dispatch(BrandServer({page , limit:process.env.REACT_APP_LIMIT}))  
+      dispatch(OrderServer({page , limit:process.env.REACT_APP_LIMIT}))  
       asyncFetch();
     }, []);
   
@@ -103,49 +108,13 @@ function DashboardBrandComponent() {
         range: [0, 1],
         tickCount: 5,
       },
-
     }
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
-
-    const [open, setOpen] = useState(false);
-
     return (
-        <div className='all-category'>
-            <DashboardBreadcrumb className="mb-3" title={"All Brand"}></DashboardBreadcrumb>
+        <div className='all-blog'>
+            <DashboardBreadcrumb className="mb-3" title={"All Blog"}></DashboardBreadcrumb>
            
             <div className="process mb-5">
-              <div className="modal-wrapper mb-2">
-                <button className='text-capitalize btn btn-primary btn-sm w-100' onClick={() => setOpen(true)}>
-                  create Brand
-                </button>
-                <Modal
-                  title=""
-                  centered
-                  open={open}
-                  onOk={() => setOpen(false)}
-                  onCancel={() => setOpen(false)}
-                  width={1000}
-                >
-                <div className="header-modal">
-                    <h5 className='text-capitalize text-center'>Create Brand</h5>
-                </div>
-                  <form action="" className='d-flex flex-column gap-2'>
-                    <div className="input">
-                      <label htmlFor="title" className='text-capitalize'>title</label>
-                      <input id='title' type="text" className='form-control' />
-                    </div>
-
-                    <div className='d-flex gap-5 mb-4'>
-                      <div className="input">
-                        <label className='text-capitalize d-block'>is Active</label>
-                        <Switch defaultChecked onChange={(checked) => {
-                          console.log(checked)
-                        }} />
-                      </div>
-                    </div>
-                  </form>
-                </Modal>
-              </div>
               <button className='text-capitalize btn btn-success btn-sm mb-2 w-100'>
                 download Excel
               </button>
@@ -155,7 +124,7 @@ function DashboardBrandComponent() {
             </div>
             <div className="search">
                 <form className="form_search_box">
-                  <button title="Search" className="button">
+                  <button onClick="" title="Search" className="button">
                     <IoSearchSharp></IoSearchSharp>
                   </button>
 
@@ -173,7 +142,7 @@ function DashboardBrandComponent() {
     )
 };
 
-export default DashboardBrandComponent;
+export default DashboardOrdersComponent;
 
 
 

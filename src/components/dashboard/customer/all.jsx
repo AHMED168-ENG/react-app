@@ -10,46 +10,52 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { UserServer } from "../../../store/reducers/user/user_server";
 
 
 function DashboardAllCustomerComponent() {
+    let page = 1
+    const dispatch = useDispatch()
+    const users = useSelector(state => state.userReducer.users)
+
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
           title: 'First Name',
-          dataIndex: 'FirstName',
+          dataIndex: 'firstName',
           sorter: {
-            compare: (a, b) => a.FirstName.localeCompare(b.FirstName),
+            compare: (a, b) => a.firstName.localeCompare(b.firstName),
             multiple: 3,
           },
         },
         {
           title: 'Last Name',
-          dataIndex: 'LastName',
+          dataIndex: 'lastName',
           sorter: {
-            compare: (a, b) => a.LastName.localeCompare(b.LastName),
+            compare: (a, b) => a.lastName.localeCompare(b.lastName),
             multiple: 3,
           },
         },
         {
           title: 'Email',
-          dataIndex: 'Email',
+          dataIndex: 'email',
           sorter: {
-            compare: (a, b) => a.Email.localeCompare(b.Email),
+            compare: (a, b) => a.email.localeCompare(b.email),
             multiple: 3,
           },
         },
         {
           title: 'Mobile',
-          dataIndex: 'Mobile',
+          dataIndex: 'mobile',
         },
         {
           title: 'Role',
-          dataIndex: 'Role',
+          dataIndex: 'role',
         },
         {
           title: 'Blocked',
-          dataIndex: 'Blocked',
+          dataIndex: 'isBlocked',
           render: (tags) => {
             return (<Tag color={`${tags ? "green" : "red"}`}> 
                       {tags ? "yes" : "false"}
@@ -58,11 +64,11 @@ function DashboardAllCustomerComponent() {
         },
         {
           title: 'Address',
-          dataIndex: 'Address',
+          dataIndex: 'address',
         },
         {
           title: 'Active',
-          dataIndex: 'Active',
+          dataIndex: 'active',
           render: (tags) => {
             return (<Tag color={`${tags ? "green" : "red"}`}> 
                       {tags ? "yes" : "false"}
@@ -108,70 +114,7 @@ function DashboardAllCustomerComponent() {
           },
         },
     ];
-    const data = [
-    {
-        key: '1',
-        FirstName: 'ahmed',
-        LastName: 'Brown',
-        Email: "ahmed.dev@gmail.com",
-        Mobile: "01024756410",
-        Role: "User",
-        Blocked: false,
-        Address: "Domett",
-        Active: true,
-        Actions: '1',
-
-    },
-    {
-        key: '2',
-        FirstName: 'John',
-        LastName: 'Brown',
-        Email: "ahmed.dev@gmail.com",
-        Mobile: "01024756410",
-        Role: "User",
-        Blocked: true,
-        Address: "Domett",
-        Active: false,
-        Actions: '1',
-    },
-    {
-        key: '3',
-        FirstName: 'John',
-        LastName: 'Brown',
-        Email: "ahmed.dev@gmail.com",
-        Mobile: "01024756410",
-        Role: "User",
-        Blocked: false,
-        Address: "Domett",
-        Active: true,
-        Actions: '1',
-    },
-    {
-        key: '4',
-        FirstName: 'John',
-        LastName: 'Brown',
-        Email: "ahmed.dev@gmail.com",
-        Mobile: "01024756410",
-        Role: "User",
-        Blocked: true,
-        Address: "Domett",
-        Active: false,
-        Actions: '1',
-    },
-    {
-        key: '5',
-        FirstName: 'John',
-        LastName: 'Brown',
-        Email: "ahmed.dev@gmail.com",
-        Mobile: "01024756410",
-        Role: "User",
-        Blocked: false,
-        Address: "Domett",
-        Active: true,
-        Actions: '1',
-    },
-  
-    ];
+    const data = users.docs || [];
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
@@ -179,6 +122,7 @@ function DashboardAllCustomerComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
+      dispatch(UserServer({page , limit:process.env.REACT_APP_LIMIT}))
       asyncFetch();
     }, []);
   
@@ -234,6 +178,7 @@ function DashboardAllCustomerComponent() {
                   create customer
                 </button>
                 <Modal
+                   animation={false}
                   title=""
                   centered
                   open={open}
@@ -322,20 +267,20 @@ function DashboardAllCustomerComponent() {
               <Area colorField='l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff' {...configChart} />
             </div>
             <div className="search">
-                <form class="form_search_box">
-                  <button onClick="" title="Search" class="button">
+                <form className="form_search_box">
+                  <button title="Search" className="button">
                     <IoSearchSharp></IoSearchSharp>
                   </button>
 
                   <input
                     type="text"
-                    class="textbox"
+                    className="textbox"
                     placeholder="Search"
                   />
                 </form>
             </div>
             <div className="table-wrapper">
-              <Table pagination={false} columns={columns} dataSource={data} onChange={onChangeTable} />
+              <Table pagination={false} rowKey="_id" columns={columns} dataSource={data} onChange={onChangeTable} />
             </div>
         </div>
     )

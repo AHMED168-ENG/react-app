@@ -46,6 +46,9 @@ import DashboardBlogAll from './pages/dashboard/blog/all';
 import DashboardBlogCreate from './pages/dashboard/blog/create';
 import DashboardBlogCategoryCreate from './pages/dashboard/blog_categorys/create';
 import DashboardBlogCategoryAll from './pages/dashboard/blog_categorys/all';
+import DashboardEnquiriesComponent from './components/dashboard/enquiries/all';
+import DashboardEnquiryCategoryAll from './pages/dashboard/enquiries/all';
+import DashboardOrderAll from './pages/dashboard/order/order';
  
 function App() {
   window.Swal = Swal.mixin({
@@ -127,6 +130,12 @@ function App() {
                   <Route path='blog-category' element={<Outlet/>}>
                     <Route index element={<DashboardBlogCategoryAll/>}></Route>
                     <Route path='add' element={<DashboardBlogCategoryCreate />}></Route>
+                  </Route>
+                  <Route path='enquiries' element={<Outlet/>}>
+                    <Route index element={<DashboardEnquiryCategoryAll/>}></Route>
+                  </Route>
+                  <Route path='order' element={<Outlet/>}>
+                    <Route index element={<DashboardOrderAll/>}></Route>
                   </Route>
               </Route>
               <Route path='login' element={<DashboardLogin/>}></Route>

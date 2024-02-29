@@ -11,9 +11,14 @@ import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
+import { useDispatch, useSelector } from "react-redux";
+import { BlogServer } from "../../../store/reducers/blog/blog_server";
 
 
 function DashboardBlogComponent() {
+    let page = 1
+    const dispatch = useDispatch()
+    const blogs = useSelector(state => state.blogReducer.blogs)
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
@@ -31,18 +36,30 @@ function DashboardBlogComponent() {
         {
           title: 'Category',
           dataIndex: 'category',
+          render : (category) => {
+            return category.title
+          }
         },
         {
           title: 'Num Views',
           dataIndex: 'numViews',
+          render : (numViews) => {
+            return numViews.length
+          }
         },
         {
           title: 'Likes',
           dataIndex: 'likes',
+          render : (likes) => {
+            return likes.length
+          }
         },
         {
           title: 'DisLikes',
           dataIndex: 'disLikes',
+          render : (disLikes) => {
+            return disLikes.length
+          }
         },
         {
           title: 'Author',
@@ -86,69 +103,7 @@ function DashboardBlogComponent() {
           },
         },
     ];
-    const data = [
-      {
-          key: '1',
-          title: 'title',
-          description: "description",
-          category: "category",
-          numViews: 220,
-          likes: 22,
-          disLikes: 36,
-          author: "author",
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          title: 'title',
-          description: "description",
-          category: "category",
-          numViews: 220,
-          likes: 22,
-          disLikes: 36,
-          author: "author",
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          title: 'title',
-          description: "description",
-          category: "category",
-          numViews: 220,
-          likes: 22,
-          disLikes: 36,
-          author: "author",
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          title: 'title',
-          description: "description",
-          category: "category",
-          numViews: 220,
-          likes: 22,
-          disLikes: 36,
-          author: "author",
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          title: 'title',
-          description: "description",
-          category: "category",
-          numViews: 220,
-          likes: 22,
-          disLikes: 36,
-          author: "author",
-          Active: true,
-          Actions: '1',
-      },
-
-    ];
+    const data = blogs.docs || [];
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
@@ -156,6 +111,7 @@ function DashboardBlogComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
+      dispatch(BlogServer({page , limit:process.env.REACT_APP_LIMIT}))  
       asyncFetch();
     }, []);
   
@@ -281,20 +237,20 @@ function DashboardBlogComponent() {
               <Area colorField='l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff' {...configChart} />
             </div>
             <div className="search">
-                <form class="form_search_box">
-                  <button onClick="" title="Search" class="button">
+                <form className="form_search_box">
+                  <button onClick="" title="Search" className="button">
                     <IoSearchSharp></IoSearchSharp>
                   </button>
 
                   <input
                     type="text"
-                    class="textbox"
+                    className="textbox"
                     placeholder="Search"
                   />
                 </form>
             </div>
             <div className="table-wrapper">
-              <Table pagination={false} columns={columns} dataSource={data} onChange={onChangeTable} />
+              <Table pagination={false} rowKey="_id" columns={columns} dataSource={data} onChange={onChangeTable} />
             </div>
         </div>
     )

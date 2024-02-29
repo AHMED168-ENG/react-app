@@ -9,9 +9,15 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { CouponServer } from "../../../store/reducers/coupon/coupon_server";
 
 
 function DashboardCouponComponent() {
+  let page = 1
+  const dispatch = useDispatch()
+  const coupon = useSelector(state => state.couponReducer.coupons)
+
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
@@ -40,7 +46,7 @@ function DashboardCouponComponent() {
         },
         {
           title: 'Actions',
-          dataIndex: 'Actions',
+          dataIndex: 'actions',
           render: (id) => {
             return  (
               <Dropdown
@@ -76,58 +82,8 @@ function DashboardCouponComponent() {
           },
         },
     ];
-    const data = [
-      {
-          key: '1',
-          name: 'Coupon One',
-          discount: 22,
-          discountType: "amount",
-          count: 220,
-          expiration: '2024-01-29T22:00:00.000Z',
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Coupon Tow',
-          discount: 22,
-          discountType: "amount",
-          count: 220,
-          expiration: '2024-01-29T22:00:00.000Z',
-          Active: false,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Coupon Three',
-          discount: 22,
-          discountType: "amount",
-          count: 220,
-          expiration: '2024-01-29T22:00:00.000Z',
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Coupon Four',
-          discount: 22,
-          discountType: "amount",
-          count: 220,
-          expiration: '2024-01-29T22:00:00.000Z',
-          Active: false,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Coupon Fif',
-          discount: 22,
-          discountType: "amount",
-          count: 220,
-          expiration: '2024-01-29T22:00:00.000Z',
-          Active: false,
-          Actions: '1',
-      },
-    ];
+
+    const data = coupon.docs || [];
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
@@ -135,6 +91,7 @@ function DashboardCouponComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
+      dispatch(CouponServer({page , limit:process.env.REACT_APP_LIMIT}))
       asyncFetch();
     }, []);
   
@@ -229,20 +186,20 @@ function DashboardCouponComponent() {
               <Area colorField='l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff' {...configChart} />
             </div>
             <div className="search">
-                <form class="form_search_box">
-                  <button onClick="" title="Search" class="button">
+                <form className="form_search_box">
+                  <button title="Search" className="button">
                     <IoSearchSharp></IoSearchSharp>
                   </button>
 
                   <input
                     type="text"
-                    class="textbox"
+                    className="textbox"
                     placeholder="Search"
                   />
                 </form>
             </div>
             <div className="table-wrapper">
-              <Table pagination={false} columns={columns} dataSource={data} onChange={onChangeTable} />
+              <Table pagination={false} columns={columns} rowKey="_id" dataSource={data} onChange={onChangeTable} />
             </div>
         </div>
     )

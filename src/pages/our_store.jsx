@@ -8,8 +8,8 @@ export default function OurStore () {
     window.scrollTo(0,0)
     return ( 
         <>
-            <HelmetComponent title="our store"></HelmetComponent>
-            <Breadcrumb title="our store"></Breadcrumb>
+            <HelmetComponent title="oorders"></HelmetComponent>
+            <Breadcrumb title="oorders"></Breadcrumb>
             <StoreWrapper></StoreWrapper>
         </>
      );

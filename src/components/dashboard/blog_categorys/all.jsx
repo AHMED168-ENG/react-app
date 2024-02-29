@@ -9,9 +9,14 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { BlogCategoryServer } from "../../../store/reducers/blog_category/blog_category_server";
 
 
 function DashboardAllBlogCategoryComponent() {
+  let page = 1
+  const dispatch = useDispatch()
+  const blogCategory = useSelector(state => state.blogCategoryReducer.blogCategory)
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
@@ -25,10 +30,14 @@ function DashboardAllBlogCategoryComponent() {
         {
           title: 'main category',
           dataIndex: 'mainCategory',
+          render: (parentId) => {
+            return (parentId ? parentId.title : "not have")
+           
+          },
         },
         {
           title: 'Active',
-          dataIndex: 'Active',
+          dataIndex: 'active',
           render: (tags) => {
             return (<Tag color={`${tags ? "green" : "red"}`}> 
                       {tags ? "yes" : "false"}
@@ -75,49 +84,7 @@ function DashboardAllBlogCategoryComponent() {
         },
     ];
 
-    const data = [
-      {
-          key: '1',
-          title: 'Category One',
-          mainCategory : "Games",
-          Active: true,
-          Actions: '1',
-
-      },
-      {
-          key: '1',
-          title: 'category Tow',
-          mainCategory : "Medicean",
-          Active: false,
-          Actions: '1',
-
-      },
-      {
-          key: '1',
-          title: 'category Three',
-          mainCategory : "Medicean",
-          Active: true,
-          Actions: '1',
-
-      },
-      {
-          key: '1',
-          title: 'category Four',
-          mainCategory : "Medicean",
-          Active: false,
-          Actions: '1',
-
-      },
-      {
-          key: '1',
-          title: 'category Fif',
-          mainCategory : "Games",
-          Active: false,
-          Actions: '1',
-
-      },
-    ];
-
+    const data = blogCategory.docs || []
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
@@ -125,6 +92,7 @@ function DashboardAllBlogCategoryComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
+      dispatch(BlogCategoryServer({page , limit:process.env.REACT_APP_LIMIT}))  
       asyncFetch();
     }, []);
   
@@ -206,20 +174,20 @@ function DashboardAllBlogCategoryComponent() {
             <Area colorField='l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff' {...configChart} />
           </div>
           <div className="search">
-              <form class="form_search_box">
-                <button onClick="" title="Search" class="button">
+              <form className="form_search_box">
+                <button title="Search" className="button">
                   <IoSearchSharp></IoSearchSharp>
                 </button>
 
                 <input
                   type="text"
-                  class="textbox"
+                  className="textbox"
                   placeholder="Search"
                 />
               </form>
           </div>
           <div className="table-wrapper">
-            <Table pagination={false} columns={columns} dataSource={data} onChange={onChangeTable} />
+            <Table pagination={false} columns={columns} rowKey="_id" dataSource={data} onChange={onChangeTable} />
           </div>
       </div>
     )

@@ -9,9 +9,14 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { ColorServer } from "../../../store/reducers/color/color_server";
 
 
 function DashboardColorComponent() {
+  let page = 1
+  const dispatch = useDispatch()
+  const brands = useSelector(state => state.colorReducer.colors)
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
@@ -60,44 +65,7 @@ function DashboardColorComponent() {
           },
         },
     ];
-    const data = [
-      {
-          key: '1',
-          name: 'Color One',
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Color Tow',
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Color Three',
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Color Four',
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Color Fif',
-          Active: true,
-          Actions: '1',
-      },
-      {
-          key: '1',
-          name: 'Color Sex',
-          Active: true,
-          Actions: '1',
-      },
-    ];
+    const data = brands.docs || [];
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
@@ -105,6 +73,7 @@ function DashboardColorComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
+      dispatch(ColorServer({page , limit:process.env.REACT_APP_LIMIT}))  
       asyncFetch();
     }, []);
   
@@ -166,20 +135,20 @@ function DashboardColorComponent() {
               <Area colorField='l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff' {...configChart} />
             </div>
             <div className="search">
-                <form class="form_search_box">
-                  <button onClick="" title="Search" class="button">
+                <form className="form_search_box">
+                  <button title="Search" className="button">
                     <IoSearchSharp></IoSearchSharp>
                   </button>
 
                   <input
                     type="text"
-                    class="textbox"
+                    className="textbox"
                     placeholder="Search"
                   />
                 </form>
             </div>
             <div className="table-wrapper">
-              <Table pagination={false} columns={columns} dataSource={data} onChange={onChangeTable} />
+              <Table pagination={false} rowKey="_id" columns={columns} dataSource={data} onChange={onChangeTable} />
             </div>
         </div>
     )

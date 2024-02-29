@@ -44,7 +44,7 @@ const DashboardSidebar = (props) => {
             label: 'Dashboard',
           },
           {
-            key: '/dashboard/customer',
+            key: '/customer',
             icon: <FaUsers className='fs-6' />,
             label: 'Customer',
             children : [
@@ -61,7 +61,7 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/product',
+            key: '/product',
             icon: <BsCart3 className='fs-6' />,
             label: 'product',
             children : [
@@ -78,7 +78,7 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/product-category',
+            key: '/product-category',
             icon: <TbCategory2 className='fs-6' />,
             label: 'product category',
             children : [
@@ -95,7 +95,7 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/brand',
+            key: '/brand',
             icon: <SiBrandfolder className='fs-6' />,
             label: 'Brand',
             children : [
@@ -113,7 +113,7 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/coupon',
+            key: '/coupon',
             icon: <RiCoupon4Fill className='fs-6' />,
             label: 'Coupon',
             children : [
@@ -131,7 +131,7 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/color',
+            key: '/color',
             icon: <IoColorPaletteSharp className='fs-6' />,
             label: 'Color',
             children : [
@@ -149,7 +149,7 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/order',
+            key: '/order',
             icon: <FaClipboardList className='fs-6' />,
             label: 'Order',
             children : [
@@ -158,16 +158,10 @@ const DashboardSidebar = (props) => {
                 icon: <FaClipboardList className='fs-6' />,
                 label: 'Order List',
               },
-              {
-                key: '/dashboard/order/add',
-                icon: <FaClipboardList className='fs-6' />,
-                label: 'Add Order',
-              },
-
             ],
           },
           {
-            key: '/dashboard/blog',
+            key: '/blog',
             icon: <FaBloggerB className='fs-6' />,
             label: 'Blog',
             children : [
@@ -195,7 +189,7 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/blog-category',
+            key: '/blog-category',
             icon: <TbCategory2 className='fs-6' />,
             label: 'Blog Category',
             children : [
@@ -212,7 +206,7 @@ const DashboardSidebar = (props) => {
             ],
           },
           {
-            key: '/dashboard/enquiries',
+            key: '/enquiries',
             icon: <SiGooglebigquery className='fs-6' />,
             label: 'Enquiries',
             children : [
@@ -220,15 +214,10 @@ const DashboardSidebar = (props) => {
                 key: '/dashboard/enquiries',
                 icon: <SiGooglebigquery className='fs-6' />,
                 label: 'Enquiries List',
-              },
-              {
-                key: '/dashboard/enquiries/add',
-                icon: <SiGooglebigquery className='fs-6' />,
-                label: 'Add Enquiries',
-              },
-
+              }
             ],
           },
+
         ]}
       />
   </Sider>

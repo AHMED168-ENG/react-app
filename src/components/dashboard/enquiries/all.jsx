@@ -1,6 +1,6 @@
-import "../../../scss/dashboard/brand/all.scss"
+import "../../../scss/dashboard/blog/all.scss"
 import React, { useEffect, useState } from 'react';
-import { Dropdown, Modal, Switch, Table, Tag } from 'antd';
+import { Dropdown, Modal, Select, Switch, Table, Tag, InputNumber, DatePicker } from 'antd';
 import DashboardBreadcrumb from '../bradcrump';
 import { IoSearchSharp } from "react-icons/io5";
 import { Area } from '@ant-design/charts';
@@ -9,33 +9,45 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
-import { BrandServer } from "../../../store/reducers/brand/brand_server";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { useDispatch, useSelector } from "react-redux";
+import { EnquiryServer } from "../../../store/reducers/enquiries/enquiry_server";
 
 
-function DashboardBrandComponent() {
+function DashboardEnquiriesComponent() {
     let page = 1
     const dispatch = useDispatch()
-    const brands = useSelector(state => state.brandReducer.brands)
+    const enquiries = useSelector(state => state.enquiryReducer.enquiries)
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
-          title: 'title',
-          dataIndex: 'title',
+          title: 'name',
+          dataIndex: 'name',
           sorter: {
-            compare: (a, b) => a.title.localeCompare(b.title),
+            compare: (a, b) => a.name.localeCompare(b.name),
+            multiple: 3,
+          },
+        },       
+        {
+          title: 'email',
+          dataIndex: 'email',
+          sorter: {
+            compare: (a, b) => a.email.localeCompare(b.email),
             multiple: 3,
           },
         },
         {
-          title: 'Active',
-          dataIndex: 'active',
-          render: (tags) => {
-            return (<Tag color={`${tags ? "green" : "red"}`}> 
-                      {tags ? "yes" : "false"}
-                  </Tag>)
-           
-          },
+          title: 'mobile',
+          dataIndex: 'mobile',
+        },
+        {
+          title: 'comment',
+          dataIndex: 'comment',
+        },
+        {
+          title: 'status',
+          dataIndex: 'status',
         },
         {
           title: 'Actions',
@@ -48,21 +60,21 @@ function DashboardBrandComponent() {
                 items : [{
                     key: 'edit',
                     label: (
-                      <Link to={`/dashboard/ProductCategory/${id}`}>
-                        <CiEdit> </CiEdit> Edit Brand
+                      <Link to={`/dashboard/enquiries/${id}`}>
+                        <CiEdit> </CiEdit> Edit blog
                       </Link>
                     ),
                   },
                   {
                     key: 'notification3',
                     label: (
-                      <button><MdOutlineNotificationsActive></MdOutlineNotificationsActive> Active Brand</button>
+                      <button><MdOutlineNotificationsActive></MdOutlineNotificationsActive> Active blog</button>
                     ),
                   },
                   {
                     key: 'notification2',
                     label: (
-                      <button><MdDeleteOutline></MdDeleteOutline> Delete Brand</button>
+                      <button><MdDeleteOutline></MdDeleteOutline> Delete blog</button>
                     ),
                   }]
               }}
@@ -75,7 +87,7 @@ function DashboardBrandComponent() {
           },
         },
     ];
-    const data = brands.docs || [];
+    const data = enquiries.docs || [];
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
@@ -83,7 +95,7 @@ function DashboardBrandComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
-      dispatch(BrandServer({page , limit:process.env.REACT_APP_LIMIT}))  
+      dispatch(EnquiryServer({page , limit:process.env.REACT_APP_LIMIT}))  
       asyncFetch();
     }, []);
   
@@ -103,49 +115,13 @@ function DashboardBrandComponent() {
         range: [0, 1],
         tickCount: 5,
       },
-
     }
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
-
-    const [open, setOpen] = useState(false);
-
     return (
-        <div className='all-category'>
-            <DashboardBreadcrumb className="mb-3" title={"All Brand"}></DashboardBreadcrumb>
+        <div className='all-blog'>
+            <DashboardBreadcrumb className="mb-3" title={"All Blog"}></DashboardBreadcrumb>
            
             <div className="process mb-5">
-              <div className="modal-wrapper mb-2">
-                <button className='text-capitalize btn btn-primary btn-sm w-100' onClick={() => setOpen(true)}>
-                  create Brand
-                </button>
-                <Modal
-                  title=""
-                  centered
-                  open={open}
-                  onOk={() => setOpen(false)}
-                  onCancel={() => setOpen(false)}
-                  width={1000}
-                >
-                <div className="header-modal">
-                    <h5 className='text-capitalize text-center'>Create Brand</h5>
-                </div>
-                  <form action="" className='d-flex flex-column gap-2'>
-                    <div className="input">
-                      <label htmlFor="title" className='text-capitalize'>title</label>
-                      <input id='title' type="text" className='form-control' />
-                    </div>
-
-                    <div className='d-flex gap-5 mb-4'>
-                      <div className="input">
-                        <label className='text-capitalize d-block'>is Active</label>
-                        <Switch defaultChecked onChange={(checked) => {
-                          console.log(checked)
-                        }} />
-                      </div>
-                    </div>
-                  </form>
-                </Modal>
-              </div>
               <button className='text-capitalize btn btn-success btn-sm mb-2 w-100'>
                 download Excel
               </button>
@@ -155,7 +131,7 @@ function DashboardBrandComponent() {
             </div>
             <div className="search">
                 <form className="form_search_box">
-                  <button title="Search" className="button">
+                  <button onClick="" title="Search" className="button">
                     <IoSearchSharp></IoSearchSharp>
                   </button>
 
@@ -173,7 +149,7 @@ function DashboardBrandComponent() {
     )
 };
 
-export default DashboardBrandComponent;
+export default DashboardEnquiriesComponent;
 
 
 

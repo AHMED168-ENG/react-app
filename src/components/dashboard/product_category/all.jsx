@@ -9,9 +9,14 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import { ProductCategoryServer } from "../../../store/reducers/product_category/product_category_server";
 
 
 function DashboardAllProductCategoryComponent() {
+  let page = 1
+  const dispatch = useDispatch()
+  const productCategory = useSelector(state => state.productCategoryReducer.productCategory)
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
@@ -25,10 +30,14 @@ function DashboardAllProductCategoryComponent() {
         {
           title: 'main category',
           dataIndex: 'mainCategory',
+          render: (mainCategory) => {
+            return (mainCategory ? mainCategory.title : "not have")
+           
+          },
         },
         {
           title: 'Active',
-          dataIndex: 'Active',
+          dataIndex: 'active',
           render: (tags) => {
             return (<Tag color={`${tags ? "green" : "red"}`}> 
                       {tags ? "yes" : "false"}
@@ -74,48 +83,7 @@ function DashboardAllProductCategoryComponent() {
           },
         },
     ];
-    const data = [
-      {
-          key: '1',
-          title: 'Category One',
-          mainCategory : "Games",
-          Active: true,
-          Actions: '1',
-
-      },
-      {
-          key: '1',
-          title: 'Category Tow',
-          mainCategory : "Medicean",
-          Active: false,
-          Actions: '1',
-
-      },
-      {
-          key: '1',
-          title: 'Category Three',
-          mainCategory : "Medicean",
-          Active: true,
-          Actions: '1',
-
-      },
-      {
-          key: '1',
-          title: 'Category Four',
-          mainCategory : "Medicean",
-          Active: false,
-          Actions: '1',
-
-      },
-      {
-          key: '1',
-          title: 'Category Fif',
-          mainCategory : "Games",
-          Active: false,
-          Actions: '1',
-
-      },
-    ];
+    const data = productCategory.docs;
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
@@ -124,6 +92,7 @@ function DashboardAllProductCategoryComponent() {
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
       asyncFetch();
+      dispatch(ProductCategoryServer({page , limit:process.env.REACT_APP_LIMIT}))  
     }, []);
   
     const asyncFetch = () => {
@@ -226,20 +195,20 @@ function DashboardAllProductCategoryComponent() {
               <Area colorField='l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff' {...configChart} />
             </div>
             <div className="search">
-                <form class="form_search_box">
-                  <button onClick="" title="Search" class="button">
+                <form className="form_search_box">
+                  <button title="Search" className="button">
                     <IoSearchSharp></IoSearchSharp>
                   </button>
 
                   <input
                     type="text"
-                    class="textbox"
+                    className="textbox"
                     placeholder="Search"
                   />
                 </form>
             </div>
             <div className="table-wrapper">
-              <Table pagination={false} columns={columns} dataSource={data} onChange={onChangeTable} />
+              <Table pagination={false} columns={columns} rowKey="_id" dataSource={data} onChange={onChangeTable} />
             </div>
         </div>
     )
