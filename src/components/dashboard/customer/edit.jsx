@@ -1,85 +1,103 @@
 
 import React, { useEffect, useState } from 'react';
 import DashboardBreadcrumb from '../bradcrump';
-import ImgCrop from 'antd-img-crop';
 import { Switch, Upload } from 'antd';
 import "../../../scss/dashboard/customer/create.scss";
 import { reset } from '../../../store/reducers/user/user_slice';
-import { UserCreateServer } from '../../../store/reducers/user/user_server';
+import { UserGetOneServer, UserUpdateOneServer, UserUploadImageServer } from '../../../store/reducers/user/user_server';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-function DashboardCreateCustomerComponent() {
+function DashboardEditCustomerComponent() {
   const dispatch = useDispatch()
   const errorsValidation = useSelector(state => state.userReducer.errors)
+  const user = useSelector(state => state.userReducer.user)
   const isError = useSelector(state => state.userReducer.isError)
+  const imageUpload = useSelector(state => state.userReducer.imageUpload)
+  const updated = useSelector(state => state.userReducer.updated)
   const message = useSelector(state => state.userReducer.message)
-  const created = useSelector(state => state.userReducer.created)
-  const [email , setEmail] = useState("")
+  const [email , setEmail] = useState(user.email)
   const [firstName , setFirstName] = useState("")
   const [lastName , setLastName] = useState("")
   const [mobile , setMobile] = useState("")
   const [password , setPassword] = useState("")
   const [resetPassword , setResetPassword] = useState("")
-  const [role , setRole] = useState("User")
-  const [isBlocked , setIsBlocked] = useState(false)
-  const [active , setActive] = useState(true)
+  const [role , setRole] = useState("")
+  const [isBlocked , setIsBlocked] = useState("")
+  const [active , setActive] = useState("")
   const [address , setAddress] = useState("")
   const [image , setImage] = useState([])
 
 
-  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ create user /\/\/\/\/\/\//\/\/\/\/\
-  function createUser(e) {
-    e.preventDefault();
-    dispatch(UserCreateServer({
-      email,
-      firstName,
-      lastName,
-      mobile,
-      password,
-      resetPassword,
-      role,
-      isBlocked,
-      active,
-      address,
-      image
+  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ update user /\/\/\/\/\/\//\/\/\/\/\
+  function updateUser(e) {
+    e.preventDefault()
+    dispatch(UserUpdateOneServer({
+      body : {
+        email,
+        firstName,
+        lastName,
+        mobile,
+        password,
+        resetPassword,
+        role,
+        isBlocked,
+        active,
+        address,
+      },
+      id: user._id
     }))
   }
-
-  function resetForm() {
-    setEmail("")
-    setFirstName("")
-    setLastName("")
-    setMobile("")
-    setPassword("")
-    setResetPassword("")
-    setRole("")
-    setIsBlocked(false)
-    setActive(true)
-    setAddress("")
-    setImage([])
-  }
-  
+  let { id } = useParams();
   useEffect(() => {
     if(isError) {
         window.Toast.fire({
             icon: "error",
             title: message,
         });
+        dispatch(reset())
     }
-    
-    if(created) {
-      dispatch(reset())
-      resetForm()
+        
+    if(imageUpload) {
       window.Toast.fire({
         icon: "success",
         title: message,
       });
+      dispatch(reset())
     }
-} , [isError , created , message]);
-  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ create user /\/\/\/\/\/\//\/\/\/\/\
+
+    if(updated) {
+      window.Toast.fire({
+        icon: "success",
+        title: message,
+      });
+      dispatch(reset())
+    }
+} , [isError , message , imageUpload , updated]);
+
+  useEffect(() => {
+      dispatch(UserGetOneServer(id))
+  } , []);
+
+  useEffect(() => {
+    setEmail(user.email)
+    setFirstName(user.firstName)
+    setLastName(user.lastName)
+    setMobile(user.mobile)
+    setRole(user.role)
+    setIsBlocked(user.isBlocked)
+    setActive(user.active)
+    setAddress(user.address)
+    if(user.image) {
+      setImage([{thumbUrl : user.image.url}])
+    }
+} , [user]);
+  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ update user /\/\/\/\/\/\//\/\/\/\/\
 
   const onChange = ({ fileList: newFileList }) => {
+    console.log(newFileList)
     setImage(newFileList);
+    if(newFileList.length) dispatch(UserUploadImageServer({id : user._id , image : newFileList}))
   };
   const onPreview = async (file) => {
     let src = file.url;
@@ -97,8 +115,8 @@ function DashboardCreateCustomerComponent() {
   };
 
   return(
-    <div className="create-customer">
-      <DashboardBreadcrumb className="mb-3" title={"Create customers"}></DashboardBreadcrumb>
+    <div className="create-customer position-relative">
+      <DashboardBreadcrumb className="mb-3" title={"update customer"}></DashboardBreadcrumb>
       <div className="form">
         <form action="" className='d-flex flex-column gap-2'>
           <div className="input">
@@ -153,12 +171,13 @@ function DashboardCreateCustomerComponent() {
               <Upload
                 action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
                 listType="picture-card"
-                beforeUpload={() => false}
                 fileList={image}
+                beforeUpload={() => false}
                 multiple={false}
                 maxCount={1}
                 onChange={onChange}
                 onPreview={onPreview}
+                className='position-relative'
               >
               {image.length < 1 && '+ Upload'}
               </Upload>
@@ -167,21 +186,21 @@ function DashboardCreateCustomerComponent() {
           <div className='d-flex gap-5 mb-4'>
             <div className="input">
               <label htmlFor="isBlocked" className='text-capitalize d-block'>is Blocked</label>
-              <Switch defaultChecked onChange={(checked) => {
+              <Switch value={isBlocked} onChange={(checked) => {
                 setIsBlocked(checked)
               }} />
               {errorsValidation.isBlocked ? <small className="text-danger">{errorsValidation.isBlocked[0].msg}</small> : ""}
             </div>
             <div className="input">
               <label htmlFor="active" className='text-capitalize d-block'>is Active</label>
-              <Switch defaultChecked onChange={(checked) => {
+              <Switch  value={active} onChange={(checked) => {
                 setActive(checked)
               }} />
               {errorsValidation.active ? <small className="text-danger">{errorsValidation.active[0].msg}</small> : ""}
             </div>
           </div>
           <div className="">
-            <button className='btn btn-primary btn-block w-100' onClick={(e) => createUser(e)}>Create</button>
+            <button className='btn btn-primary btn-block w-100' onClick={(e) => updateUser(e)}>update</button>
           </div>
         </form>
       </div>
@@ -189,4 +208,4 @@ function DashboardCreateCustomerComponent() {
   )
 };
 
-export default DashboardCreateCustomerComponent;
+export default DashboardEditCustomerComponent;

@@ -49,7 +49,7 @@ function DashboardLoginComponent() {
                         {errorsValidation.password ? <small className="text-danger">{errorsValidation.password[0].msg}</small> : ""}
                     </div>
                     <Link className="forget-password-button text-right d-block my-3 text-decoration-underline" to="/dashboard/forget-password">forget password ?</Link>
-                    <button onClick={login} className="login" to="/dashboard">Login</button>
+                    <button onClick={login} className="login" to="/errors">Login</button>
                 </form>
             </div>
         </div>

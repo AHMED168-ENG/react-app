@@ -49,7 +49,7 @@ export const AuthSlice = createSlice({
                 state.errors = action.payload.response.data.errors
             } else {
                 state.isError = true
-                state.message = action.message
+                state.message = action.payload.response.data.message
             }
 
         })

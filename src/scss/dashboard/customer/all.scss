@@ -33,7 +33,21 @@
     }
 }
 .all-customer {
-
+    .user-container {
+        .image {
+            width: 35px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+}
+    }
     .process {
         .modal-wrapper button {
             border-color:#adc6ff;
