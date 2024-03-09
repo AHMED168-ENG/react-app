@@ -4,32 +4,45 @@ import DashboardBreadcrumb from '../bradcrump';
 import { Switch } from 'antd';
 import "../../../scss/dashboard/brand/create.scss";
 import { useDispatch, useSelector } from 'react-redux';
-import { BrandCreateServer } from '../../../store/reducers/brand/brand_server';
+import { BrandGetOneServer, BrandUpdateOneServer } from '../../../store/reducers/brand/brand_server';
 import { reset } from '../../../store/reducers/brand/brand_slice';
+import { useParams } from 'react-router-dom';
 
-function DashboardCreateBrandComponent() {
+function DashboardEditBrandComponent() {
   const dispatch = useDispatch()
   const errorsValidation = useSelector(state => state.brandReducer.errors)
+  const brand = useSelector(state => state.brandReducer.brand)
   const isError = useSelector(state => state.brandReducer.isError)
-  const created = useSelector(state => state.brandReducer.created)
+  const updated = useSelector(state => state.brandReducer.updated)
   const message = useSelector(state => state.brandReducer.message)
   const [title , setTitle] = useState("")
   const [active , setActive] = useState(true)
+  let { id } = useParams();
 
   
-  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ create brand /\/\/\/\/\/\//\/\/\/\/\
-  function resetForm() {
-    setTitle("")
-    setActive(true)
-  }
+  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ edit brand /\/\/\/\/\/\//\/\/\/\/\
 
-  function createbrand(e) {
+
+  function updateColor(e) {
     e.preventDefault()
-    dispatch(BrandCreateServer({
-      title,
-      active,
+    dispatch(BrandUpdateOneServer({
+      body : {
+        title,
+        active,
+      },
+      id: brand._id
     }))
   }
+
+  useEffect(() => {
+    dispatch(BrandGetOneServer(id))
+  } , []);
+
+  useEffect(() => {
+    setTitle(brand.title)
+    setActive(brand.active)
+} , [brand]);
+
   useEffect(() => {
     if(isError) {
         window.Toast.fire({
@@ -39,21 +52,19 @@ function DashboardCreateBrandComponent() {
         dispatch(reset())
     }
 
-    if(created) {
+    if(updated) {
       window.Toast.fire({
         icon: "success",
         title: message,
       });
       dispatch(reset())
-      resetForm()
-
     }
-} , [isError , message , created]);
+} , [isError , message , updated]);
 
-  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ create brand /\/\/\/\/\/\//\/\/\/\/\
+  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ edit brand /\/\/\/\/\/\//\/\/\/\/\
   return(
-    <div className="create-brand">
-      <DashboardBreadcrumb className="mb-3" title={"Create Product Brand"}></DashboardBreadcrumb>
+    <div className="edit-brand">
+      <DashboardBreadcrumb className="mb-3" title={"edit Product Brand"}></DashboardBreadcrumb>
       <div className="form">
         <form action="" className='d-flex flex-column gap-2'>
           <div className="input">
@@ -71,7 +82,7 @@ function DashboardCreateBrandComponent() {
             </div>
           </div>
           <div className="">
-            <button className='btn btn-primary btn-block w-100' onClick={createbrand}>Create</button>
+          <button className='btn btn-primary btn-block w-100' onClick={(e) => updateColor(e)}>update</button>
           </div>
         </form>
       </div>
@@ -79,4 +90,4 @@ function DashboardCreateBrandComponent() {
   )
 };
 
-export default DashboardCreateBrandComponent;
+export default DashboardEditBrandComponent;

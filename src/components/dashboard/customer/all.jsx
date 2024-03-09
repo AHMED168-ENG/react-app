@@ -58,12 +58,17 @@ function DashboardAllCustomerComponent() {
       }))
     }
 
+    function downloadExcel() {
+      window.location.href = `${process.env.REACT_APP_SERVER_URL}/user/export/excel`
+    }
+
     function activationUser( id) {
       dispatch(UserActivationServer(id))
     }
 
     function searchUser(search) {
-      dispatch(UserAllServer({page , limit:process.env.REACT_APP_LIMIT , search : `firstName=${search}`}))
+      dispatch(UserAllServer({page , limit:process.env.REACT_APP_LIMIT , search : `firstName[regex]=${search}&lastName[regex]=${search}&email[regex]=${search}`}))
+      dispatch(reset())
     }
 
     function deleteUser( id) {
@@ -406,7 +411,7 @@ function DashboardAllCustomerComponent() {
                   </form>
                 </Modal>
               </div>
-              <button className='text-capitalize btn btn-success btn-sm mb-2 w-100'>
+              <button onClick={() => downloadExcel()} className='text-capitalize btn btn-success btn-sm mb-2 w-100'>
                 download Excel
               </button>
             </div>

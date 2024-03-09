@@ -4,31 +4,32 @@ import DashboardBreadcrumb from '../bradcrump';
 import { Switch } from 'antd';
 import "../../../scss/dashboard/color/create.scss";
 import { useDispatch, useSelector } from 'react-redux';
+import { ColorGetOneServer, ColorUpdateOneServer } from '../../../store/reducers/color/color_server';
 import { useParams } from 'react-router-dom';
-import { ColorCreateServer } from '../../../store/reducers/color/color_server';
 import { reset } from '../../../store/reducers/color/color_slice';
 
-function DashboardCreateColorComponent() {
+function DashboardUpdateColorComponent() {
+
   const dispatch = useDispatch()
   const errorsValidation = useSelector(state => state.colorReducer.errors)
+  const color = useSelector(state => state.colorReducer.color)
   const isError = useSelector(state => state.colorReducer.isError)
-  const created = useSelector(state => state.colorReducer.created)
+  const updated = useSelector(state => state.colorReducer.updated)
   const message = useSelector(state => state.colorReducer.message)
   const [name , setName] = useState("")
-  const [active , setActive] = useState(true)
+  const [active , setActive] = useState(false)
 
-  
-  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ create color /\/\/\/\/\/\//\/\/\/\/\
-  function resetForm() {
-    setName("")
-    setActive(false)
-  }
 
-  function createColor(e) {
+  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ update color /\/\/\/\/\/\//\/\/\/\/\
+  let { id } = useParams();
+  function updateColor(e) {
     e.preventDefault()
-    dispatch(ColorCreateServer({
-      name,
-      active,
+    dispatch(ColorUpdateOneServer({
+      body : {
+        name,
+        active,
+      },
+      id: color._id
     }))
   }
   useEffect(() => {
@@ -40,18 +41,24 @@ function DashboardCreateColorComponent() {
         dispatch(reset())
     }
 
-    if(created) {
+    if(updated) {
       window.Toast.fire({
         icon: "success",
         title: message,
       });
       dispatch(reset())
-      resetForm()
-
     }
-} , [isError , message , created]);
+} , [isError , message , updated]);
 
-  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ create color /\/\/\/\/\/\//\/\/\/\/\
+  useEffect(() => {
+      dispatch(ColorGetOneServer(id))
+  } , []);
+
+  useEffect(() => {
+    setName(color.name)
+    setActive(color.active)
+} , [color]);
+  // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ update color /\/\/\/\/\/\//\/\/\/\/\
   return(
     <div className="create-color">
       <DashboardBreadcrumb className="mb-3" title={"Create Product Color"}></DashboardBreadcrumb>
@@ -59,7 +66,7 @@ function DashboardCreateColorComponent() {
         <form action="" className='d-flex flex-column gap-2'>
           <div className="input">
             <label htmlFor="name" className='text-capitalize'>name</label>
-            <input id='name' value={name} onInput={(e) => setName(e.target.value)} type="text" className='form-control' />
+            <input value={name} onInput={(e) => setName(e.target.value)} id='name' type="text" className='form-control' />
             {errorsValidation.name ? <small className="text-danger">{errorsValidation.name[0].msg}</small> : ""}
           </div>
           <div className='d-flex gap-5 mb-2'>
@@ -72,7 +79,7 @@ function DashboardCreateColorComponent() {
             </div>
           </div>
           <div className="">
-            <button className='btn btn-primary btn-block w-100' onClick={createColor}>Create</button>
+          <button className='btn btn-primary btn-block w-100' onClick={(e) => updateColor(e)}>update</button>
           </div>
         </form>
       </div>
@@ -80,4 +87,4 @@ function DashboardCreateColorComponent() {
   )
 };
 
-export default DashboardCreateColorComponent;
+export default DashboardUpdateColorComponent;

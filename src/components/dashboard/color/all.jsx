@@ -1,6 +1,6 @@
 import "../../../scss/dashboard/color/all.scss"
 import React, { useEffect, useState } from 'react';
-import { Dropdown, Modal, Table } from 'antd';
+import { Dropdown, Modal, Switch, Table, Tag } from 'antd';
 import DashboardBreadcrumb from '../bradcrump';
 import { IoSearchSharp } from "react-icons/io5";
 import { Area } from '@ant-design/charts';
@@ -10,13 +10,95 @@ import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
-import { ColorServer } from "../../../store/reducers/color/color_server";
+import { ColorActivationServer, ColorAllServer, ColorCreateServer, ColorDeleteServer } from "../../../store/reducers/color/color_server";
+import { reset } from "../../../store/reducers/color/color_slice";
+import DashboardLoading from "../loading";
 
 
 function DashboardColorComponent() {
   let page = 1
   const dispatch = useDispatch()
-  const brands = useSelector(state => state.colorReducer.colors)
+  const [name , setName] = useState("")
+  const [active , setActive] = useState(true)
+  const colors = useSelector(state => state.colorReducer.colors)
+  const errorsValidation = useSelector(state => state.colorReducer.errors)
+  const isError = useSelector(state => state.colorReducer.isError)
+  const deleted = useSelector(state => state.colorReducer.deleted)
+  const isLoading = useSelector(state => state.colorReducer.isLoading)
+  const activation = useSelector(state => state.colorReducer.activation)
+  const message = useSelector(state => state.colorReducer.message)
+  const created = useSelector(state => state.colorReducer.created)
+
+
+    // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about create color /\/\/\/\/\/\//\/\/\/\/\
+    function createColor(e) {
+      e.preventDefault();
+      dispatch(ColorCreateServer({
+        name,
+        active,
+      }))
+    }
+
+    function downloadExcel() {
+      window.location.href = `${process.env.REACT_APP_SERVER_URL}/color/export/excel`
+    }
+
+    function activationColor(id) {
+      dispatch(ColorActivationServer(id))
+    }
+
+    function searchColor(search) {
+      dispatch(ColorAllServer({page , limit:process.env.REACT_APP_LIMIT , search : `name[regex]=${search}`}))
+      dispatch(reset())
+    }
+
+    function deleteColor( id) {
+      dispatch(ColorDeleteServer(id))
+    }
+
+    function resetForm() {
+      setName("")
+      setActive(true)
+    }
+    
+    useEffect(() => {
+        if(isError) {
+            window.Toast.fire({
+                icon: "error",
+                title: message,
+            });
+        }
+
+        if(created) {
+          dispatch(ColorAllServer({page , limit:process.env.REACT_APP_LIMIT}))
+          dispatch(reset())
+          resetForm()
+          setOpen(false)
+          window.Toast.fire({
+            icon: "success",
+            title: message,
+          });
+        }
+
+        if(activation) {
+          dispatch(ColorAllServer({page , limit:process.env.REACT_APP_LIMIT}))
+          dispatch(reset())
+          window.Toast.fire({
+            icon: "success",
+            title: message,
+          });
+        }
+        if(deleted) {
+          dispatch(ColorAllServer({page , limit:process.env.REACT_APP_LIMIT }))
+          dispatch(reset())
+          window.Toast.fire({
+            icon: "success",
+            title: message,
+          });
+        }
+      } , [isError , created , message , activation , deleted]);
+    // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about create color /\/\/\/\/\/\//\/\/\/\/\
+
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
@@ -26,11 +108,20 @@ function DashboardColorComponent() {
             compare: (a, b) => a.name.localeCompare(b.name),
             multiple: 3,
           },
-        },       
+        },   
+        {
+          title: 'Active',
+          dataIndex: 'active',
+          render: (active) => {
+            return (<Tag color={`${active ? "green" : "red"}`}> 
+                      {active ? "yes" : "false"}
+                  </Tag>)
+          },
+        },    
         {
           title: 'Actions',
-          dataIndex: 'Actions',
-          render: (id) => {
+          dataIndex: ["_id" , "active"],
+          render: (id , row) => {
             return  (
               <Dropdown
               align={{ offset: [0, 40] }}
@@ -38,23 +129,25 @@ function DashboardColorComponent() {
                 items : [{
                     key: 'edit',
                     label: (
-                      <Link to={`/dashboard/ProductColor/${id}`}>
+                      <Link to={`/dashboard/color/edit/${row._id}`}>
                         <CiEdit> </CiEdit> Edit Color
                       </Link>
                     ),
                   },
                   {
-                    key: 'notification3',
+                    key: 'activation',
                     label: (
-                      <button><MdOutlineNotificationsActive></MdOutlineNotificationsActive> Active Color</button>
+                      <button onClick={() => {activationColor(row._id)}}><MdOutlineNotificationsActive></MdOutlineNotificationsActive> { !row.active ? "Active" : "dis active"} customer</button>
                     ),
                   },
+  
                   {
                     key: 'notification2',
                     label: (
-                      <button><MdDeleteOutline></MdDeleteOutline> Delete Color</button>
+                      <button onClick={() => deleteColor(row._id)}><MdDeleteOutline></MdDeleteOutline> Delete customer</button>
                     ),
-                  }]
+                  }
+                  ]
               }}
               placement="right"
             >
@@ -65,15 +158,16 @@ function DashboardColorComponent() {
           },
         },
     ];
-    const data = brands.docs || [];
+    const data = colors.docs || [];
     const onChangeTable = (pagination, filters, sorter, extra) => {
       console.log('params', pagination, filters, sorter, extra);
     };
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
+
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
-      dispatch(ColorServer({page , limit:process.env.REACT_APP_LIMIT}))  
+      dispatch(ColorAllServer({page , limit:process.env.REACT_APP_LIMIT}))  
       asyncFetch();
     }, []);
   
@@ -115,19 +209,37 @@ function DashboardColorComponent() {
                   onOk={() => setOpen(false)}
                   onCancel={() => setOpen(false)}
                   width={1000}
+                  footer={null}
                 >
+                {isLoading ? <DashboardLoading ></DashboardLoading> : ""}
                 <div className="header-modal">
                     <h5 className='text-capitalize text-center'>Create Color</h5>
                 </div>
                   <form action="" className='d-flex flex-column gap-2'>
                     <div className="input">
                       <label htmlFor="name" className='text-capitalize'>name</label>
-                      <input id='name' type="text" className='form-control' />
+                      <input id='name' value={name} onChange={(e) => {setName(e.target.value)}} type="text" className='form-control' />
+                      {errorsValidation.name ? <small className="text-danger">{errorsValidation.name[0].msg}</small> : ""}
+                    </div>
+                    <div className="input">
+                        <label className='text-capitalize d-block'>is Active</label>
+                        <Switch value={active} onChange={(checked) => {
+                          setActive(checked)
+                        }} />
+                        {errorsValidation.active ? <small className="text-danger">{errorsValidation.active[0].msg}</small> : ""}
+                    </div>
+                    <div className="ant-modal-footer">
+                      <button className='ant-btn css-dev-only-do-not-override-i1mju1 ant-btn-default' onClick={(e) => {e.preventDefault() ; setOpen(false)}}>
+                        cancel
+                      </button>
+                      <button className='ant-btn css-dev-only-do-not-override-i1mju1 ant-btn-primary' onClick={(e) => createColor(e)}>
+                        ok
+                      </button>
                     </div>
                   </form>
                 </Modal>
               </div>
-              <button className='text-capitalize btn btn-success btn-sm mb-2 w-100'>
+              <button onClick={() => downloadExcel()} className='text-capitalize btn btn-success btn-sm mb-2 w-100'>
                 download Excel
               </button>
             </div>
@@ -144,6 +256,7 @@ function DashboardColorComponent() {
                     type="text"
                     className="textbox"
                     placeholder="Search"
+                    onInput={(e) => searchColor(e.target.value)}
                   />
                 </form>
             </div>

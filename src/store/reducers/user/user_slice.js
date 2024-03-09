@@ -41,6 +41,7 @@ export const UserSlice = createSlice({
 
         }
     },
+    
     extraReducers : (builder => {
         builder.addCase(UserAllServer.pending , (state , action) => {
             state.isLoading = true

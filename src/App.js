@@ -50,6 +50,8 @@ import DashboardEnquiriesComponent from './components/dashboard/enquiries/all';
 import DashboardEnquiryCategoryAll from './pages/dashboard/enquiries/all';
 import DashboardOrderAll from './pages/dashboard/order/order';
 import DashboardCustomerEdit from './pages/dashboard/customer/edit';
+import DashboardColorEdit from './pages/dashboard/color/edit';
+import DashboardBrandUpdate from './pages/dashboard/brand/edit';
  
 function App() {
   window.Swal = Swal.mixin({
@@ -116,6 +118,7 @@ function App() {
                   <Route path='brand' element={<Outlet/>}>
                     <Route index element={<DashboardBrandAll/>}></Route>
                     <Route path='add' element={<DashboardBrandCreate />}></Route>
+                    <Route path='edit/:id' element={<DashboardBrandUpdate />}></Route>
                   </Route>
                   <Route path='coupon' element={<Outlet/>}>
                     <Route index element={<DashboardCouponAll/>}></Route>
@@ -124,6 +127,7 @@ function App() {
                   <Route path='color' element={<Outlet/>}>
                     <Route index element={<DashboardColorAll/>}></Route>
                     <Route path='add' element={<DashboardColorCreate />}></Route>
+                    <Route path='edit/:id' element={<DashboardColorEdit/>}></Route>
                   </Route>
                   <Route path='blog' element={<Outlet/>}>
                     <Route index element={<DashboardBlogAll/>}></Route>

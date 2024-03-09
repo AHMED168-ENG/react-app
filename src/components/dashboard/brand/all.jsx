@@ -9,14 +9,95 @@ import { Link } from 'react-router-dom';
 import { CiEdit } from "react-icons/ci";
 import { MdOutlineNotificationsActive } from "react-icons/md";
 import { MdDeleteOutline } from "react-icons/md";
-import { BrandServer } from "../../../store/reducers/brand/brand_server";
+import { BrandActivationServer, BrandAllServer, BrandCreateServer, BrandDeleteServer } from "../../../store/reducers/brand/brand_server";
 import { useDispatch, useSelector } from "react-redux";
+import { reset } from "../../../store/reducers/brand/brand_slice";
+import DashboardLoading from "../loading";
 
 
 function DashboardBrandComponent() {
     let page = 1
     const dispatch = useDispatch()
+    const [title , setTitle] = useState("")
+    const [active , setActive] = useState(true)
+    const errorsValidation = useSelector(state => state.brandReducer.errors)
+    const isError = useSelector(state => state.brandReducer.isError)
+    const deleted = useSelector(state => state.brandReducer.deleted)
+    const isLoading = useSelector(state => state.brandReducer.isLoading)
+    const activation = useSelector(state => state.brandReducer.activation)
+    const message = useSelector(state => state.brandReducer.message)
+    const created = useSelector(state => state.brandReducer.created)
     const brands = useSelector(state => state.brandReducer.brands)
+
+
+        // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about create brand /\/\/\/\/\/\//\/\/\/\/\
+        function createBrand(e) {
+          e.preventDefault();
+          dispatch(BrandCreateServer({
+            title,
+            active,
+          }))
+        }
+    
+        function downloadExcel() {
+          window.location.href = `${process.env.REACT_APP_SERVER_URL}/brand/export/excel`
+        }
+    
+        function activationbrand(id) {
+          dispatch(BrandActivationServer(id))
+        }
+    
+        function searchbrand(search) {
+          dispatch(BrandAllServer({page , limit:process.env.REACT_APP_LIMIT , search : `name[regex]=${search}`}))
+          dispatch(reset())
+        }
+    
+        function deletebrand( id) {
+          dispatch(BrandDeleteServer(id))
+        }
+    
+        function resetForm() {
+          setTitle("")
+          setActive(true)
+        }
+        
+        useEffect(() => {
+            if(isError) {
+                window.Toast.fire({
+                    icon: "error",
+                    title: message,
+                });
+            }
+    
+            if(created) {
+              dispatch(BrandAllServer({page , limit:process.env.REACT_APP_LIMIT}))
+              dispatch(reset())
+              resetForm()
+              setOpen(false)
+              window.Toast.fire({
+                icon: "success",
+                title: message,
+              });
+            }
+    
+            if(activation) {
+              dispatch(BrandAllServer({page , limit:process.env.REACT_APP_LIMIT}))
+              dispatch(reset())
+              window.Toast.fire({
+                icon: "success",
+                title: message,
+              });
+            }
+            if(deleted) {
+              dispatch(BrandAllServer({page , limit:process.env.REACT_APP_LIMIT }))
+              dispatch(reset())
+              window.Toast.fire({
+                icon: "success",
+                title: message,
+              });
+            }
+          } , [isError , created , message , activation , deleted]);
+        // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about create brand /\/\/\/\/\/\//\/\/\/\/\
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about table /\/\/\/\/\/\//\/\/\/\/\
     const columns = [
         {
@@ -39,8 +120,8 @@ function DashboardBrandComponent() {
         },
         {
           title: 'Actions',
-          dataIndex: 'Actions',
-          render: (id) => {
+          dataIndex: ["_id" , "active"],
+          render: (id , row) => {
             return  (
               <Dropdown
               align={{ offset: [0, 40] }}
@@ -48,21 +129,22 @@ function DashboardBrandComponent() {
                 items : [{
                     key: 'edit',
                     label: (
-                      <Link to={`/dashboard/ProductCategory/${id}`}>
+                      <Link to={`/dashboard/brand/edit/${row._id}`}>
                         <CiEdit> </CiEdit> Edit Brand
                       </Link>
                     ),
                   },
                   {
-                    key: 'notification3',
+                    key: 'activation',
                     label: (
-                      <button><MdOutlineNotificationsActive></MdOutlineNotificationsActive> Active Brand</button>
+                      <button onClick={() => {activationbrand(row._id)}}><MdOutlineNotificationsActive></MdOutlineNotificationsActive> { !row.active ? "Active" : "dis active"} customer</button>
                     ),
                   },
+  
                   {
                     key: 'notification2',
                     label: (
-                      <button><MdDeleteOutline></MdDeleteOutline> Delete Brand</button>
+                      <button onClick={() => deletebrand(row._id)}><MdDeleteOutline></MdDeleteOutline> Delete brand</button>
                     ),
                   }]
               }}
@@ -83,7 +165,7 @@ function DashboardBrandComponent() {
     // /\/\/\/\/\/\//\/\//\/\/\/\/\/\/\/ about chart /\/\/\/\/\/\//\/\/\/\/\
     const [chartData, setChartData] = useState([]);
     useEffect(() => {
-      dispatch(BrandServer({page , limit:process.env.REACT_APP_LIMIT}))  
+      dispatch(BrandAllServer({page , limit:process.env.REACT_APP_LIMIT}))  
       asyncFetch();
     }, []);
   
@@ -125,28 +207,40 @@ function DashboardBrandComponent() {
                   onOk={() => setOpen(false)}
                   onCancel={() => setOpen(false)}
                   width={1000}
+                  footer={null}
                 >
+                {isLoading ? <DashboardLoading ></DashboardLoading> : ""}
                 <div className="header-modal">
                     <h5 className='text-capitalize text-center'>Create Brand</h5>
                 </div>
                   <form action="" className='d-flex flex-column gap-2'>
                     <div className="input">
                       <label htmlFor="title" className='text-capitalize'>title</label>
-                      <input id='title' type="text" className='form-control' />
+                      <input id='title' value={title} onChange={(e) => {setTitle(e.target.value)}}  type="text" className='form-control' />
+                      {errorsValidation.title ? <small className="text-danger">{errorsValidation.title[0].msg}</small> : ""}
                     </div>
 
                     <div className='d-flex gap-5 mb-4'>
                       <div className="input">
                         <label className='text-capitalize d-block'>is Active</label>
-                        <Switch defaultChecked onChange={(checked) => {
-                          console.log(checked)
+                        <Switch  value={active} onChange={(checked) => {
+                          setActive(checked)
                         }} />
+                        {errorsValidation.active ? <small className="text-danger">{errorsValidation.active[0].msg}</small> : ""}
                       </div>
+                    </div>
+                    <div className="ant-modal-footer">
+                      <button className='ant-btn css-dev-only-do-not-override-i1mju1 ant-btn-default' onClick={(e) => {e.preventDefault() ; setOpen(false)}}>
+                        cancel
+                      </button>
+                      <button className='ant-btn css-dev-only-do-not-override-i1mju1 ant-btn-primary' onClick={(e) => createBrand(e)}>
+                        ok
+                      </button>
                     </div>
                   </form>
                 </Modal>
               </div>
-              <button className='text-capitalize btn btn-success btn-sm mb-2 w-100'>
+              <button onClick={() => downloadExcel()} className='text-capitalize btn btn-success btn-sm mb-2 w-100'>
                 download Excel
               </button>
             </div>
